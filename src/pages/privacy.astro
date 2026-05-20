@@ -1,0 +1,153 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import Header from "@/components/Header.astro";
+import Footer from "@/components/Footer.astro";
+import WhatsAppFloating from "@/components/WhatsAppFloating.astro";
+import { withBase } from "@/lib/url";
+
+const lastUpdated = "20 maggio 2026";
+---
+
+<BaseLayout
+  title="Privacy Policy - PERMALINE | Compassin"
+  description="Informativa sul trattamento dei dati personali del sito Permaline.it, ai sensi del Regolamento UE 2016/679 (GDPR) e del D.Lgs. 196/2003."
+>
+  <Header />
+  <main class="flex-1 bg-[var(--color-paper)]">
+    <article class="mx-auto max-w-2xl px-5 md:px-8 py-16 md:py-24 prose-manifesto">
+      <span class="brand-mark" aria-hidden="true"></span>
+      <p class="eyebrow text-[var(--color-accent)] mb-3">Informativa</p>
+      <h1 class="heading text-3xl md:text-4xl lg:text-5xl leading-tight mb-4">Privacy Policy</h1>
+      <p class="text-sm text-[var(--color-graphite)] mb-10">Ultimo aggiornamento: {lastUpdated}</p>
+
+      <p>
+        La presente informativa descrive il trattamento dei dati personali degli utenti
+        che visitano il sito <strong>permaline.it</strong> (di seguito "Sito"), ai sensi
+        del Regolamento UE 2016/679 ("GDPR") e della normativa italiana applicabile in
+        materia di protezione dei dati personali.
+      </p>
+
+      <h2 class="heading text-2xl mt-12 mb-4">1. Titolare del trattamento</h2>
+      <p>
+        Il titolare del trattamento dei dati personali raccolti tramite il Sito è:
+      </p>
+      <p class="rounded-xl border border-[var(--color-line)] bg-white p-5 text-base">
+        <strong>[RAGIONE SOCIALE COMPASSIN - da compilare]</strong><br />
+        Sede legale: [INDIRIZZO COMPLETO - da compilare]<br />
+        P.IVA / C.F.: [P.IVA - da compilare]<br />
+        Email: <a href="mailto:supporto@compassin.it" class="text-[var(--color-accent)] underline">supporto@compassin.it</a><br />
+        Tel: +39 375 571 8600
+      </p>
+
+      <h2 class="heading text-2xl mt-12 mb-4">2. Tipologia di dati raccolti</h2>
+      <p>
+        Il Sito raccoglie le seguenti categorie di dati:
+      </p>
+      <ul class="list-disc pl-6 space-y-2 my-4">
+        <li>
+          <strong>Dati di navigazione</strong>: indirizzo IP, tipo di browser, sistema
+          operativo, pagine visitate, orario e durata della visita. Questi dati sono
+          raccolti automaticamente dai server tecnici e utilizzati solo in forma
+          aggregata per fini statistici e per garantire il corretto funzionamento del
+          Sito.
+        </li>
+        <li>
+          <strong>Dati forniti volontariamente</strong>: dati di contatto (nome, email,
+          telefono, messaggio) inviati attraverso eventuali moduli di contatto, richieste
+          di preventivo, o canali diretti (WhatsApp, email).
+        </li>
+      </ul>
+
+      <h2 class="heading text-2xl mt-12 mb-4">3. Finalita e base giuridica</h2>
+      <ul class="list-disc pl-6 space-y-2 my-4">
+        <li>
+          <strong>Funzionamento del Sito</strong> (base giuridica: legittimo interesse del
+          titolare, art. 6.1.f GDPR): garantire la corretta erogazione del servizio.
+        </li>
+        <li>
+          <strong>Risposta a richieste di contatto</strong> (base giuridica: esecuzione di
+          misure precontrattuali, art. 6.1.b GDPR): rispondere alle richieste inviate
+          tramite i canali di contatto.
+        </li>
+        <li>
+          <strong>Adempimenti di legge</strong> (base giuridica: obbligo legale, art.
+          6.1.c GDPR): conservazione dei dati per il tempo necessario al rispetto degli
+          obblighi normativi.
+        </li>
+      </ul>
+
+      <h2 class="heading text-2xl mt-12 mb-4">4. Cookie</h2>
+      <p>
+        Il Sito utilizza <strong>esclusivamente cookie tecnici essenziali</strong> al
+        funzionamento. Non sono installati cookie di profilazione, cookie di terze parti
+        per scopi pubblicitari, ne strumenti di tracciamento del comportamento.
+      </p>
+      <p>
+        Ai sensi delle linee guida del Garante per la protezione dei dati personali
+        (provvedimento del 10 giugno 2021), i cookie tecnici non richiedono il consenso
+        dell'utente.
+      </p>
+      <p>
+        L'utente puo gestire o disabilitare i cookie direttamente dalle impostazioni del
+        proprio browser.
+      </p>
+
+      <h2 class="heading text-2xl mt-12 mb-4">5. Modalita e tempi di conservazione</h2>
+      <p>
+        I dati sono trattati con strumenti elettronici, con misure di sicurezza adeguate
+        a prevenire accessi non autorizzati, perdita o alterazione. I dati di navigazione
+        sono conservati per il tempo strettamente necessario alle finalita tecniche e
+        comunque non oltre 12 mesi. I dati forniti volontariamente sono conservati per il
+        tempo necessario a rispondere alla richiesta e ai successivi obblighi di legge.
+      </p>
+
+      <h2 class="heading text-2xl mt-12 mb-4">6. Destinatari dei dati</h2>
+      <p>
+        I dati possono essere comunicati a soggetti che agiscono come responsabili del
+        trattamento (es. fornitori di servizi tecnici, hosting, posta elettronica),
+        nominati ai sensi dell'art. 28 GDPR. L'elenco dei responsabili e disponibile su
+        richiesta all'indirizzo del titolare.
+      </p>
+      <p>
+        I dati non sono trasferiti al di fuori dello Spazio Economico Europeo, salvo
+        ricorso a fornitori cloud certificati con garanzie adeguate (clausole contrattuali
+        standard UE).
+      </p>
+
+      <h2 class="heading text-2xl mt-12 mb-4">7. Diritti dell'interessato</h2>
+      <p>
+        Ai sensi degli artt. 15-22 GDPR, l'utente ha il diritto di:
+      </p>
+      <ul class="list-disc pl-6 space-y-2 my-4">
+        <li>accedere ai propri dati personali;</li>
+        <li>richiederne la rettifica o la cancellazione;</li>
+        <li>limitarne o opporsi al trattamento;</li>
+        <li>ricevere i dati in formato strutturato (portabilita);</li>
+        <li>
+          presentare reclamo al Garante per la protezione dei dati personali
+          (<a href="https://www.garanteprivacy.it" target="_blank" rel="noopener noreferrer" class="text-[var(--color-accent)] underline">www.garanteprivacy.it</a>).
+        </li>
+      </ul>
+      <p>
+        Per esercitare questi diritti e sufficiente scrivere a
+        <a href="mailto:supporto@compassin.it" class="text-[var(--color-accent)] underline">supporto@compassin.it</a>.
+      </p>
+
+      <h2 class="heading text-2xl mt-12 mb-4">8. Modifiche all'informativa</h2>
+      <p>
+        Questa informativa puo essere aggiornata. Le modifiche sostanziali saranno
+        evidenziate nella sezione "Ultimo aggiornamento" all'inizio del documento.
+      </p>
+
+      <hr class="my-12 border-[var(--color-line)]" />
+
+      <p class="text-sm text-[var(--color-graphite)]">
+        Per qualsiasi domanda sulla presente informativa puoi scrivere a
+        <a href="mailto:supporto@compassin.it" class="text-[var(--color-accent)] underline">supporto@compassin.it</a>
+        o chiamare il numero <a href="tel:+393755718600" class="text-[var(--color-accent)] underline">+39 375 571 8600</a>.
+      </p>
+    </article>
+  </main>
+  <Footer />
+  <WhatsAppFloating />
+</BaseLayout>

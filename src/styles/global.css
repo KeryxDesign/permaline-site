@@ -156,3 +156,80 @@ body.no-scroll {
     scroll-behavior: auto !important;
   }
 }
+
+/* === Accessibility widget classes (toggle utente) === */
+
+/* Testo piu grande: scala +12.5% via font-size root */
+html.a11y-large-text {
+  font-size: 112.5%;
+}
+
+/* Alto contrasto: forza nero su bianco, bordi pieni, rimuove sfumature */
+html.a11y-high-contrast {
+  --color-ink: #000000;
+  --color-charcoal: #000000;
+  --color-graphite: #000000;
+  --color-paper: #ffffff;
+  --color-bone: #ffffff;
+  --color-mist: #000000;
+  --color-line: #000000;
+  --color-accent: #006a39;
+}
+
+html.a11y-high-contrast body {
+  background: #ffffff;
+  color: #000000;
+}
+
+html.a11y-high-contrast img,
+html.a11y-high-contrast svg {
+  filter: contrast(1.15);
+}
+
+html.a11y-high-contrast a,
+html.a11y-high-contrast button {
+  text-decoration: underline;
+}
+
+/* Sottolinea tutti i link in pagina */
+html.a11y-underline-links a {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* Forza riduci animazioni anche se OS non lo richiede */
+html.a11y-reduce-motion *,
+html.a11y-reduce-motion *::before,
+html.a11y-reduce-motion *::after {
+  animation-duration: 0.01ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.01ms !important;
+}
+
+/* sr-only helper */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Accent verde su pull-quote (variante warmer) */
+.pull-quote.accent {
+  border-left-color: var(--color-accent);
+}
+
+/* Marker brand: trattino verde sopra titoli sezioni */
+.brand-mark {
+  display: inline-block;
+  width: 32px;
+  height: 2px;
+  background: var(--color-accent);
+  margin-bottom: 1.25rem;
+  border-radius: 2px;
+}

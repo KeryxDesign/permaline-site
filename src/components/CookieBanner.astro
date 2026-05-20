@@ -1,0 +1,49 @@
+---
+import { withBase } from "@/lib/url";
+---
+
+<aside
+  id="cookie-banner"
+  class="fixed left-3 right-3 bottom-3 md:left-auto md:right-6 md:bottom-6 md:max-w-md z-50 hidden bg-white border border-[var(--color-line)] rounded-2xl shadow-[0_20px_50px_-20px_rgba(0,0,0,0.25)] p-5 md:p-6"
+  role="dialog"
+  aria-labelledby="cookie-title"
+  aria-describedby="cookie-body"
+  data-cookie-banner
+>
+  <h2 id="cookie-title" class="heading text-lg mb-2">Cookie tecnici</h2>
+  <p id="cookie-body" class="text-sm text-[var(--color-charcoal)]/85 leading-relaxed mb-4">
+    Usiamo solo cookie tecnici essenziali per il funzionamento del sito.
+    Nessun cookie di profilazione, nessun tracking di terze parti.
+  </p>
+  <div class="flex flex-col sm:flex-row gap-2">
+    <button
+      type="button"
+      class="inline-flex items-center justify-center rounded-full bg-[var(--color-charcoal)] px-5 py-2.5 min-h-11 text-sm font-semibold text-white hover:bg-[var(--color-ink)] transition-colors"
+      data-cookie-accept
+    >
+      Ho capito
+    </button>
+    <a
+      href={withBase("privacy")}
+      class="inline-flex items-center justify-center rounded-full border border-[var(--color-line)] px-5 py-2.5 min-h-11 text-sm font-semibold text-[var(--color-charcoal)] hover:border-[var(--color-charcoal)] transition-colors"
+    >
+      Privacy policy
+    </a>
+  </div>
+</aside>
+
+<script>
+  const KEY = "permaline.cookie.v1";
+  const banner = document.getElementById("cookie-banner");
+  const accept = document.querySelector("[data-cookie-accept]");
+
+  if (banner && !localStorage.getItem(KEY)) {
+    // Mostra dopo un piccolo delay per non disturbare la prima impressione
+    setTimeout(() => banner.classList.remove("hidden"), 1200);
+  }
+
+  accept?.addEventListener("click", () => {
+    localStorage.setItem(KEY, JSON.stringify({ accepted: true, ts: Date.now() }));
+    banner?.classList.add("hidden");
+  });
+</script>
