@@ -5,7 +5,8 @@ import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://permaline.it',
+  site: 'https://keryxdesign.github.io',
+  base: '/permaline-site/',
   server: { port: 4326 },
   integrations: [sitemap()],
   vite: {

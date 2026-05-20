@@ -1,19 +1,21 @@
 ---
+import { withBase } from "@/lib/url";
+
 const links = [
-  { href: "/cosa-e-permaline", label: "Cos'è PERMALINE" },
-  { href: "/architetti", label: "Architetti" },
-  { href: "/imprese", label: "Imprese" },
-  { href: "/faq", label: "FAQ" },
+  { href: withBase("cosa-e-permaline"), label: "Cos'è PERMALINE" },
+  { href: withBase("architetti"), label: "Architetti" },
+  { href: withBase("imprese"), label: "Imprese" },
+  { href: withBase("faq"), label: "FAQ" },
   { href: "https://chiusureperimpianti.it", label: "Approfondimenti", external: true },
-  { href: "/contatti", label: "Contatti" },
+  { href: withBase("contatti"), label: "Contatti" },
 ];
 ---
 
 <header class="sticky top-0 z-40 bg-[var(--color-paper)]/85 backdrop-blur border-b border-[var(--color-mist)]">
   <div class="mx-auto max-w-7xl px-5 md:px-8 h-16 md:h-20 flex items-center justify-between gap-6">
-    <a href="/" class="flex items-center gap-2" aria-label="PERMALINE - Home">
+    <a href={withBase("")} class="flex items-center gap-2" aria-label="PERMALINE - Home">
       <img
-        src="/logo/permaline.svg"
+        src={withBase("logo/permaline.svg")}
         alt="PERMALINE"
         class="h-7 md:h-8 w-auto"
         width="200"

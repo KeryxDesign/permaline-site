@@ -1,5 +1,6 @@
 ---
 import "@/styles/global.css";
+import { withBase } from "@/lib/url";
 
 interface Props {
   title?: string;
@@ -10,7 +11,7 @@ interface Props {
 const {
   title = "PERMALINE® - La linea che protegge il progetto",
   description = "Il primo accesso tecnico di precisione per ambienti ad alta finitura. Valvole, filtri, domotica e accessi tecnici che devono scomparire nella superficie e restare precisi nel tempo.",
-  ogImage = "/img/hero-1.png",
+  ogImage = withBase("img/hero-1.png"),
 } = Astro.props;
 
 const canonical = new URL(Astro.url.pathname, Astro.site).toString();
@@ -28,7 +29,7 @@ const canonical = new URL(Astro.url.pathname, Astro.site).toString();
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
 
-    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="icon" type="image/png" href={withBase("favicon.png")} />
 
     <meta property="og:type" content="website" />
     <meta property="og:title" content={title} />

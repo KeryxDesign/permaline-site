@@ -1,9 +1,11 @@
 ---
+import { withBase } from "@/lib/url";
+
 const slides = [
-  { src: "/img/hero-1.png", alt: "Accesso tecnico PERMALINE installato a filo parete" },
-  { src: "/img/hero-2.png", alt: "Dettaglio della linea perimetrale costante" },
-  { src: "/img/hero-3.png", alt: "Chiusura a filo PERMALINE in ambiente residenziale" },
-  { src: "/img/hero-4.png", alt: "Installazione a filo soffitto su superficie continua" },
+  { src: withBase("img/hero-1.png"), alt: "Accesso tecnico PERMALINE installato a filo parete" },
+  { src: withBase("img/hero-2.png"), alt: "Dettaglio della linea perimetrale costante" },
+  { src: withBase("img/hero-3.png"), alt: "Chiusura a filo PERMALINE in ambiente residenziale" },
+  { src: withBase("img/hero-4.png"), alt: "Installazione a filo soffitto su superficie continua" },
 ];
 ---
 
@@ -28,13 +30,13 @@ const slides = [
 
         <div class="flex flex-col sm:flex-row gap-3">
           <a
-            href="/architetti"
+            href={withBase("architetti")}
             class="inline-flex items-center justify-center rounded-full bg-[var(--color-charcoal)] px-6 py-3.5 text-sm font-semibold text-white hover:bg-[var(--color-ink)] transition-colors"
           >
             Sono un architetto
           </a>
           <a
-            href="/imprese"
+            href={withBase("imprese")}
             class="inline-flex items-center justify-center rounded-full border border-[var(--color-charcoal)] px-6 py-3.5 text-sm font-semibold text-[var(--color-charcoal)] hover:bg-[var(--color-charcoal)] hover:text-white transition-colors"
           >
             Ho un'impresa

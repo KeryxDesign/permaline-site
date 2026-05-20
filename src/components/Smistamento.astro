@@ -1,11 +1,13 @@
 ---
+import { withBase } from "@/lib/url";
+
 const cards = [
   {
     eyebrow: "Sei un architetto?",
     title: "Mantieni il controllo del dettaglio.",
     body: "Scopri come evitare che un piccolo accesso tradisca la percezione dell'intero ambiente.",
     cta: "Inizia da qui",
-    href: "/architetti",
+    href: withBase("architetti"),
     tone: "dark",
   },
   {
@@ -13,7 +15,7 @@ const cards = [
     title: "Chiudi un lavoro senza tornarci sopra.",
     body: "Scopri come eliminare richiami inutili, velocizzare la posa e finire una superficie con sicurezza.",
     cta: "Inizia da qui",
-    href: "/imprese",
+    href: withBase("imprese"),
     tone: "light",
   },
 ];

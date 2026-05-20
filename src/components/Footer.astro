@@ -1,4 +1,5 @@
 ---
+import { withBase } from "@/lib/url";
 const year = new Date().getFullYear();
 ---
 
@@ -7,7 +8,7 @@ const year = new Date().getFullYear();
     <div class="grid md:grid-cols-3 gap-10">
       <div>
         <img
-          src="/logo/permaline.svg"
+          src={withBase("logo/permaline.svg")}
           alt="PERMALINE"
           class="h-8 w-auto mb-4 brightness-0 invert opacity-90"
           width="200"
@@ -91,7 +92,7 @@ const year = new Date().getFullYear();
         PERMALINE<span class="text-[0.7em] align-top">®</span> &copy; {year} - un prodotto COMPASSiN
       </p>
       <img
-        src="/logo/compassin.png"
+        src={withBase("logo/compassin.png")}
         alt="COMPASSiN"
         class="h-6 w-auto opacity-80"
         width="120"
