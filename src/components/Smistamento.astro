@@ -32,7 +32,7 @@ const cards = [
   <div class="mx-auto max-w-7xl px-5 md:px-8">
     <div class="text-center">
       <span class="brand-mark mx-auto" aria-hidden="true"></span>
-      <p class="eyebrow text-[var(--color-accent)] mb-3">Da dove vuoi partire</p>
+      <p class="eyebrow mb-3">Da dove vuoi partire</p>
       <h2
         id="smistamento-title"
         class="heading text-3xl md:text-4xl leading-tight mb-12 max-w-2xl mx-auto"
@@ -49,7 +49,7 @@ const cards = [
             class:list={[
               "group block rounded-2xl overflow-hidden transition-all duration-300 border",
               card.tone === "dark"
-                ? "bg-[var(--color-charcoal)] border-[var(--color-charcoal)] text-white hover:bg-[var(--color-ink)]"
+                ? "card-dark bg-[var(--color-ink)] border-[var(--color-ink)] text-white hover:bg-black"
                 : "bg-white border-[var(--color-line)] text-[var(--color-ink)] hover:border-[var(--color-charcoal)]",
             ]}
           >
@@ -78,28 +78,24 @@ const cards = [
               <h3
                 class:list={[
                   "heading text-2xl md:text-3xl leading-snug mb-5",
+                  card.tone === "dark" ? "!text-white" : "",
                 ]}
-                style={card.tone === "dark" ? "color:white" : ""}
               >
                 {card.eyebrow}
               </h3>
               <p
                 class:list={[
                   "text-base md:text-lg leading-relaxed mb-8 body-prose",
-                  card.tone === "dark" ? "text-white/90" : "text-[var(--color-charcoal)]/90",
+                  card.tone === "dark" ? "text-white" : "text-[var(--color-charcoal)]/90",
                 ]}
                 set:html={card.bodyHtml}
               />
-              {card.tone === "dark" && (
-                <style is:global>{`
-                  .group .body-prose strong { color: white; }
-                  .group .body-prose em { color: rgba(255,255,255,0.95); }
-                `}</style>
-              )}
               <span
                 class:list={[
-                  "inline-flex items-center gap-2 text-sm font-semibold",
-                  card.tone === "dark" ? "text-white" : "text-[var(--color-charcoal)]",
+                  "inline-flex items-center gap-2 rounded-full px-5 py-2.5 min-h-11 text-sm font-semibold transition-colors",
+                  card.tone === "dark"
+                    ? "bg-[var(--color-accent)] text-white group-hover:bg-[#234f37]"
+                    : "bg-[var(--color-accent)] text-white group-hover:bg-[#234f37]",
                 ]}
               >
                 {card.cta}

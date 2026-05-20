@@ -261,6 +261,15 @@ html.a11y-reduce-motion *::after {
   letter-spacing: 0.005em;
 }
 
+/* Override per card dark: emphasis in bianco anziche ink */
+.card-dark .body-prose strong {
+  color: #ffffff;
+}
+
+.card-dark .body-prose em {
+  color: rgba(255, 255, 255, 0.95);
+}
+
 /* Highlight DRD: barra verde brand a 60% di altezza, mai giallo fluo */
 .mark {
   background: linear-gradient(
