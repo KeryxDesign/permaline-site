@@ -4,9 +4,8 @@ import { withBase } from "@/lib/url";
 const cards = [
   {
     eyebrow: "Sei un architetto?",
-    title: "Mantieni il controllo del dettaglio.",
     bodyHtml:
-      "Scopri come evitare che <em>un piccolo accesso</em> tradisca la percezione dell'<strong>intero ambiente</strong>.",
+      "Scopri come <strong>mantenere il controllo del dettaglio</strong> ed evitare che un piccolo accesso <em>tradisca la percezione dell'intero ambiente</em>.",
     cta: "Inizia da qui",
     href: withBase("architetti"),
     image: withBase("img/architetti.webp"),
@@ -15,9 +14,8 @@ const cards = [
   },
   {
     eyebrow: "Hai un'impresa?",
-    title: "Chiudi un lavoro senza tornarci sopra.",
     bodyHtml:
-      "Scopri come eliminare <strong>richiami inutili</strong>, velocizzare la posa e <em>finire una superficie con sicurezza</em>.",
+      "Scopri come eliminare <strong>richiami inutili</strong>, velocizzare la posa e <em>chiudere un lavoro senza doverci tornare sopra</em>.",
     cta: "Inizia da qui",
     href: withBase("imprese"),
     image: withBase("img/imprese.webp"),
@@ -77,24 +75,18 @@ const cards = [
             </div>
 
             <div class="p-7 md:p-9">
-              <p
-                class:list={[
-                  "eyebrow mb-4",
-                  card.tone === "dark" ? "text-[#7fcca0]" : "text-[var(--color-accent)]",
-                ]}
-              >
-                {card.eyebrow}
-              </p>
               <h3
-                class="heading text-2xl md:text-3xl leading-snug mb-4"
+                class:list={[
+                  "heading text-2xl md:text-3xl leading-snug mb-5",
+                ]}
                 style={card.tone === "dark" ? "color:white" : ""}
               >
-                {card.title}
+                {card.eyebrow}
               </h3>
               <p
                 class:list={[
                   "text-base md:text-lg leading-relaxed mb-8 body-prose",
-                  card.tone === "dark" ? "text-white/85" : "text-[var(--color-charcoal)]/85",
+                  card.tone === "dark" ? "text-white/90" : "text-[var(--color-charcoal)]/90",
                 ]}
                 set:html={card.bodyHtml}
               />
