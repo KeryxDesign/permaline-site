@@ -29,6 +29,9 @@ const canonical = new URL(Astro.url.pathname, Astro.site).toString();
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
 
+    <!-- Temp domain: blocca indicizzazione finche non si migra a permaline.it -->
+    <meta name="robots" content="noindex, nofollow" />
+
     <link rel="icon" type="image/png" href={withBase("favicon.png")} />
 
     <meta property="og:type" content="website" />

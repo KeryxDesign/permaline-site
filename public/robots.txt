@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /
+
+Sitemap: https://keryxdesign.github.io/permaline-site/sitemap-index.xml
