@@ -1,0 +1,62 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+  --font-display: "Inter", ui-sans-serif, system-ui, -apple-system, sans-serif;
+
+  --color-ink: #1a1c1a;
+  --color-charcoal: #373a36;
+  --color-graphite: #76777a;
+  --color-mist: #e6e6e3;
+  --color-bone: #f4f3ee;
+  --color-paper: #fafaf7;
+  --color-line: #c9c9c5;
+  --color-accent: #2f6b4a;
+  --color-accent-soft: #e9f0eb;
+}
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  font-family: var(--font-sans);
+  color: var(--color-ink);
+  background: var(--color-paper);
+  font-feature-settings: "ss01", "cv11";
+}
+
+.heading {
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--color-charcoal);
+}
+
+.eyebrow {
+  font-size: 0.75rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--color-graphite);
+}
+
+.hairline {
+  height: 1px;
+  background: var(--color-line);
+}
+
+.pencil-line {
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    var(--color-charcoal) 12%,
+    var(--color-charcoal) 88%,
+    transparent
+  );
+}

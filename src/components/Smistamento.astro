@@ -1,0 +1,85 @@
+---
+const cards = [
+  {
+    eyebrow: "Sei un architetto?",
+    title: "Mantieni il controllo del dettaglio.",
+    body: "Scopri come evitare che un piccolo accesso tradisca la percezione dell'intero ambiente.",
+    cta: "Inizia da qui",
+    href: "/architetti",
+    tone: "dark",
+  },
+  {
+    eyebrow: "Hai un'impresa?",
+    title: "Chiudi un lavoro senza tornarci sopra.",
+    body: "Scopri come eliminare richiami inutili, velocizzare la posa e finire una superficie con sicurezza.",
+    cta: "Inizia da qui",
+    href: "/imprese",
+    tone: "light",
+  },
+];
+---
+
+<section class="bg-[var(--color-paper)] py-16 md:py-24">
+  <div class="mx-auto max-w-7xl px-5 md:px-8">
+    <p class="eyebrow text-center mb-3">Da dove vuoi partire</p>
+    <h2 class="heading text-center text-3xl md:text-4xl leading-tight mb-12 max-w-2xl mx-auto">
+      Due percorsi. Lo stesso standard.
+    </h2>
+
+    <div class="grid md:grid-cols-2 gap-5 md:gap-6">
+      {
+        cards.map((card) => (
+          <a
+            href={card.href}
+            class:list={[
+              "group block rounded-2xl p-8 md:p-10 transition-all duration-300 border",
+              card.tone === "dark"
+                ? "bg-[var(--color-charcoal)] border-[var(--color-charcoal)] text-white hover:bg-[var(--color-ink)]"
+                : "bg-white border-[var(--color-line)] text-[var(--color-ink)] hover:border-[var(--color-charcoal)]",
+            ]}
+          >
+            <p
+              class:list={[
+                "eyebrow mb-4",
+                card.tone === "dark" ? "text-white/70" : "text-[var(--color-graphite)]",
+              ]}
+            >
+              {card.eyebrow}
+            </p>
+            <h3 class="heading text-2xl md:text-3xl leading-snug mb-4" style={card.tone === "dark" ? "color:white" : ""}>
+              {card.title}
+            </h3>
+            <p
+              class:list={[
+                "text-base md:text-lg leading-relaxed mb-8",
+                card.tone === "dark" ? "text-white/80" : "text-[var(--color-charcoal)]/90",
+              ]}
+            >
+              {card.body}
+            </p>
+            <span
+              class:list={[
+                "inline-flex items-center gap-2 text-sm font-semibold",
+                card.tone === "dark" ? "text-white" : "text-[var(--color-charcoal)]",
+              ]}
+            >
+              {card.cta}
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                class="transition-transform duration-300 group-hover:translate-x-1"
+              >
+                <line x1="5" y1="12" x2="19" y2="12" />
+                <polyline points="12 5 19 12 12 19" />
+              </svg>
+            </span>
+          </a>
+        ))
+      }
+    </div>
+  </div>
+</section>

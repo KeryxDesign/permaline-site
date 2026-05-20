@@ -1,0 +1,97 @@
+---
+const links = [
+  { href: "/cosa-e-permaline", label: "Cos'è PERMALINE" },
+  { href: "/architetti", label: "Architetti" },
+  { href: "/imprese", label: "Imprese" },
+  { href: "/faq", label: "FAQ" },
+  { href: "https://chiusureperimpianti.it", label: "Approfondimenti", external: true },
+  { href: "/contatti", label: "Contatti" },
+];
+---
+
+<header class="sticky top-0 z-40 bg-[var(--color-paper)]/85 backdrop-blur border-b border-[var(--color-mist)]">
+  <div class="mx-auto max-w-7xl px-5 md:px-8 h-16 md:h-20 flex items-center justify-between gap-6">
+    <a href="/" class="flex items-center gap-2" aria-label="PERMALINE - Home">
+      <img
+        src="/logo/permaline.svg"
+        alt="PERMALINE"
+        class="h-7 md:h-8 w-auto"
+        width="200"
+        height="71"
+      />
+    </a>
+
+    <nav class="hidden lg:flex items-center gap-7" aria-label="Menu principale">
+      {
+        links.map((link) => (
+          <a
+            href={link.href}
+            class="text-sm font-medium text-[var(--color-charcoal)] hover:text-[var(--color-ink)] transition-colors"
+            target={link.external ? "_blank" : undefined}
+            rel={link.external ? "noopener noreferrer" : undefined}
+          >
+            {link.label}
+          </a>
+        ))
+      }
+    </nav>
+
+    <a
+      href="https://wa.me/393755718600"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="hidden md:inline-flex items-center gap-2 rounded-full bg-[var(--color-charcoal)] px-4 py-2 text-sm font-medium text-white hover:bg-[var(--color-ink)] transition-colors"
+    >
+      Supporto tecnico
+    </a>
+
+    <button
+      type="button"
+      class="lg:hidden inline-flex items-center justify-center h-10 w-10 rounded-md text-[var(--color-charcoal)]"
+      aria-label="Apri menu"
+      data-mobile-menu-toggle
+    >
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+        <line x1="4" y1="7" x2="20" y2="7" />
+        <line x1="4" y1="12" x2="20" y2="12" />
+        <line x1="4" y1="17" x2="20" y2="17" />
+      </svg>
+    </button>
+  </div>
+
+  <div
+    class="lg:hidden hidden border-t border-[var(--color-mist)] bg-[var(--color-paper)]"
+    data-mobile-menu
+  >
+    <nav class="px-5 py-4 flex flex-col gap-3" aria-label="Menu mobile">
+      {
+        links.map((link) => (
+          <a
+            href={link.href}
+            class="text-base font-medium text-[var(--color-charcoal)] py-2"
+            target={link.external ? "_blank" : undefined}
+            rel={link.external ? "noopener noreferrer" : undefined}
+          >
+            {link.label}
+          </a>
+        ))
+      }
+      <a
+        href="https://wa.me/393755718600"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="mt-2 inline-flex items-center justify-center rounded-full bg-[var(--color-charcoal)] px-4 py-3 text-sm font-medium text-white"
+      >
+        Parla con il supporto tecnico
+      </a>
+    </nav>
+  </div>
+</header>
+
+<script>
+  const toggle = document.querySelector("[data-mobile-menu-toggle]");
+  const menu = document.querySelector("[data-mobile-menu]");
+  toggle?.addEventListener("click", () => {
+    menu?.classList.toggle("hidden");
+  });
+</script>

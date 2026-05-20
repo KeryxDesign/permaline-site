@@ -1,0 +1,12 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "permaline-dev",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "dev"],
+      "port": 4326,
+      "cwd": "/Users/davidefilippini/Documents/Claude/permaline-site"
+    }
+  ]
+}

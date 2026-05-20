@@ -1,0 +1,25 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import Header from "@/components/Header.astro";
+import Hero from "@/components/Hero.astro";
+import Manifesto from "@/components/Manifesto.astro";
+import PencilCriterion from "@/components/PencilCriterion.astro";
+import Smistamento from "@/components/Smistamento.astro";
+import Footer from "@/components/Footer.astro";
+import WhatsAppFloating from "@/components/WhatsAppFloating.astro";
+---
+
+<BaseLayout
+  title="PERMALINE® - La linea che protegge il progetto"
+  description="Il primo accesso tecnico di precisione per ambienti ad alta finitura. Valvole, filtri, domotica e accessi tecnici che devono scomparire nella superficie e restare precisi nel tempo."
+>
+  <Header />
+  <main class="flex-1">
+    <Hero />
+    <Manifesto />
+    <PencilCriterion />
+    <Smistamento />
+  </main>
+  <Footer />
+  <WhatsAppFloating />
+</BaseLayout>

@@ -1,0 +1,133 @@
+---
+const slides = [
+  { src: "/img/hero-1.png", alt: "Accesso tecnico PERMALINE installato a filo parete" },
+  { src: "/img/hero-2.png", alt: "Dettaglio della linea perimetrale costante" },
+  { src: "/img/hero-3.png", alt: "Chiusura a filo PERMALINE in ambiente residenziale" },
+  { src: "/img/hero-4.png", alt: "Installazione a filo soffitto su superficie continua" },
+];
+---
+
+<section class="relative overflow-hidden bg-[var(--color-paper)]">
+  <div class="mx-auto max-w-7xl px-5 md:px-8 pt-12 md:pt-20 pb-12 md:pb-16">
+    <div class="grid lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+      <div class="lg:col-span-6 max-w-xl">
+        <p class="eyebrow mb-5">PERMALINE<span class="ml-0.5 align-top text-[0.6em]">®</span></p>
+
+        <h1 class="heading text-4xl sm:text-5xl lg:text-6xl leading-[1.05] mb-5">
+          La linea che protegge il progetto.
+        </h1>
+
+        <p class="text-lg md:text-xl text-[var(--color-charcoal)]/90 leading-snug mb-6 font-medium">
+          Il primo accesso tecnico di precisione per ambienti ad alta finitura.
+        </p>
+
+        <p class="text-base md:text-lg text-[var(--color-graphite)] leading-relaxed mb-8">
+          Valvole, filtri, domotica e accessi tecnici che devono scomparire nella
+          superficie e restare precisi nel tempo.
+        </p>
+
+        <div class="flex flex-col sm:flex-row gap-3">
+          <a
+            href="/architetti"
+            class="inline-flex items-center justify-center rounded-full bg-[var(--color-charcoal)] px-6 py-3.5 text-sm font-semibold text-white hover:bg-[var(--color-ink)] transition-colors"
+          >
+            Sono un architetto
+          </a>
+          <a
+            href="/imprese"
+            class="inline-flex items-center justify-center rounded-full border border-[var(--color-charcoal)] px-6 py-3.5 text-sm font-semibold text-[var(--color-charcoal)] hover:bg-[var(--color-charcoal)] hover:text-white transition-colors"
+          >
+            Ho un'impresa
+          </a>
+        </div>
+      </div>
+
+      <div class="lg:col-span-6">
+        <div
+          class="relative aspect-[4/3] md:aspect-[5/4] overflow-hidden rounded-2xl bg-[var(--color-bone)] shadow-[0_1px_2px_rgba(0,0,0,0.04),0_20px_40px_-20px_rgba(0,0,0,0.18)]"
+          data-slider
+        >
+          {
+            slides.map((slide, i) => (
+              <img
+                src={slide.src}
+                alt={slide.alt}
+                width="1200"
+                height="900"
+                loading={i === 0 ? "eager" : "lazy"}
+                decoding="async"
+                class={`absolute inset-0 h-full w-full object-cover transition-opacity duration-1000 ${
+                  i === 0 ? "opacity-100" : "opacity-0"
+                }`}
+                data-slide
+                data-index={i}
+              />
+            ))
+          }
+
+          <div class="absolute bottom-4 left-0 right-0 flex justify-center gap-2" data-dots>
+            {
+              slides.map((_, i) => (
+                <button
+                  type="button"
+                  class={`h-1.5 rounded-full transition-all ${
+                    i === 0 ? "w-8 bg-white" : "w-1.5 bg-white/60"
+                  }`}
+                  aria-label={`Vai alla foto ${i + 1}`}
+                  data-dot
+                  data-index={i}
+                />
+              ))
+            }
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="pencil-line mx-auto max-w-7xl"></div>
+</section>
+
+<script>
+  const slider = document.querySelector("[data-slider]");
+  if (slider) {
+    const slides = slider.querySelectorAll<HTMLImageElement>("[data-slide]");
+    const dots = slider.querySelectorAll<HTMLButtonElement>("[data-dot]");
+    let current = 0;
+    let timer: ReturnType<typeof setInterval> | null = null;
+
+    const show = (next: number) => {
+      slides.forEach((el, i) => {
+        el.style.opacity = i === next ? "1" : "0";
+      });
+      dots.forEach((dot, i) => {
+        if (i === next) {
+          dot.classList.remove("w-1.5", "bg-white/60");
+          dot.classList.add("w-8", "bg-white");
+        } else {
+          dot.classList.remove("w-8", "bg-white");
+          dot.classList.add("w-1.5", "bg-white/60");
+        }
+      });
+      current = next;
+    };
+
+    const start = () => {
+      timer = setInterval(() => show((current + 1) % slides.length), 5000);
+    };
+    const stop = () => {
+      if (timer) clearInterval(timer);
+    };
+
+    dots.forEach((dot) => {
+      dot.addEventListener("click", () => {
+        stop();
+        const idx = Number(dot.dataset.index);
+        show(idx);
+        start();
+      });
+    });
+
+    start();
+  }
+</script>
