@@ -42,26 +42,29 @@ const links = [
       href="https://wa.me/393755718600"
       target="_blank"
       rel="noopener noreferrer"
-      class="hidden md:inline-flex items-center gap-2 rounded-full bg-[var(--color-charcoal)] px-4 py-2 text-sm font-medium text-white hover:bg-[var(--color-ink)] transition-colors"
+      class="hidden md:inline-flex items-center gap-2 rounded-full bg-[var(--color-charcoal)] px-4 py-2 text-sm font-medium text-white hover:bg-[var(--color-ink)] transition-colors min-h-11"
     >
       Supporto tecnico
     </a>
 
     <button
       type="button"
-      class="lg:hidden inline-flex items-center justify-center h-10 w-10 rounded-md text-[var(--color-charcoal)]"
+      class="lg:hidden inline-flex items-center justify-center h-11 w-11 rounded-md text-[var(--color-charcoal)]"
       aria-label="Apri menu"
+      aria-expanded="false"
+      aria-controls="mobile-menu"
       data-mobile-menu-toggle
     >
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-        <line x1="4" y1="7" x2="20" y2="7" />
-        <line x1="4" y1="12" x2="20" y2="12" />
-        <line x1="4" y1="17" x2="20" y2="17" />
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+        <line x1="4" y1="7" x2="20" y2="7"></line>
+        <line x1="4" y1="12" x2="20" y2="12"></line>
+        <line x1="4" y1="17" x2="20" y2="17"></line>
       </svg>
     </button>
   </div>
 
   <div
+    id="mobile-menu"
     class="lg:hidden hidden border-t border-[var(--color-mist)] bg-[var(--color-paper)]"
     data-mobile-menu
   >
@@ -70,7 +73,7 @@ const links = [
         links.map((link) => (
           <a
             href={link.href}
-            class="text-base font-medium text-[var(--color-charcoal)] py-2"
+            class="text-base font-medium text-[var(--color-charcoal)] py-3 min-h-11 flex items-center"
             target={link.external ? "_blank" : undefined}
             rel={link.external ? "noopener noreferrer" : undefined}
           >
@@ -82,7 +85,7 @@ const links = [
         href="https://wa.me/393755718600"
         target="_blank"
         rel="noopener noreferrer"
-        class="mt-2 inline-flex items-center justify-center rounded-full bg-[var(--color-charcoal)] px-4 py-3 text-sm font-medium text-white"
+        class="mt-2 inline-flex items-center justify-center rounded-full bg-[var(--color-charcoal)] px-4 py-3 text-sm font-medium text-white min-h-11"
       >
         Parla con il supporto tecnico
       </a>
@@ -91,9 +94,39 @@ const links = [
 </header>
 
 <script>
-  const toggle = document.querySelector("[data-mobile-menu-toggle]");
-  const menu = document.querySelector("[data-mobile-menu]");
+  const toggle = document.querySelector<HTMLButtonElement>("[data-mobile-menu-toggle]");
+  const menu = document.querySelector<HTMLDivElement>("[data-mobile-menu]");
+
+  const setOpen = (open: boolean) => {
+    if (!toggle || !menu) return;
+    if (open) {
+      menu.classList.remove("hidden");
+      toggle.setAttribute("aria-expanded", "true");
+      toggle.setAttribute("aria-label", "Chiudi menu");
+      document.body.classList.add("no-scroll");
+    } else {
+      menu.classList.add("hidden");
+      toggle.setAttribute("aria-expanded", "false");
+      toggle.setAttribute("aria-label", "Apri menu");
+      document.body.classList.remove("no-scroll");
+    }
+  };
+
   toggle?.addEventListener("click", () => {
-    menu?.classList.toggle("hidden");
+    const open = menu?.classList.contains("hidden");
+    setOpen(!!open);
+  });
+
+  // Chiudi su Escape
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && menu && !menu.classList.contains("hidden")) {
+      setOpen(false);
+      toggle?.focus();
+    }
+  });
+
+  // Chiudi su click sul link (mobile menu)
+  menu?.querySelectorAll("a").forEach((a) => {
+    a.addEventListener("click", () => setOpen(false));
   });
 </script>

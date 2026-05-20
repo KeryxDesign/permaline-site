@@ -21,10 +21,16 @@ const cards = [
 ];
 ---
 
-<section class="bg-[var(--color-paper)] py-16 md:py-24">
+<section
+  class="bg-[var(--color-paper)] py-16 md:py-24"
+  aria-labelledby="smistamento-title"
+>
   <div class="mx-auto max-w-7xl px-5 md:px-8">
     <p class="eyebrow text-center mb-3">Da dove vuoi partire</p>
-    <h2 class="heading text-center text-3xl md:text-4xl leading-tight mb-12 max-w-2xl mx-auto">
+    <h2
+      id="smistamento-title"
+      class="heading text-center text-3xl md:text-4xl leading-tight mb-12 max-w-2xl mx-auto"
+    >
       Due percorsi. Lo stesso standard.
     </h2>
 
@@ -48,13 +54,16 @@ const cards = [
             >
               {card.eyebrow}
             </p>
-            <h3 class="heading text-2xl md:text-3xl leading-snug mb-4" style={card.tone === "dark" ? "color:white" : ""}>
+            <h3
+              class="heading text-2xl md:text-3xl leading-snug mb-4"
+              style={card.tone === "dark" ? "color:white" : ""}
+            >
               {card.title}
             </h3>
             <p
               class:list={[
                 "text-base md:text-lg leading-relaxed mb-8",
-                card.tone === "dark" ? "text-white/80" : "text-[var(--color-charcoal)]/90",
+                card.tone === "dark" ? "text-white/85" : "text-[var(--color-charcoal)]/85",
               ]}
             >
               {card.body}
@@ -74,9 +83,10 @@ const cards = [
                 stroke="currentColor"
                 stroke-width="2"
                 class="transition-transform duration-300 group-hover:translate-x-1"
+                aria-hidden="true"
               >
-                <line x1="5" y1="12" x2="19" y2="12" />
-                <polyline points="12 5 19 12 12 19" />
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
               </svg>
             </span>
           </a>

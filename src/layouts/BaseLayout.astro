@@ -15,6 +15,64 @@ const {
 } = Astro.props;
 
 const canonical = new URL(Astro.url.pathname, Astro.site).toString();
+const ogImageAbsolute = new URL(ogImage, Astro.site).toString();
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://www.compassin.it/#organization",
+      name: "Compassin",
+      url: "https://www.compassin.it/",
+      logo: new URL(withBase("logo/compassin.png"), Astro.site).toString(),
+      sameAs: [
+        "https://www.instagram.com/chiusure_a_filo_compassin",
+        "https://www.youtube.com/@AFILOdiCOMPASSiN",
+        "https://chiusureperimpianti.it",
+      ],
+      contactPoint: {
+        "@type": "ContactPoint",
+        telephone: "+39-375-571-8600",
+        contactType: "technical support",
+        email: "supporto@compassin.it",
+        areaServed: "IT",
+        availableLanguage: ["Italian"],
+      },
+    },
+    {
+      "@type": "Brand",
+      "@id": canonical + "#brand",
+      name: "PERMALINE",
+      logo: new URL(withBase("logo/permaline.svg"), Astro.site).toString(),
+      parentOrganization: { "@id": "https://www.compassin.it/#organization" },
+    },
+    {
+      "@type": "Product",
+      "@id": canonical + "#product",
+      name: "PERMALINE",
+      category: "Accessi tecnici a filo parete e soffitto",
+      description:
+        "Standard di accesso tecnico di precisione per ambienti ad alta finitura. Sportelli di ispezione, accessi a valvole, filtri e domotica progettati per scomparire nella superficie e restare precisi nel tempo.",
+      brand: { "@id": canonical + "#brand" },
+      manufacturer: { "@id": "https://www.compassin.it/#organization" },
+      image: [
+        new URL(withBase("img/hero-1.png"), Astro.site).toString(),
+        new URL(withBase("img/hero-2.png"), Astro.site).toString(),
+        new URL(withBase("img/hero-3.png"), Astro.site).toString(),
+      ],
+      url: canonical,
+    },
+    {
+      "@type": "WebSite",
+      "@id": canonical + "#website",
+      url: canonical,
+      name: "PERMALINE",
+      inLanguage: "it-IT",
+      publisher: { "@id": "https://www.compassin.it/#organization" },
+    },
+  ],
+};
 ---
 
 <!doctype html>
@@ -35,22 +93,29 @@ const canonical = new URL(Astro.url.pathname, Astro.site).toString();
     <link rel="icon" type="image/png" href={withBase("favicon.png")} />
 
     <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="PERMALINE | Compassin" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical} />
-    <meta property="og:image" content={new URL(ogImage, Astro.site).toString()} />
+    <meta property="og:image" content={ogImageAbsolute} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="900" />
+    <meta property="og:image:alt" content="Accesso tecnico PERMALINE installato a filo parete" />
     <meta property="og:locale" content="it_IT" />
 
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImageAbsolute} />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
+
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
   </head>
   <body class="min-h-screen flex flex-col">
     <slot />

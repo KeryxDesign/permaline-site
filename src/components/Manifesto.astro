@@ -1,50 +1,87 @@
 ---
 ---
 
-<section class="bg-[var(--color-paper)] py-16 md:py-24">
-  <div class="mx-auto max-w-3xl px-5 md:px-8">
-    <h2 class="heading text-3xl md:text-4xl lg:text-5xl leading-[1.1] mb-10">
-      C'è un punto del cantiere che parla da solo.
-      <span class="block text-[var(--color-graphite)]">Anche quando preferiresti che tacesse.</span>
-    </h2>
+<section
+  class="bg-[var(--color-paper)] py-16 md:py-24"
+  aria-labelledby="manifesto-title"
+>
+  <div class="mx-auto max-w-2xl px-5 md:px-8">
+    <article>
+      <h2 id="manifesto-title" class="heading text-3xl md:text-4xl lg:text-5xl leading-[1.1] mb-10">
+        C'è un punto del cantiere che parla da solo.
+        <span class="block text-[var(--color-graphite)]">Anche quando preferiresti che tacesse.</span>
+      </h2>
 
-    <div class="space-y-6 text-lg leading-relaxed text-[var(--color-charcoal)]/95">
-      <p>
-        La linea perimetrale di un accesso tecnico non è un'opinione. È un dato
-        fisico: si osserva, si misura, si fotografa, si confronta nel tempo.
-      </p>
+      <div class="prose-manifesto">
+        <p class="drop-cap">
+          La linea perimetrale di un accesso tecnico non è un'opinione. È un dato
+          fisico: si osserva, si misura, si fotografa, si confronta nel tempo.
+        </p>
 
-      <p>
-        Quando un architetto ispeziona un ambiente, il suo occhio va istintivamente
-        alla linea.
-      </p>
+        <p>
+          Quando un architetto ispeziona un ambiente, il suo occhio va istintivamente
+          alla linea.
+        </p>
 
-      <p>
-        Quando un posatore verifica il proprio lavoro, controlla la linea.
-      </p>
+        <p>
+          Quando un posatore verifica il proprio lavoro, controlla la linea.
+        </p>
 
-      <p>
-        Quando un committente osserva la superficie, spesso senza sapere cosa sta
-        guardando, vede la linea, e da quella linea trae un giudizio complessivo
-        sulla cura con cui il suo ambiente è stato realizzato.
-      </p>
+        <p>
+          Quando un committente osserva la superficie, spesso senza sapere cosa sta
+          guardando, vede la linea. E da quella linea trae un giudizio complessivo
+          sulla cura con cui il suo ambiente è stato realizzato.
+        </p>
+      </div>
 
-      <div class="grid sm:grid-cols-2 gap-6 my-10">
-        <div class="rounded-xl border border-[var(--color-line)] bg-white p-6">
-          <p class="eyebrow mb-3 text-[var(--color-accent)]">Linea costante</p>
-          <p class="text-base text-[var(--color-charcoal)]">
+      <div class="grid sm:grid-cols-2 gap-5 md:gap-6 mt-12">
+        <div class="rounded-xl border border-[var(--color-line)] bg-white p-6 md:p-7">
+          <p class="eyebrow mb-4 text-[var(--color-accent)]">Linea costante</p>
+          <svg
+            viewBox="0 0 200 24"
+            class="w-full h-6 mb-4"
+            aria-hidden="true"
+            role="img"
+          >
+            <line
+              x1="4"
+              y1="12"
+              x2="196"
+              y2="12"
+              stroke="#373a36"
+              stroke-width="2"
+              stroke-linecap="round"
+            ></line>
+          </svg>
+          <p class="text-base text-[var(--color-charcoal)] leading-relaxed">
             Sottile, uniforme. Comunica controllo, precisione, padronanza del
             dettaglio.
           </p>
         </div>
-        <div class="rounded-xl border border-[var(--color-line)] bg-[var(--color-bone)] p-6">
-          <p class="eyebrow mb-3 text-[var(--color-graphite)]">Linea irregolare</p>
-          <p class="text-base text-[var(--color-charcoal)]">
+
+        <div class="rounded-xl border border-[var(--color-line)] bg-[var(--color-bone)] p-6 md:p-7">
+          <p class="eyebrow mb-4 text-[var(--color-graphite)]">Linea irregolare</p>
+          <svg
+            viewBox="0 0 200 24"
+            class="w-full h-6 mb-4"
+            aria-hidden="true"
+            role="img"
+          >
+            <path
+              d="M 4 12 L 30 11 L 55 13.5 L 78 11.5 L 102 13 L 128 10.5 L 152 13 L 175 11 L 196 12.5"
+              fill="none"
+              stroke="#373a36"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            ></path>
+          </svg>
+          <p class="text-base text-[var(--color-charcoal)] leading-relaxed">
             Cambia spessore, si interrompe. Comunica approssimazione, compromesso,
             mancanza di cura.
           </p>
         </div>
       </div>
-    </div>
+    </article>
   </div>
 </section>
