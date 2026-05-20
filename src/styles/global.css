@@ -62,15 +62,16 @@ body.no-scroll {
   color: var(--color-graphite);
 }
 
-/* Pre-headline: nome brand sopra l'H1, peso e dimensione maggiori dell'eyebrow */
+/* Pre-headline: nome brand sopra l'H1, dimensione marcata per affermazione di categoria */
 .pre-headline {
   font-family: var(--font-display);
-  font-size: clamp(1.0625rem, 0.95rem + 0.5vw, 1.25rem);
-  letter-spacing: 0.06em;
+  font-size: clamp(1.5rem, 1.2rem + 1.2vw, 2.125rem);
+  letter-spacing: 0.04em;
   font-weight: 700;
-  color: var(--color-accent);
+  color: var(--color-charcoal);
   text-transform: uppercase;
   display: inline-block;
+  line-height: 1;
 }
 
 .hairline {
