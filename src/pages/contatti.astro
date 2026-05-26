@@ -1,0 +1,406 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import Header from "@/components/Header.astro";
+import Footer from "@/components/Footer.astro";
+import WhatsAppFloating from "@/components/WhatsAppFloating.astro";
+import { withBase } from "@/lib/url";
+
+// Canali di contatto diretto
+const canali = [
+  {
+    label: "WhatsApp",
+    primary: "+39 375 571 8600",
+    body: "Risposta rapida in giornata, anche con foto del cantiere o del progetto.",
+    href: "https://wa.me/393755718600?text=Salve,%20vorrei%20parlare%20con%20il%20supporto%20tecnico%20PERMALINE",
+    external: true,
+    accent: false,
+    icon: "whatsapp",
+  },
+  {
+    label: "Telefono",
+    primary: "+39 02 98 28 10 59",
+    body: "Per chiarire dubbi tecnici direttamente con un nostro tecnico. Lun-Ven, orario d'ufficio.",
+    href: "tel:+390298281059",
+    external: false,
+    accent: false,
+    icon: "phone",
+  },
+  {
+    label: "Email tecnica",
+    primary: "supporto@compassin.it",
+    body: "Richiesta tecnica dedicata. Risposta entro 24 ore lavorative.",
+    href: "mailto:supporto@compassin.it",
+    external: false,
+    accent: true,
+    icon: "mail",
+  },
+];
+
+// Social
+const social = [
+  {
+    label: "Instagram",
+    handle: "@chiusure_a_filo_compassin",
+    href: "https://www.instagram.com/chiusure_a_filo_compassin",
+    body: "Foto di cantieri reali e dettagli costruttivi.",
+    icon: "instagram",
+  },
+  {
+    label: "YouTube",
+    handle: "@AFILOdiCOMPASSiN",
+    href: "https://www.youtube.com/@AFILOdiCOMPASSiN",
+    body: "Video tutorial di posa, casi studio, dettagli tecnici.",
+    icon: "youtube",
+  },
+];
+---
+
+<BaseLayout
+  title="Contatti — PERMALINE® supporto tecnico diretto"
+  description="Parla con un tecnico COMPASSiN®. WhatsApp +39 375 571 8600, telefono +39 02 98 28 10 59, email supporto@compassin.it. Risposta entro 24 ore lavorative."
+>
+  <Header />
+
+  <main class="flex-1">
+
+    <!-- ============================================
+         HERO CONTATTI
+         ============================================ -->
+    <section
+      class="relative overflow-hidden bg-[var(--color-paper)]"
+      aria-label="Contatti PERMALINE"
+    >
+      <div class="mx-auto max-w-7xl px-5 md:px-8 pt-12 md:pt-20 pb-10 md:pb-12">
+        <div class="max-w-3xl">
+          <p class="eyebrow mb-3">Contatti</p>
+          <h1
+            class="heading text-3xl sm:text-4xl lg:text-5xl leading-[1.1] mb-6"
+          >
+            Parla con un tecnico
+            <span class="block mt-2 text-[var(--color-accent)]">
+              COMPASSiN®.
+            </span>
+          </h1>
+          <p
+            class="text-lg md:text-xl text-[var(--color-charcoal)]/90 leading-snug font-medium max-w-2xl"
+          >
+            Descrivici il tuo caso — progetto, cantiere, posizione, impianto —
+            e ti diciamo subito come procedere.
+          </p>
+          <p class="mt-4 text-base md:text-lg text-[var(--color-charcoal)]/80 leading-relaxed max-w-2xl">
+            <strong>Prima si chiarisce il tipo di accesso da gestire</strong>,
+            più è facile evitare compromessi, errori e ritorni inutili.
+          </p>
+        </div>
+      </div>
+
+      <div class="pencil-line mx-auto max-w-7xl"></div>
+    </section>
+
+    <!-- ============================================
+         CANALI DI CONTATTO DIRETTO
+         ============================================ -->
+    <section
+      class="bg-[var(--color-paper)] py-14 md:py-20"
+      aria-labelledby="canali-title"
+    >
+      <div class="mx-auto max-w-7xl px-5 md:px-8">
+        <div class="max-w-4xl">
+          <span class="brand-mark" aria-hidden="true"></span>
+          <p class="eyebrow mb-3">Supporto diretto</p>
+          <h2
+            id="canali-title"
+            class="heading text-2xl md:text-3xl lg:text-4xl leading-tight mb-4"
+          >
+            Tre modi per parlarci.
+          </h2>
+          <p class="text-base md:text-lg text-[var(--color-charcoal)]/85 leading-relaxed max-w-2xl">
+            Scegli il canale più comodo. Ti rispondiamo sullo stesso.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-5 mt-12">
+          {canali.map((c) => (
+            <a
+              href={c.href}
+              target={c.external ? "_blank" : undefined}
+              rel={c.external ? "noopener noreferrer" : undefined}
+              class:list={[
+                "group rounded-2xl p-7 md:p-8 transition-colors flex flex-col",
+                c.accent
+                  ? "border-2 border-[var(--color-accent)] bg-[var(--color-accent-soft)] hover:bg-[var(--color-accent)]/15"
+                  : "border border-[var(--color-line)] bg-white hover:border-[var(--color-charcoal)]",
+              ]}
+            >
+              <div class="flex items-center gap-3 mb-4">
+                {c.icon === "whatsapp" && (
+                  <span class="inline-flex items-center justify-center h-10 w-10 rounded-full bg-[#25D366] text-white flex-shrink-0">
+                    <svg width="20" height="20" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true">
+                      <path d="M19.11 17.205c-.372 0-1.088 1.39-1.518 1.39a.63.63 0 0 1-.315-.1c-.802-.402-1.504-.817-2.163-1.447-.545-.516-1.146-1.29-1.46-1.963a.426.426 0 0 1-.073-.215c0-.33.99-.945.99-1.49 0-.143-.73-2.09-.832-2.335-.143-.372-.214-.487-.6-.487-.187 0-.36-.043-.53-.043-.302 0-.53.115-.746.315-.688.645-1.032 1.318-1.06 2.264v.114c-.015.99.472 1.977 1.017 2.78 1.23 1.82 2.506 3.41 4.554 4.34.616.287 2.035.96 2.708.96.387 0 2.135-.387 2.464-.832.225-.305.357-.733.357-1.122 0-.043 0-.043 0-.085-.058-.058-1.39-.83-1.793-.83zm-3.252 5.92h-.014c-1.59 0-3.18-.45-4.554-1.255L7.18 23.013l1.18-3.51A8.84 8.84 0 0 1 7.06 14.6c0-4.872 3.99-8.85 8.86-8.85 2.365 0 4.602.913 6.28 2.578a8.85 8.85 0 0 1 2.6 6.27c-.007 4.876-3.997 8.85-8.943 8.85zm7.563-16.4A10.62 10.62 0 0 0 15.86 4.04 10.55 10.55 0 0 0 5.32 14.6c0 1.85.487 3.654 1.41 5.247L5.236 25.4l5.69-1.49a10.55 10.55 0 0 0 5.045 1.282h.005c5.834 0 10.583-4.74 10.583-10.572 0-2.83-1.09-5.49-3.097-7.495z" />
+                    </svg>
+                  </span>
+                )}
+                {c.icon === "phone" && (
+                  <span class="inline-flex items-center justify-center h-10 w-10 rounded-full bg-[var(--color-ink)] text-white flex-shrink-0">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                    </svg>
+                  </span>
+                )}
+                {c.icon === "mail" && (
+                  <span class="inline-flex items-center justify-center h-10 w-10 rounded-full bg-[var(--color-accent)] text-white flex-shrink-0">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                      <polyline points="22,6 12,13 2,6" />
+                    </svg>
+                  </span>
+                )}
+                <p class="eyebrow" style={c.accent ? "color: var(--color-accent);" : ""}>
+                  {c.label}
+                </p>
+              </div>
+
+              <p
+                class:list={[
+                  "heading text-lg md:text-xl leading-snug mb-2",
+                  c.accent ? "" : "",
+                ]}
+              >
+                {c.primary}
+              </p>
+              <p class="text-sm md:text-base text-[var(--color-charcoal)]/85 leading-relaxed flex-1">
+                {c.body}
+              </p>
+
+              <span
+                class:list={[
+                  "mt-5 inline-flex items-center gap-2 text-sm font-semibold transition-colors",
+                  c.accent
+                    ? "text-[var(--color-accent)] group-hover:text-[#234f37]"
+                    : "text-[var(--color-charcoal)] group-hover:text-[var(--color-ink)]",
+                ]}
+              >
+                Apri
+                <svg
+                  width="14"
+                  height="14"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2.5"
+                  class="transition-transform duration-300 group-hover:translate-x-1"
+                  aria-hidden="true"
+                >
+                  <line x1="5" y1="12" x2="19" y2="12" />
+                  <polyline points="12 5 19 12 12 19" />
+                </svg>
+              </span>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================
+         SUPPORTO TECNICO DEDICATO (DARK)
+         ============================================ -->
+    <section
+      class="bg-[var(--color-ink)] py-14 md:py-20 text-white"
+      aria-labelledby="supporto-title"
+    >
+      <div class="mx-auto max-w-7xl px-5 md:px-8">
+        <div class="grid lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+          <div class="lg:col-span-7">
+            <span class="brand-mark" aria-hidden="true"></span>
+            <p class="eyebrow mb-3" style="color: rgba(255,255,255,0.7);">
+              Supporto tecnico esteso
+            </p>
+            <h2
+              id="supporto-title"
+              class="heading text-2xl md:text-3xl lg:text-4xl leading-tight mb-5 !text-white"
+            >
+              Hai bisogno di supporto su una posa specifica?
+            </h2>
+            <p class="text-base md:text-lg text-white/85 leading-relaxed mb-6 max-w-2xl">
+              Accedi al nostro portale di supporto tecnico dedicato:
+              documentazione tecnica, schede prodotto, video di posa, casi
+              risolti. <strong>Tutto in un unico posto.</strong>
+            </p>
+            <a
+              href="https://supportotecnico.compassin.it/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center gap-2 rounded-full bg-[var(--color-accent)] px-6 py-3.5 min-h-11 text-sm font-semibold text-white hover:bg-[#234f37] transition-colors"
+            >
+              Vai al portale supporto
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="transition-transform" aria-hidden="true">
+                <line x1="5" y1="12" x2="19" y2="12" />
+                <polyline points="12 5 19 12 12 19" />
+              </svg>
+            </a>
+          </div>
+
+          <div class="lg:col-span-5">
+            <div class="rounded-2xl border border-white/15 bg-white/5 p-7 md:p-8 backdrop-blur-sm">
+              <p class="eyebrow mb-3" style="color: rgba(255,255,255,0.7);">
+                Vuoi vedere PERMALINE in azione?
+              </p>
+              <h3 class="heading text-xl md:text-2xl leading-snug !text-white mb-3">
+                Esplora il canale YouTube
+              </h3>
+              <p class="text-sm md:text-base text-white/85 leading-relaxed mb-5">
+                Video di posa a parete e soffitto, casi studio, dettagli
+                costruttivi raccontati dai tecnici di cantiere.
+              </p>
+              <a
+                href="https://www.youtube.com/@AFILOdiCOMPASSiN"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center gap-2 rounded-full border-2 border-white/40 px-5 py-3 min-h-11 text-sm font-semibold text-white hover:bg-white hover:text-[var(--color-ink)] transition-colors"
+              >
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+                </svg>
+                @AFILOdiCOMPASSiN
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================
+         SOCIAL
+         ============================================ -->
+    <section
+      class="bg-[var(--color-bone)] py-14 md:py-20"
+      aria-labelledby="social-title"
+    >
+      <div class="mx-auto max-w-7xl px-5 md:px-8">
+        <div class="max-w-4xl">
+          <span class="brand-mark" aria-hidden="true"></span>
+          <p class="eyebrow mb-3">Seguici</p>
+          <h2
+            id="social-title"
+            class="heading text-2xl md:text-3xl lg:text-4xl leading-tight mb-4"
+          >
+            Foto di cantiere, dettagli costruttivi,
+            <span class="block mt-2 text-[var(--color-accent)]">
+              casi reali.
+            </span>
+          </h2>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-5 mt-12">
+          {social.map((s) => (
+            <a
+              href={s.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="group rounded-2xl border border-[var(--color-line)] bg-white p-7 md:p-8 hover:border-[var(--color-charcoal)] transition-colors flex items-center gap-5"
+            >
+              <span
+                class:list={[
+                  "inline-flex items-center justify-center h-12 w-12 rounded-full flex-shrink-0",
+                  s.icon === "instagram"
+                    ? "bg-gradient-to-tr from-[#F58529] via-[#DD2A7B] to-[#8134AF] text-white"
+                    : "bg-[#FF0000] text-white",
+                ]}
+              >
+                {s.icon === "instagram" && (
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z" />
+                  </svg>
+                )}
+                {s.icon === "youtube" && (
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+                  </svg>
+                )}
+              </span>
+              <div class="flex-1 min-w-0">
+                <p class="eyebrow mb-1">{s.label}</p>
+                <p class="heading text-base md:text-lg leading-snug truncate">
+                  {s.handle}
+                </p>
+                <p class="text-sm text-[var(--color-charcoal)]/85 leading-relaxed mt-1">
+                  {s.body}
+                </p>
+              </div>
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+                class="text-[var(--color-charcoal)] group-hover:text-[var(--color-ink)] transition-all duration-300 group-hover:translate-x-1 flex-shrink-0"
+                aria-hidden="true"
+              >
+                <line x1="5" y1="12" x2="19" y2="12" />
+                <polyline points="12 5 19 12 12 19" />
+              </svg>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================
+         SEDE LEGALE
+         ============================================ -->
+    <section
+      class="bg-[var(--color-paper)] py-14 md:py-20"
+      aria-labelledby="sede-title"
+    >
+      <div class="mx-auto max-w-7xl px-5 md:px-8">
+        <div class="grid md:grid-cols-2 gap-10 lg:gap-16 items-start">
+          <div>
+            <span class="brand-mark" aria-hidden="true"></span>
+            <p class="eyebrow mb-3">Sede</p>
+            <h2
+              id="sede-title"
+              class="heading text-2xl md:text-3xl leading-tight mb-4"
+            >
+              COMPASSiN S.r.l.
+            </h2>
+            <address class="not-italic text-base md:text-lg text-[var(--color-charcoal)]/90 leading-relaxed">
+              Via del Tecchione, 13<br />
+              20098 — San Giuliano Milanese (MI)<br />
+              Italia
+            </address>
+            <p class="mt-4 text-sm text-[var(--color-charcoal)]/75">
+              C.F. / P.IVA 09356150962<br />
+              Reg. Imprese Milano REA MI-2084882
+            </p>
+          </div>
+
+          <div>
+            <p class="eyebrow mb-3">PERMALINE® appartiene alla linea</p>
+            <h3 class="heading text-xl md:text-2xl leading-snug mb-3">
+              Chiusure A FiLO® di COMPASSiN®
+            </h3>
+            <p class="text-base md:text-lg text-[var(--color-charcoal)]/85 leading-relaxed">
+              4 brevetti sviluppati per governare integrazione, stabilità,
+              apertura e precisione nel tempo. Progettata da chi, prima di
+              progettarla, lavorava in cantiere.
+            </p>
+            <a
+              href={withBase("cos-e-permaline")}
+              class="mt-5 inline-flex items-center gap-2 text-[var(--color-accent)] font-semibold underline underline-offset-4 hover:text-[#234f37] transition-colors text-sm md:text-base"
+            >
+              Scopri di più su PERMALINE
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                <line x1="5" y1="12" x2="19" y2="12" />
+                <polyline points="12 5 19 12 12 19" />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+  <WhatsAppFloating />
+</BaseLayout>
