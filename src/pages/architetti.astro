@@ -216,7 +216,7 @@ const condizioni = [
               </a>
             </div>
 
-            <p class="mt-4 text-sm text-[var(--color-graphite)]">
+            <p class="mt-4 text-sm text-[var(--color-charcoal)]/75">
               Nessuna proposta standard. Prima capiamo il progetto.
             </p>
           </div>
@@ -230,6 +230,7 @@ const condizioni = [
                 alt="Accesso tecnico PERMALINE integrato in ambiente residenziale di alta finitura"
                 width="1600"
                 height="1200"
+                sizes="(min-width: 1024px) 50vw, 100vw"
                 loading="eager"
                 fetchpriority="high"
                 decoding="async"
@@ -268,7 +269,7 @@ const condizioni = [
 
         <div class="grid lg:grid-cols-2 gap-10 lg:gap-16 items-start mt-12">
           <div class="body-prose prose-manifesto max-w-xl">
-            <p class="text-lg text-[var(--color-charcoal)]/90">
+            <p class="text-lg text-[var(--color-charcoal)]/90 drop-cap">
               Quante volte succede? Definisci materiali, luci, fughe,
               proporzioni, continuità delle superfici. Poi arriva il momento di
               gestire un piccolo accesso impiantistico — valvole, filtri,
@@ -281,8 +282,8 @@ const condizioni = [
               sbagliata resta visibile.
             </p>
             <p class="text-base md:text-lg text-[var(--color-charcoal)]/85">
-              Viene <strong>sottovalutata</strong>. Viene
-              <strong>delegata</strong>. Viene <strong>rimandata</strong>
+              Viene sottovalutata. Viene delegata. Viene
+              <strong class="pencil-underline">rimandata</strong>
               (a quando è troppo tardi).
             </p>
           </div>
@@ -296,6 +297,7 @@ const condizioni = [
                 alt="Linea perimetrale costante di un accesso tecnico PERMALINE"
                 width="1200"
                 height="900"
+                sizes="(min-width: 1024px) 50vw, 100vw"
                 loading="lazy"
                 decoding="async"
                 class="absolute inset-0 h-full w-full object-cover"
@@ -304,68 +306,60 @@ const condizioni = [
           </div>
         </div>
 
-        <div class="max-w-3xl mt-12 body-prose prose-manifesto">
-          <p class="text-base md:text-lg text-[var(--color-charcoal)]/85">
-            La linea perimetrale di un accesso tecnico non è un'opinione. È un
-            dato fisico: <strong>si osserva, si misura, si fotografa, si
-            confronta nel tempo</strong>.
-          </p>
-          <p class="text-base md:text-lg text-[var(--color-charcoal)]/85">
-            Quando ispezioni un dettaglio costruttivo, il tuo occhio va
-            istintivamente alla linea — è lì che si concentra tutta
-            l'informazione sulla qualità dell'esecuzione. Una linea costante e
-            sottile comunica <em>controllo</em>. Una linea che cambia spessore,
-            che si interrompe, che racconta l'assestamento di un materiale
-            sbagliato — comunica <em>approssimazione</em>.
-          </p>
-          <p class="text-base md:text-lg text-[var(--color-charcoal)]/85">
-            E il committente, spesso senza sapere cosa sta guardando, vede la
-            stessa cosa. Trae un giudizio complessivo sulla cura dell'intero
-            ambiente. <strong>Quel giudizio ricade su chi ha progettato.</strong>
-          </p>
+        <div class="max-w-3xl mt-12">
+          <blockquote class="pull-quote">
+            <p>
+              Il committente vede la linea. Trae un giudizio sulla cura
+              dell'ambiente. <strong><mark>Quel giudizio ricade su chi ha
+              progettato.</mark></strong>
+            </p>
+          </blockquote>
         </div>
       </div>
     </section>
 
     <!-- ============================================
-         PERCHÉ È UN COSTO REALE
+         PERCHÉ È UN COSTO REALE (DARK)
          ============================================ -->
     <section
-      class="bg-[var(--color-bone)] py-16 md:py-24"
+      class="bg-[var(--color-ink)] py-16 md:py-24 text-white"
       aria-labelledby="costo-title"
     >
       <div class="mx-auto max-w-7xl px-5 md:px-8">
         <div class="max-w-4xl">
           <span class="brand-mark" aria-hidden="true"></span>
-          <p class="eyebrow mb-3">Perché è un costo reale</p>
+          <p class="eyebrow mb-3" style="color: rgba(255,255,255,0.7);">
+            Perché è un costo reale
+          </p>
           <h2
             id="costo-title"
-            class="heading text-3xl md:text-4xl lg:text-5xl leading-tight mb-6"
+            class="heading text-3xl md:text-4xl lg:text-5xl leading-tight mb-6 !text-white"
           >
             Il prezzo della botola è una voce di acquisto.
-            <span class="block mt-2 text-[var(--color-accent)]">
+            <span class="block mt-2 text-white/70">
               Il costo vero nasce dopo.
             </span>
           </h2>
           <p
-            class="text-lg text-[var(--color-charcoal)]/85 leading-relaxed max-w-2xl"
+            class="text-lg text-white/90 leading-relaxed max-w-2xl"
           >
             Se l'accesso tecnico resta fuori linea, crea crepe, si abbassa,
             sporge o non richiude bene, il problema non rimane sulla botola.
-            <strong>Ricade sul progetto.</strong>
+            <strong class="pencil-underline" style="--pencil-color: white;">Ricade sul progetto.</strong>
           </p>
         </div>
 
         <div class="grid lg:grid-cols-3 gap-10 lg:gap-12 items-start mt-12">
           <div class="lg:col-span-1">
             <div
-              class="relative aspect-[4/3] overflow-hidden rounded-2xl bg-white shadow-[0_1px_2px_rgba(0,0,0,0.04),0_20px_40px_-20px_rgba(0,0,0,0.15)]"
+              class="relative aspect-[4/3] overflow-hidden rounded-2xl bg-[var(--color-charcoal)] shadow-[0_1px_2px_rgba(0,0,0,0.04),0_20px_40px_-20px_rgba(0,0,0,0.5)]"
             >
               <img
                 src={withBase("img/architetti/03-progettare-botole.webp")}
                 alt="Schema progettuale di accessi tecnici integrati nell'architettura"
                 width="1200"
                 height="900"
+                sizes="(min-width: 1024px) 33vw, 100vw"
                 loading="lazy"
                 decoding="async"
                 class="absolute inset-0 h-full w-full object-cover"
@@ -376,12 +370,12 @@ const condizioni = [
           <div class="lg:col-span-2 grid sm:grid-cols-2 gap-5">
             {costReale.map((item) => (
               <div
-                class="rounded-2xl border border-[var(--color-line)] bg-white p-6 hover:border-[var(--color-charcoal)] transition-colors"
+                class="rounded-2xl border border-white/15 bg-white/5 p-6 hover:border-white/40 transition-colors backdrop-blur-sm"
               >
-                <h3 class="heading text-base md:text-lg leading-snug mb-2">
+                <h3 class="heading text-base md:text-lg leading-snug mb-2 !text-white">
                   {item.title}
                 </h3>
-                <p class="text-sm md:text-base text-[var(--color-charcoal)]/85 leading-relaxed">
+                <p class="text-sm md:text-base text-white/85 leading-relaxed">
                   {item.body}
                 </p>
               </div>
@@ -390,8 +384,11 @@ const condizioni = [
         </div>
 
         <div class="mt-12 max-w-3xl">
-          <blockquote class="pull-quote accent">
-            <p>
+          <blockquote
+            class="border-l-4 pl-7 md:pl-9 py-2"
+            style="border-left-color: var(--color-accent);"
+          >
+            <p class="text-lg md:text-xl leading-snug text-white">
               Una botola economica può costare poco da comprare e molto da
               gestire. <strong>Non stai scegliendo solo un accesso tecnico. Stai
               decidendo se quel dettaglio lavorerà per il progetto o contro il
@@ -451,6 +448,7 @@ const condizioni = [
                   alt={limite.alt}
                   width="800"
                   height="600"
+                  sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
                   loading="lazy"
                   decoding="async"
                   class="absolute inset-0 h-full w-full object-cover"
@@ -470,8 +468,9 @@ const condizioni = [
 
         <div class="mt-12 max-w-3xl body-prose">
           <p class="text-base md:text-lg text-[var(--color-charcoal)]/90">
-            Non sono difetti occasionali. Sono <strong>limiti strutturali</strong>.
-            Puoi cambiare marca. Non cambia il comportamento.
+            Non sono difetti occasionali. Sono <strong><mark>limiti
+            strutturali</mark></strong>. Puoi cambiare marca. Non cambia il
+            comportamento.
           </p>
           <p class="text-base md:text-lg text-[var(--color-charcoal)]/85 mt-4">
             Se il contesto richiede precisione, il problema non è scegliere una
@@ -552,52 +551,23 @@ const condizioni = [
               esigenze di un accesso visibile in un soggiorno, in una hall o in
               un corridoio curato.
             </p>
-            <p class="text-base md:text-lg text-white/90 leading-relaxed mt-4">
-              <strong>Non tutte le chiusure filo muro risolvono lo stesso
-              problema.</strong>
-            </p>
-            <p class="text-base md:text-lg text-white/85 leading-relaxed mt-4">
+
+            <blockquote
+              class="mt-6 border-l-4 pl-6 md:pl-8 py-2"
+              style="border-left-color: var(--color-accent);"
+            >
+              <p class="text-lg md:text-xl leading-snug text-white font-medium">
+                Non tutte le chiusure filo muro risolvono lo stesso problema.
+              </p>
+            </blockquote>
+
+            <p class="text-base md:text-lg text-white/85 leading-relaxed mt-6">
               Le botole d'ispezione standard servono a chiudere un foro.
-              PERMALINE nasce per gestire situazioni precise:
+              PERMALINE nasce per gestire situazioni precise: superfici curate
+              e continue, punti molto visibili, aperture nel tempo per
+              manutenzione.
             </p>
-            <ul class="mt-4 space-y-2 text-white/85">
-              <li class="flex items-start gap-3">
-                <span
-                  class="mt-1.5 inline-block h-1.5 w-1.5 rounded-full bg-[var(--color-accent)] flex-shrink-0"
-                  aria-hidden="true"
-                ></span>
-                piccoli impianti a soffitto o parete
-              </li>
-              <li class="flex items-start gap-3">
-                <span
-                  class="mt-1.5 inline-block h-1.5 w-1.5 rounded-full bg-[var(--color-accent)] flex-shrink-0"
-                  aria-hidden="true"
-                ></span>
-                superfici curate e continue
-              </li>
-              <li class="flex items-start gap-3">
-                <span
-                  class="mt-1.5 inline-block h-1.5 w-1.5 rounded-full bg-[var(--color-accent)] flex-shrink-0"
-                  aria-hidden="true"
-                ></span>
-                punti molto visibili
-              </li>
-              <li class="flex items-start gap-3">
-                <span
-                  class="mt-1.5 inline-block h-1.5 w-1.5 rounded-full bg-[var(--color-accent)] flex-shrink-0"
-                  aria-hidden="true"
-                ></span>
-                aperture nel tempo per manutenzione
-              </li>
-              <li class="flex items-start gap-3">
-                <span
-                  class="mt-1.5 inline-block h-1.5 w-1.5 rounded-full bg-[var(--color-accent)] flex-shrink-0"
-                  aria-hidden="true"
-                ></span>
-                necessità di mantenere allineamento e pulizia estetica
-              </li>
-            </ul>
-            <p class="text-base md:text-lg text-white/90 leading-relaxed mt-6">
+            <p class="text-base md:text-lg text-white/90 leading-relaxed mt-4">
               Se il progetto è curato nei dettagli, scegliere «una qualsiasi»
               non è neutralità. <strong>È un rischio.</strong>
             </p>
@@ -612,34 +582,27 @@ const condizioni = [
                 alt="Esempio di accesso tecnico mal integrato in superficie curata"
                 width="800"
                 height="1066"
+                sizes="(min-width: 1024px) 25vw, 50vw"
                 loading="lazy"
                 decoding="async"
                 class="absolute inset-0 h-full w-full object-cover"
               />
             </div>
             <div
-              class="relative aspect-[3/4] overflow-hidden rounded-2xl bg-[var(--color-charcoal)] mt-12"
+              class="relative aspect-[3/4] overflow-hidden rounded-2xl bg-[var(--color-charcoal)] sm:mt-12"
             >
               <img
                 src={withBase("img/architetti/08-vero-nemico-2.webp")}
                 alt="Accesso tecnico PERMALINE integrato in superficie continua"
                 width="800"
                 height="1066"
+                sizes="(min-width: 1024px) 25vw, 50vw"
                 loading="lazy"
                 decoding="async"
                 class="absolute inset-0 h-full w-full object-cover"
               />
             </div>
           </div>
-        </div>
-
-        <div class="mt-12">
-          <a
-            href="#prenota"
-            class="inline-flex items-center justify-center rounded-full bg-[var(--color-accent)] px-6 py-3.5 min-h-11 text-sm font-semibold text-white hover:bg-[#234f37] transition-colors"
-          >
-            Prenota un confronto tecnico sul tuo progetto
-          </a>
         </div>
       </div>
     </section>
@@ -669,23 +632,29 @@ const condizioni = [
         <div class="grid lg:grid-cols-2 gap-10 lg:gap-16 items-start mt-12">
           <div class="body-prose prose-manifesto max-w-xl">
             <p class="text-base md:text-lg text-[var(--color-charcoal)]/90">
-              Il committente non sa cosa sia una botola di ispezione. Non
-              conosce i sistemi di cerniera, non legge il dettaglio costruttivo,
-              non valuta il telaio.
+              Il committente non conosce i sistemi di cerniera, non legge il
+              dettaglio costruttivo, non valuta il telaio.
+              <strong><mark>Ma vede la linea.</mark></strong>
             </p>
             <p class="text-base md:text-lg text-[var(--color-charcoal)]/85">
-              <strong>Ma vede la linea.</strong> E dalla qualità di quella
-              linea — con luce radente, a occhio nudo, senza nessuna competenza
-              specialistica — trae un giudizio complessivo sulla cura con cui
-              il suo ambiente è stato realizzato.
+              Dalla qualità di quella linea — con luce radente, a occhio nudo,
+              senza nessuna competenza specialistica — trae un giudizio
+              complessivo sulla cura con cui il suo ambiente è stato realizzato.
             </p>
             <p class="text-base md:text-lg text-[var(--color-charcoal)]/85">
               Quel giudizio non si ferma all'accesso tecnico. Risale fino al
               progetto. <em>Fino a te.</em>
             </p>
+
+            <blockquote class="pull-quote mt-8">
+              <p>
+                Il cliente non sa cosa sia una botola.
+                <strong>Ma sa cosa vede.</strong>
+              </p>
+            </blockquote>
           </div>
 
-          <div class="grid grid-cols-2 gap-4">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div class="relative">
               <p class="eyebrow mb-2 text-center">Prima</p>
               <div
@@ -696,6 +665,7 @@ const condizioni = [
                   alt="Accesso tecnico tradizionale, prima dell'intervento PERMALINE"
                   width="800"
                   height="1066"
+                  sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
                   loading="lazy"
                   decoding="async"
                   class="absolute inset-0 h-full w-full object-cover"
@@ -714,6 +684,7 @@ const condizioni = [
                   alt="Accesso tecnico PERMALINE installato, dopo l'intervento"
                   width="800"
                   height="1066"
+                  sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
                   loading="lazy"
                   decoding="async"
                   class="absolute inset-0 h-full w-full object-cover"
@@ -750,7 +721,7 @@ const condizioni = [
 
         <div class="grid lg:grid-cols-12 gap-10 lg:gap-12 items-start mt-12">
           <div class="lg:col-span-7 body-prose prose-manifesto">
-            <p class="text-base md:text-lg text-[var(--color-charcoal)]/90">
+            <p class="text-base md:text-lg text-[var(--color-charcoal)]/90 drop-cap">
               PERMALINE è il primo sistema di precisione pensato per ambienti
               ad alta finitura. Nasce per eliminare un problema che il mercato
               ha sempre considerato inevitabile:
@@ -806,8 +777,9 @@ const condizioni = [
               a telaio, cerniere e sistema di chiusura come un unico sistema.
             </p>
             <p class="text-base md:text-lg text-[var(--color-charcoal)]/90 mt-4">
-              <strong>Tradotto:</strong> la linea che approvi alla consegna è
-              la linea che ritroverai anche dopo utilizzi ripetuti e nel tempo.
+              <strong>Tradotto:</strong>
+              <mark>la linea che approvi alla consegna è la linea che ritroverai
+              anche dopo utilizzi ripetuti e nel tempo.</mark>
             </p>
 
             <div class="mt-8">
@@ -879,7 +851,7 @@ const condizioni = [
                 </li>
               ))}
             </ul>
-            <p class="text-sm text-[var(--color-graphite)] mt-6">
+            <p class="text-sm text-[var(--color-charcoal)]/75 mt-6">
               Soffitto o parete. Su misura.
             </p>
           </div>
@@ -1026,13 +998,14 @@ const condizioni = [
               />
             </div>
             <div
-              class="relative aspect-[3/4] overflow-hidden rounded-2xl bg-[var(--color-bone)] mt-8"
+              class="relative aspect-[3/4] overflow-hidden rounded-2xl bg-[var(--color-bone)] sm:mt-8"
             >
               <img
                 src={withBase("img/architetti/14-casi-2.webp")}
                 alt="Esempio di PERMALINE in ambiente hospitality o retail"
                 width="800"
                 height="1066"
+                sizes="(min-width: 1024px) 25vw, 50vw"
                 loading="lazy"
                 decoding="async"
                 class="absolute inset-0 h-full w-full object-cover"
@@ -1104,14 +1077,15 @@ const condizioni = [
           </div>
         </div>
 
-        <div class="mt-10">
+        <p class="mt-8 max-w-3xl text-base md:text-lg text-[var(--color-charcoal)]/85 leading-relaxed">
+          Vuoi capire se ha senso per il tuo progetto?
           <a
             href="#prenota"
-            class="inline-flex items-center justify-center rounded-full bg-[var(--color-accent)] px-6 py-3.5 min-h-11 text-sm font-semibold text-white hover:bg-[#234f37] transition-colors"
+            class="text-[var(--color-accent)] font-semibold underline underline-offset-4 hover:text-[#234f37] transition-colors"
           >
-            Prenota un confronto tecnico sul tuo progetto
-          </a>
-        </div>
+            Prenota un confronto tecnico
+          </a>.
+        </p>
       </div>
     </section>
 
@@ -1148,6 +1122,7 @@ const condizioni = [
                   alt={t.alt}
                   width="800"
                   height="600"
+                  sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
                   loading="lazy"
                   decoding="async"
                   class="absolute inset-0 h-full w-full object-cover"
@@ -1162,7 +1137,7 @@ const condizioni = [
                 <p class="heading text-sm md:text-base leading-snug">
                   {t.name}
                 </p>
-                <p class="text-xs md:text-sm text-[var(--color-graphite)] mt-1">
+                <p class="text-xs md:text-sm text-[var(--color-charcoal)]/75 mt-1">
                   {t.studio}
                 </p>
               </figcaption>
@@ -1179,7 +1154,7 @@ const condizioni = [
             Il prima è quello che oggi accettiamo. Il dopo è quello che possiamo
             pretendere.
           </h3>
-          <div class="grid md:grid-cols-2 gap-4 md:gap-6">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
             <div>
               <p class="eyebrow mb-2 text-center">Prima</p>
               <div
@@ -1190,6 +1165,7 @@ const condizioni = [
                   alt="Accesso tecnico tradizionale, prima dell'intervento PERMALINE"
                   width="1200"
                   height="900"
+                  sizes="(min-width: 768px) 50vw, 100vw"
                   loading="lazy"
                   decoding="async"
                   class="absolute inset-0 h-full w-full object-cover"
@@ -1208,6 +1184,7 @@ const condizioni = [
                   alt="Accesso tecnico PERMALINE installato, dopo l'intervento"
                   width="1200"
                   height="900"
+                  sizes="(min-width: 768px) 50vw, 100vw"
                   loading="lazy"
                   decoding="async"
                   class="absolute inset-0 h-full w-full object-cover"
@@ -1274,7 +1251,6 @@ const condizioni = [
             action="https://formsubmit.co/info@keryxdesign.com"
             method="POST"
             class="grid gap-4"
-            novalidate
           >
             <!-- Formsubmit config -->
             <input
@@ -1444,7 +1420,7 @@ const condizioni = [
               Prenota confronto tecnico
             </button>
 
-            <p class="text-xs text-[var(--color-graphite)] mt-2 leading-relaxed">
+            <p class="text-xs text-[var(--color-charcoal)]/75 mt-2 leading-relaxed">
               Nessuna richiesta generica. Nessuna proposta standard. Prima
               capiamo il progetto. Poi ti diciamo se PERMALINE è la scelta
               giusta.
