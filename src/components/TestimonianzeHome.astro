@@ -1,0 +1,86 @@
+---
+import { withBase } from "@/lib/url";
+
+const voci = [
+  {
+    quote:
+      "Ai miei clienti dico sempre: «Se ho lavorato bene non vi sento più». Il lavoro con COMPASSiN permette di risolvere un problema ancora prima che si presenti.",
+    name: "Arch. Alessia Rubino",
+    role: "Milano",
+    image: withBase("img/architetti/16-testimonial-rubino.webp"),
+    alt: "Foto di Arch. Alessia Rubino, Milano",
+  },
+  {
+    quote:
+      "Installazione più veloce e finitura ottima. Consegniamo lavori puliti senza lamentele.",
+    name: "Luca Albertelli",
+    role: "Ambientare",
+    image: withBase("img/imprese/10-testimonial-albertelli.webp"),
+    alt: "Foto di Luca Albertelli, Ambientare",
+  },
+  {
+    quote:
+      "Sappiamo che possiamo avere il massimo controllo su tutti i dettagli. Margine di errore molto basso, precisione a regola d'arte.",
+    name: "Arch. Alberto De Lorenzo",
+    role: "De Base Architettura, Milano",
+    image: withBase("img/architetti/17-testimonial-delorenzo.webp"),
+    alt: "Foto di Arch. Alberto De Lorenzo, De Base Architettura",
+  },
+];
+---
+
+<section
+  class="bg-[var(--color-paper)] py-16 md:py-24"
+  aria-labelledby="voci-title"
+>
+  <div class="mx-auto max-w-7xl px-5 md:px-8">
+    <div class="text-center max-w-3xl mx-auto">
+      <span class="brand-mark mx-auto" aria-hidden="true"></span>
+      <p class="eyebrow mb-3">Chi l'ha usata</p>
+      <h2
+        id="voci-title"
+        class="heading text-3xl md:text-4xl leading-tight mb-4"
+      >
+        Architetti e imprese
+        <span class="block mt-2 text-[var(--color-accent)]">
+          che hanno chiuso un dettaglio per sempre.
+        </span>
+      </h2>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-6 mt-12">
+      {voci.map((v) => (
+        <figure
+          class="rounded-2xl border border-[var(--color-line)] bg-white p-6 md:p-7 hover:border-[var(--color-charcoal)] transition-colors flex flex-col"
+        >
+          <blockquote class="flex-1 mb-5">
+            <p class="text-sm md:text-base text-[var(--color-charcoal)]/90 leading-relaxed italic">
+              «{v.quote}»
+            </p>
+          </blockquote>
+          <figcaption class="flex items-center gap-3 pt-4 border-t border-[var(--color-line)]">
+            <div class="relative h-12 w-12 rounded-full overflow-hidden bg-[var(--color-bone)] flex-shrink-0">
+              <img
+                src={v.image}
+                alt={v.alt}
+                width="96"
+                height="96"
+                loading="lazy"
+                decoding="async"
+                class="absolute inset-0 h-full w-full object-cover"
+              />
+            </div>
+            <div class="flex-1 min-w-0">
+              <p class="heading text-sm md:text-base leading-snug truncate">
+                {v.name}
+              </p>
+              <p class="text-xs md:text-sm text-[var(--color-charcoal)]/75 truncate">
+                {v.role}
+              </p>
+            </div>
+          </figcaption>
+        </figure>
+      ))}
+    </div>
+  </div>
+</section>
