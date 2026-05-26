@@ -1,0 +1,1213 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import Header from "@/components/Header.astro";
+import Footer from "@/components/Footer.astro";
+import WhatsAppFloating from "@/components/WhatsAppFloating.astro";
+import { withBase } from "@/lib/url";
+
+// Perdite "quanto ti costa davvero"
+const perdite = [
+  {
+    title: "Ore che non fatturi",
+    body: "Torni in cantiere, lavori, ma non te le pagano.",
+  },
+  {
+    title: "Squadre bloccate",
+    body: "Aspetti la chiusura prima di passare al prossimo lavoro.",
+  },
+  {
+    title: "Finiture rifatte",
+    body: "Stucco, pittura, regolazioni: lavoro già chiuso da rifare.",
+  },
+  {
+    title: "Materiali consumati",
+    body: "Ogni rientro costa ferramenta, consumabili, trasporto.",
+  },
+  {
+    title: "Clienti infastiditi",
+    body: "Una telefonata in più al cliente pesa più del lavoro fatto.",
+  },
+  {
+    title: "Margine assottigliato",
+    body: "Il guadagno previsto sparisce in un ritorno gratuito.",
+  },
+];
+
+// 6 benefici "cosa cambia per te"
+const benefici = [
+  {
+    title: "Una posa sola",
+    body: "Chiudi e vai avanti. Niente passaggi di verifica successivi.",
+  },
+  {
+    title: "Meno richiami",
+    body: "Più clienti soddisfatti. Meno tempo al telefono.",
+  },
+  {
+    title: "Più tempo produttivo",
+    body: "Ti concentri sui lavori che rendono, non sui dettagli da rincorrere.",
+  },
+  {
+    title: "Più margine",
+    body: "Se non torni gratis, guadagni di più. Punto.",
+  },
+  {
+    title: "Meno stress",
+    body: "Niente piccoli problemi che girano in testa la sera.",
+  },
+  {
+    title: "Risultato che regge",
+    body: "Il lavoro resta pulito anche dopo anni di apertura.",
+  },
+];
+
+// 5 step "come funziona"
+const steps = [
+  {
+    n: "1",
+    title: "Ci contatti",
+    body: "Telefono o WhatsApp.",
+  },
+  {
+    n: "2",
+    title: "Verifichiamo il caso",
+    body: "Impianto, posizione, misure, foto.",
+  },
+  {
+    n: "3",
+    title: "Ti diciamo se è adatta",
+    body: "Se non lo è, non perdi tempo.",
+  },
+  {
+    n: "4",
+    title: "Ricevi la tua PERMALINE",
+    body: "Produzione rapida (5 giorni).",
+  },
+  {
+    n: "5",
+    title: "Ti seguiamo fino alla posa",
+    body: "Se serve, ci siamo anche in cantiere.",
+  },
+];
+
+// 3 testimonial imprese
+const testimonials = [
+  {
+    quote:
+      "Avevamo problemi di precisione e installazione lenta. Dopo la consegna arrivavano contestazioni. Con COMPASSiN abbiamo velocizzato i tempi e ottenuto un risultato pulito, senza ritorni.",
+    name: "Emiliano Carelli",
+    studio: "Tecno C.G.E.",
+    image: withBase("img/imprese/09-testimonial-carelli.webp"),
+    alt: "Emiliano Carelli, Tecno C.G.E.",
+  },
+  {
+    quote:
+      "Installazione più veloce e finitura ottima. Consegniamo lavori puliti senza lamentele. Anche tempi di risposta e produzione molto più rapidi.",
+    name: "Luca Albertelli",
+    studio: "Ambientare",
+    image: withBase("img/imprese/10-testimonial-albertelli.webp"),
+    alt: "Luca Albertelli, Ambientare",
+  },
+  {
+    quote:
+      "Prima dovevo tornare sui lavori e perdevo tempo e soldi. Ora lavoro più veloce, ho meno problemi e più guadagni.",
+    name: "Dorin Maftei",
+    studio: "Cartongessista",
+    image: withBase("img/imprese/11-testimonial-maftei.webp"),
+    alt: "Dorin Maftei, cartongessista",
+  },
+];
+
+// Dove si usa PERMALINE
+const usi = [
+  "valvole impianti",
+  "filtri VMC",
+  "trasformatori",
+  "centraline domotiche",
+  "regolazioni tecniche",
+  "piccoli punti di ispezione a soffitto",
+  "accessi tecnici a parete ad alta finitura",
+];
+---
+
+<BaseLayout
+  title="PERMALINE® per imprese — Posa una volta sola, niente ritorni"
+  description="L'accesso tecnico che chiudi e dimentichi. Per cartongessisti, posatori, imprese di costruzione. Meno richiami, più margine, più tempo produttivo. La prima PERMALINE te la offriamo noi."
+>
+  <Header />
+
+  <main class="flex-1">
+
+    <!-- ============================================
+         HERO
+         ============================================ -->
+    <section
+      class="relative overflow-hidden bg-[var(--color-paper)]"
+      aria-label="Introduzione PERMALINE per imprese"
+    >
+      <div class="mx-auto max-w-7xl px-5 md:px-8 pt-12 md:pt-20 pb-12 md:pb-16">
+        <div class="grid lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+          <div class="lg:col-span-6 max-w-xl body-prose">
+            <p class="eyebrow mb-3">Per imprese e cartongessisti</p>
+
+            <h1
+              class="heading text-3xl sm:text-4xl lg:text-5xl leading-[1.1] mb-6"
+            >
+              Il problema non è posarla.
+              <span class="block mt-2 text-[var(--color-accent)]">
+                È tornarci sopra.
+              </span>
+            </h1>
+
+            <p
+              class="text-lg md:text-xl text-[var(--color-charcoal)]/90 leading-snug mb-6 font-medium"
+            >
+              <strong>PERMALINE</strong> è l'accesso tecnico che posi una volta
+              sola.
+            </p>
+
+            <p
+              class="text-base md:text-lg text-[var(--color-charcoal)]/80 leading-relaxed mb-8"
+            >
+              Quando richiudi un accesso e la linea è quella di una matita —
+              uniforme, costante, senza interruzioni — sai che il lavoro è
+              fatto. <em>Non ci torni. Passi avanti.</em>
+            </p>
+
+            <ul class="space-y-1.5 text-base md:text-lg text-[var(--color-charcoal)]/85 mb-8">
+              <li class="flex items-center gap-2">
+                <span class="text-[var(--color-accent)] font-bold">→</span>
+                Niente ritorni.
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="text-[var(--color-accent)] font-bold">→</span>
+                Niente ritocchi.
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="text-[var(--color-accent)] font-bold">→</span>
+                Niente ore perse dietro una botola.
+              </li>
+            </ul>
+
+            <div class="flex flex-col sm:flex-row gap-3">
+              <a
+                href="#prenota"
+                class="inline-flex items-center justify-center rounded-full bg-[var(--color-accent)] px-6 py-3.5 min-h-11 text-sm font-semibold text-white hover:bg-[#234f37] transition-colors"
+              >
+                Richiedi la tua prima PERMALINE
+              </a>
+            </div>
+
+            <p class="mt-4 text-sm text-[var(--color-charcoal)]/75">
+              Posi, chiudi il lavoro e passi al prossimo cantiere.
+            </p>
+          </div>
+
+          <div class="lg:col-span-6">
+            <div
+              class="relative aspect-[4/3] md:aspect-[5/4] overflow-hidden rounded-2xl bg-[var(--color-bone)] shadow-[0_1px_2px_rgba(0,0,0,0.04),0_20px_40px_-20px_rgba(0,0,0,0.18)]"
+            >
+              <img
+                src={withBase("img/imprese/01-hero.webp")}
+                alt="Accesso tecnico PERMALINE installato a filo in cantiere finito"
+                width="1600"
+                height="1200"
+                sizes="(min-width: 1024px) 50vw, 100vw"
+                loading="eager"
+                fetchpriority="high"
+                decoding="async"
+                class="absolute inset-0 h-full w-full object-cover"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="pencil-line mx-auto max-w-7xl"></div>
+    </section>
+
+    <!-- ============================================
+         IL PROBLEMA
+         ============================================ -->
+    <section
+      class="bg-[var(--color-paper)] py-16 md:py-24"
+      aria-labelledby="problema-title"
+    >
+      <div class="mx-auto max-w-7xl px-5 md:px-8">
+        <div class="max-w-4xl">
+          <span class="brand-mark" aria-hidden="true"></span>
+          <p class="eyebrow mb-3">Il problema</p>
+          <h2
+            id="problema-title"
+            class="heading text-3xl md:text-4xl lg:text-5xl leading-tight mb-8"
+          >
+            Chiudi il cantiere.
+            <span class="block mt-2 text-[var(--color-charcoal)]/70">
+              Poi arriva la chiamata del cliente.
+            </span>
+          </h2>
+        </div>
+
+        <div class="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center mt-12">
+          <div class="body-prose max-w-xl">
+            <p class="text-lg text-[var(--color-charcoal)]/90 drop-cap">
+              Chiudi il cantiere. Hai già la testa sul lavoro dopo. Poi squilla
+              il telefono.
+            </p>
+
+            <div class="mt-6 space-y-2 text-lg md:text-xl text-[var(--color-ink)] font-medium">
+              <p>«La botola si è crepata.»</p>
+              <p>«Non si apre.»</p>
+              <p>«Non è bella da vedere.»</p>
+            </div>
+
+            <p class="text-base md:text-lg text-[var(--color-charcoal)]/85 mt-6">
+              E per un pezzo da pochi euro perdi mezza giornata. Torni indietro.
+              <strong class="pencil-underline">Lavori gratis e rallenti il
+              cantiere dopo.</strong>
+            </p>
+
+            <p class="text-base md:text-lg text-[var(--color-charcoal)]/85 mt-4">
+              Tutto per un dettaglio che doveva sparire.
+            </p>
+          </div>
+
+          <div class="relative">
+            <div
+              class="relative aspect-[4/3] overflow-hidden rounded-2xl bg-[var(--color-bone)] shadow-[0_1px_2px_rgba(0,0,0,0.04),0_20px_40px_-20px_rgba(0,0,0,0.15)]"
+            >
+              <img
+                src={withBase("img/imprese/02-telefono-cliente.webp")}
+                alt="Telefono che squilla con la chiamata del cliente per problemi alla botola"
+                width="1200"
+                height="900"
+                sizes="(min-width: 1024px) 50vw, 100vw"
+                loading="lazy"
+                decoding="async"
+                class="absolute inset-0 h-full w-full object-cover"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================
+         QUANTO TI COSTA DAVVERO (DARK)
+         ============================================ -->
+    <section
+      class="bg-[var(--color-ink)] py-16 md:py-24 text-white"
+      aria-labelledby="costo-title"
+    >
+      <div class="mx-auto max-w-7xl px-5 md:px-8">
+        <div class="max-w-4xl">
+          <span class="brand-mark" aria-hidden="true"></span>
+          <p class="eyebrow mb-3" style="color: rgba(255,255,255,0.7);">
+            Quanto ti costa davvero
+          </p>
+          <h2
+            id="costo-title"
+            class="heading text-3xl md:text-4xl lg:text-5xl leading-tight mb-6 !text-white"
+          >
+            Forse paghi poco la botola,
+            <span class="block mt-2 text-white/70">
+              ma non il conto finale.
+            </span>
+          </h2>
+          <p class="text-lg text-white/90 leading-relaxed max-w-2xl">
+            Il prezzo della botola conta poco. Conta quello che succede dopo.
+            <strong>Ogni volta che torni su una botola:</strong>
+          </p>
+        </div>
+
+        <div class="grid lg:grid-cols-3 gap-10 lg:gap-12 items-start mt-12">
+          <div class="lg:col-span-1">
+            <div
+              class="relative aspect-[4/3] overflow-hidden rounded-2xl bg-[var(--color-charcoal)] shadow-[0_1px_2px_rgba(0,0,0,0.04),0_20px_40px_-20px_rgba(0,0,0,0.5)]"
+            >
+              <img
+                src={withBase("img/imprese/03-quanto-costa.webp")}
+                alt="Calcolatrice e fattura: il costo invisibile dei ritorni in cantiere"
+                width="1200"
+                height="900"
+                sizes="(min-width: 1024px) 33vw, 100vw"
+                loading="lazy"
+                decoding="async"
+                class="absolute inset-0 h-full w-full object-cover"
+              />
+            </div>
+          </div>
+
+          <div class="lg:col-span-2 grid sm:grid-cols-2 gap-5">
+            {perdite.map((item) => (
+              <div
+                class="rounded-2xl border border-white/15 bg-white/5 p-6 hover:border-white/40 transition-colors backdrop-blur-sm"
+              >
+                <h3 class="heading text-base md:text-lg leading-snug mb-2 !text-white">
+                  {item.title}
+                </h3>
+                <p class="text-sm md:text-base text-white/85 leading-relaxed">
+                  {item.body}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div class="mt-12 max-w-3xl">
+          <blockquote
+            class="border-l-4 pl-7 md:pl-9 py-2"
+            style="border-left-color: var(--color-accent);"
+          >
+            <p class="text-lg md:text-xl leading-snug text-white">
+              <em>Sembra</em> che la botola costi poco.
+              <strong>Ma i problemi li paghi tutti dopo.</strong>
+            </p>
+          </blockquote>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================
+         IL VERO PERICOLO
+         ============================================ -->
+    <section
+      class="bg-[var(--color-paper)] py-16 md:py-24"
+      aria-labelledby="pericolo-title"
+    >
+      <div class="mx-auto max-w-7xl px-5 md:px-8">
+        <div class="max-w-4xl">
+          <span class="brand-mark" aria-hidden="true"></span>
+          <p class="eyebrow mb-3">Il vero pericolo</p>
+          <h2
+            id="pericolo-title"
+            class="heading text-3xl md:text-4xl lg:text-5xl leading-tight mb-6"
+          >
+            «Tanto sono tutte uguali.»
+          </h2>
+          <p
+            class="text-base md:text-lg text-[var(--color-charcoal)]/85 leading-relaxed max-w-2xl"
+          >
+            È la frase che tiene fermo il mercato da anni. Sembra buon senso.
+            <strong><mark>In realtà costa soldi.</mark></strong>
+          </p>
+        </div>
+
+        <div class="grid lg:grid-cols-2 gap-10 lg:gap-16 items-start mt-12">
+          <div class="body-prose">
+            <p class="text-base md:text-lg text-[var(--color-charcoal)]/90">
+              Quando pensi che una botola valga l'altra, la scelta smette di
+              essere tecnica e diventa automatica. Allora scegli:
+            </p>
+            <ul class="mt-4 space-y-2 text-[var(--color-charcoal)]/85">
+              <li class="flex items-start gap-3">
+                <span
+                  class="mt-1.5 inline-block h-1.5 w-1.5 rounded-full bg-[var(--color-accent)] flex-shrink-0"
+                  aria-hidden="true"
+                ></span>
+                quella che costa meno
+              </li>
+              <li class="flex items-start gap-3">
+                <span
+                  class="mt-1.5 inline-block h-1.5 w-1.5 rounded-full bg-[var(--color-accent)] flex-shrink-0"
+                  aria-hidden="true"
+                ></span>
+                quella disponibile subito
+              </li>
+              <li class="flex items-start gap-3">
+                <span
+                  class="mt-1.5 inline-block h-1.5 w-1.5 rounded-full bg-[var(--color-accent)] flex-shrink-0"
+                  aria-hidden="true"
+                ></span>
+                quella che hai sempre usato
+              </li>
+              <li class="flex items-start gap-3">
+                <span
+                  class="mt-1.5 inline-block h-1.5 w-1.5 rounded-full bg-[var(--color-accent)] flex-shrink-0"
+                  aria-hidden="true"
+                ></span>
+                quella che «tanto basta chiudere il foro»
+              </li>
+            </ul>
+            <p class="text-base md:text-lg text-[var(--color-charcoal)]/90 mt-6">
+              Non stai valutando cosa succede dopo la posa. Stai guardando solo
+              cosa succede oggi al momento dell'acquisto.
+            </p>
+
+            <p class="text-base md:text-lg text-[var(--color-charcoal)]/85 mt-4">
+              Ma il vero costo non è quando compri. È quando si crepa, l'anta
+              si abbassa, la fuga cambia, devi tornare a sistemarla, il cliente
+              si lamenta, perdi tempo che nessuno ti paga.
+            </p>
+
+            <blockquote class="pull-quote mt-8">
+              <p>
+                Cambia il nome sulla scatola.
+                <strong><mark>Non cambia quello che succede in
+                cantiere.</mark></strong>
+              </p>
+            </blockquote>
+          </div>
+
+          <div class="relative">
+            <div
+              class="relative aspect-[4/5] overflow-hidden rounded-2xl bg-[var(--color-bone)] shadow-[0_1px_2px_rgba(0,0,0,0.04),0_20px_40px_-20px_rgba(0,0,0,0.15)]"
+            >
+              <img
+                src={withBase("img/imprese/12-vero-pericolo.webp")}
+                alt="Botole standard simili tra loro, varianti dello stesso problema"
+                width="900"
+                height="1125"
+                sizes="(min-width: 1024px) 50vw, 100vw"
+                loading="lazy"
+                decoding="async"
+                class="absolute inset-0 h-full w-full object-cover"
+              />
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-12 max-w-3xl body-prose">
+          <p class="text-base md:text-lg text-[var(--color-charcoal)]/90">
+            C'è un modo semplice per verificarlo. Si chiama
+            <strong class="pencil-underline">linea di matita</strong>.
+          </p>
+          <p class="text-base md:text-lg text-[var(--color-charcoal)]/85 mt-4">
+            Dopo la posa, osserva il perimetro dell'accesso con luce radente.
+            Se la fuga è uniforme, costante, sottile come il tratto di una
+            matita: il lavoro è fatto bene. Se cambia spessore, si interrompe,
+            racconta il cedimento di un materiale: <em>prima o poi ti
+            richiamano</em>.
+          </p>
+          <p class="text-base md:text-lg text-[var(--color-charcoal)]/85 mt-4">
+            Non serve uno strumento. Non serve uno specialista. Basta guardare.
+            <strong>E quella linea ti dice già adesso se ci tornerai sopra o
+            no.</strong>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================
+         COS'È PERMALINE
+         ============================================ -->
+    <section
+      class="bg-[var(--color-bone)] py-16 md:py-24"
+      aria-labelledby="permaline-title"
+    >
+      <div class="mx-auto max-w-7xl px-5 md:px-8">
+        <div class="max-w-4xl">
+          <span class="brand-mark" aria-hidden="true"></span>
+          <p class="eyebrow mb-3">Cos'è PERMALINE</p>
+          <h2
+            id="permaline-title"
+            class="heading text-3xl md:text-4xl lg:text-5xl leading-tight mb-6"
+          >
+            Non è una botola standard migliorata.
+            <span class="block mt-2 text-[var(--color-charcoal)]/70">
+              È un sistema progettato per eliminare i problemi tipici delle
+              botole tradizionali.
+            </span>
+          </h2>
+        </div>
+
+        <div class="grid lg:grid-cols-12 gap-10 lg:gap-12 items-start mt-12">
+          <div class="lg:col-span-7 body-prose">
+            <p class="text-base md:text-lg text-[var(--color-charcoal)]/90 drop-cap">
+              PERMALINE nasce per piccoli impianti a parete e soffitto dove
+              servono tre cose insieme: <strong>posa veloce, finitura pulita,
+              affidabilità nel tempo</strong>.
+            </p>
+
+            <p class="text-base md:text-lg text-[var(--color-charcoal)]/85 mt-4">
+              Sotto la finitura c'è:
+            </p>
+            <ul class="mt-3 space-y-2 text-[var(--color-charcoal)]/90">
+              <li class="flex items-start gap-3">
+                <span
+                  class="mt-1.5 inline-block h-1.5 w-1.5 rounded-full bg-[var(--color-accent)] flex-shrink-0"
+                  aria-hidden="true"
+                ></span>
+                <strong>telaio stabile</strong>
+              </li>
+              <li class="flex items-start gap-3">
+                <span
+                  class="mt-1.5 inline-block h-1.5 w-1.5 rounded-full bg-[var(--color-accent)] flex-shrink-0"
+                  aria-hidden="true"
+                ></span>
+                <strong>anta in composito di alluminio</strong>
+              </li>
+              <li class="flex items-start gap-3">
+                <span
+                  class="mt-1.5 inline-block h-1.5 w-1.5 rounded-full bg-[var(--color-accent)] flex-shrink-0"
+                  aria-hidden="true"
+                ></span>
+                <strong>apertura precisa integrata nel sistema</strong>
+              </li>
+            </ul>
+
+            <p class="text-base md:text-lg text-[var(--color-charcoal)]/85 mt-6">
+              Risultato:
+            </p>
+            <ul class="mt-3 space-y-2 text-[var(--color-charcoal)]/90">
+              <li class="flex items-start gap-3">
+                <span class="text-[var(--color-accent)] font-bold flex-shrink-0">→</span>
+                non si abbassa
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="text-[var(--color-accent)] font-bold flex-shrink-0">→</span>
+                non si crepa
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="text-[var(--color-accent)] font-bold flex-shrink-0">→</span>
+                non si incastra
+              </li>
+            </ul>
+
+            <p class="text-lg md:text-xl text-[var(--color-ink)] font-medium mt-6">
+              E soprattutto:
+              <mark><strong>non devi tornarci sopra.</strong></mark>
+            </p>
+
+            <p class="text-base md:text-lg text-[var(--color-charcoal)]/85 mt-4">
+              La linea resta quella che hai lasciato il giorno della posa. Oggi,
+              tra un anno, dopo cento aperture.
+            </p>
+          </div>
+
+          <div class="lg:col-span-5">
+            <div
+              class="relative aspect-[3/4] overflow-hidden rounded-2xl bg-[var(--color-bone)] shadow-[0_1px_2px_rgba(0,0,0,0.04),0_20px_40px_-20px_rgba(0,0,0,0.18)]"
+            >
+              <img
+                src={withBase("img/imprese/13-cos-e-permaline.webp")}
+                alt="Sistema PERMALINE in posa: telaio + anta in composito + apertura precisa"
+                width="900"
+                height="1200"
+                sizes="(min-width: 1024px) 40vw, 100vw"
+                loading="lazy"
+                decoding="async"
+                class="absolute inset-0 h-full w-full object-cover"
+              />
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-10">
+          <a
+            href="#prenota"
+            class="inline-flex items-center justify-center rounded-full bg-[var(--color-accent)] px-6 py-3.5 min-h-11 text-sm font-semibold text-white hover:bg-[#234f37] transition-colors"
+          >
+            Richiedi la tua prima PERMALINE
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================
+         DOVE SI USA
+         ============================================ -->
+    <section
+      class="bg-[var(--color-paper)] py-16 md:py-24"
+      aria-labelledby="usi-title"
+    >
+      <div class="mx-auto max-w-7xl px-5 md:px-8">
+        <div class="max-w-4xl">
+          <span class="brand-mark" aria-hidden="true"></span>
+          <p class="eyebrow mb-3">Dove si usa</p>
+          <h2
+            id="usi-title"
+            class="heading text-3xl md:text-4xl lg:text-5xl leading-tight mb-6"
+          >
+            Soffitto o parete.
+            <span class="text-[var(--color-accent)]">Su misura.</span>
+          </h2>
+          <p
+            class="text-base md:text-lg text-[var(--color-charcoal)]/85 leading-relaxed max-w-2xl"
+          >
+            Per chiudere in modo preciso e invisibile accessi come:
+          </p>
+        </div>
+
+        <div class="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center mt-12">
+          <ul class="space-y-3">
+            {usi.map((uso) => (
+              <li class="flex items-start gap-4">
+                <span
+                  class="mt-2 inline-block h-2 w-2 rounded-full bg-[var(--color-accent)] flex-shrink-0"
+                  aria-hidden="true"
+                ></span>
+                <span class="text-lg md:text-xl text-[var(--color-charcoal)]/90 leading-snug">
+                  {uso}
+                </span>
+              </li>
+            ))}
+          </ul>
+
+          <div class="relative">
+            <div
+              class="relative aspect-[4/3] overflow-hidden rounded-2xl bg-[var(--color-bone)] shadow-[0_1px_2px_rgba(0,0,0,0.04),0_20px_40px_-20px_rgba(0,0,0,0.15)]"
+            >
+              <img
+                src={withBase("img/imprese/06-dove-si-usa.webp")}
+                alt="Esempi di applicazione PERMALINE: valvole impianti, filtri VMC, accessi tecnici"
+                width="1200"
+                height="900"
+                sizes="(min-width: 1024px) 50vw, 100vw"
+                loading="lazy"
+                decoding="async"
+                class="absolute inset-0 h-full w-full object-cover"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================
+         COSA CAMBIA PER TE
+         ============================================ -->
+    <section
+      class="bg-[var(--color-bone)] py-16 md:py-24"
+      aria-labelledby="benefici-title"
+    >
+      <div class="mx-auto max-w-7xl px-5 md:px-8">
+        <div class="max-w-4xl">
+          <span class="brand-mark" aria-hidden="true"></span>
+          <p class="eyebrow mb-3">Cosa cambia per te</p>
+          <h2
+            id="benefici-title"
+            class="heading text-3xl md:text-4xl lg:text-5xl leading-tight mb-6"
+          >
+            Meno problemi.
+            <span class="text-[var(--color-accent)]">Più lavoro utile.</span>
+          </h2>
+        </div>
+
+        <div class="grid lg:grid-cols-12 gap-10 lg:gap-12 items-start mt-12">
+          <div class="lg:col-span-5">
+            <div
+              class="relative aspect-[4/5] overflow-hidden rounded-2xl bg-[var(--color-bone)] shadow-[0_1px_2px_rgba(0,0,0,0.04),0_20px_40px_-20px_rgba(0,0,0,0.18)]"
+            >
+              <img
+                src={withBase("img/imprese/07-cosa-cambia.webp")}
+                alt="Cartongessista che chiude un cantiere con PERMALINE e va avanti"
+                width="900"
+                height="1125"
+                sizes="(min-width: 1024px) 40vw, 100vw"
+                loading="lazy"
+                decoding="async"
+                class="absolute inset-0 h-full w-full object-cover"
+              />
+            </div>
+          </div>
+
+          <div class="lg:col-span-7 grid sm:grid-cols-2 gap-5">
+            {benefici.map((b) => (
+              <div
+                class="rounded-2xl border border-[var(--color-line)] bg-white p-6 hover:border-[var(--color-charcoal)] transition-colors"
+              >
+                <h3 class="heading text-base md:text-lg leading-snug mb-2">
+                  {b.title}
+                </h3>
+                <p class="text-sm md:text-base text-[var(--color-charcoal)]/85 leading-relaxed">
+                  {b.body}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================
+         COME FUNZIONA
+         ============================================ -->
+    <section
+      class="bg-[var(--color-paper)] py-16 md:py-24"
+      aria-labelledby="funziona-title"
+    >
+      <div class="mx-auto max-w-7xl px-5 md:px-8">
+        <div class="max-w-4xl">
+          <span class="brand-mark" aria-hidden="true"></span>
+          <p class="eyebrow mb-3">Come funziona</p>
+          <h2
+            id="funziona-title"
+            class="heading text-3xl md:text-4xl lg:text-5xl leading-tight mb-6"
+          >
+            Verifica PERMALINE
+            <span class="block mt-2 text-[var(--color-charcoal)]/70">
+              sul tuo prossimo cantiere.
+            </span>
+          </h2>
+        </div>
+
+        <ol class="grid md:grid-cols-2 lg:grid-cols-5 gap-5 mt-12">
+          {steps.map((s) => (
+            <li
+              class="rounded-2xl border border-[var(--color-line)] bg-white p-6 hover:border-[var(--color-charcoal)] transition-colors"
+            >
+              <span
+                class="heading text-3xl md:text-4xl text-[var(--color-accent)] block mb-3"
+              >
+                {s.n}
+              </span>
+              <h3 class="heading text-base md:text-lg leading-snug mb-2">
+                {s.title}
+              </h3>
+              <p class="text-sm md:text-base text-[var(--color-charcoal)]/85 leading-relaxed">
+                {s.body}
+              </p>
+            </li>
+          ))}
+        </ol>
+
+        <p class="mt-8 max-w-3xl text-base md:text-lg text-[var(--color-charcoal)]/85 leading-relaxed">
+          Vuoi capire se ha senso per il tuo prossimo cantiere?
+          <a
+            href="#prenota"
+            class="text-[var(--color-accent)] font-semibold underline underline-offset-4 hover:text-[#234f37] transition-colors"
+          >
+            Richiedi la tua prima PERMALINE
+          </a>.
+        </p>
+      </div>
+    </section>
+
+    <!-- ============================================
+         OFFERTA SPECIALE (DARK)
+         ============================================ -->
+    <section
+      class="bg-[var(--color-ink)] py-16 md:py-24 text-white"
+      aria-labelledby="offerta-title"
+    >
+      <div class="mx-auto max-w-7xl px-5 md:px-8">
+        <div class="grid lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+          <div class="lg:col-span-7">
+            <span class="brand-mark" aria-hidden="true"></span>
+            <p class="eyebrow mb-3" style="color: rgba(255,255,255,0.7);">
+              Offerta speciale
+            </p>
+            <h2
+              id="offerta-title"
+              class="heading text-3xl md:text-4xl lg:text-5xl leading-tight mb-6 !text-white"
+            >
+              La prima PERMALINE
+              <span class="block mt-2 text-[var(--color-accent)]">
+                la offriamo noi.
+              </span>
+            </h2>
+            <p class="text-lg md:text-xl text-white/90 leading-snug mb-6 font-medium">
+              La provi dove conta davvero: <strong>in cantiere</strong>.
+            </p>
+
+            <ul class="space-y-2 text-base md:text-lg text-white/85 mb-8">
+              <li class="flex items-center gap-3">
+                <span class="text-[var(--color-accent)] font-bold">→</span>
+                Niente ordini al buio.
+              </li>
+              <li class="flex items-center gap-3">
+                <span class="text-[var(--color-accent)] font-bold">→</span>
+                Niente cataloghi.
+              </li>
+              <li class="flex items-center gap-3">
+                <span class="text-[var(--color-accent)] font-bold">→</span>
+                Niente «fidati che funziona».
+              </li>
+            </ul>
+
+            <p class="text-base md:text-lg text-white/90 leading-relaxed mb-6">
+              <strong>Il lavoro finito sarà la prova definitiva</strong>, con
+              cui decidere se proseguire.
+            </p>
+
+            <a
+              href="#prenota"
+              class="inline-flex items-center justify-center rounded-full bg-[var(--color-accent)] px-6 py-3.5 min-h-11 text-sm font-semibold text-white hover:bg-[#234f37] transition-colors"
+            >
+              Richiedi la tua prima PERMALINE
+            </a>
+
+            <p class="mt-4 text-sm text-white/70">
+              Offerta riservata a nuovi contatti, previa verifica tecnica e
+              disponibilità mensile.
+            </p>
+          </div>
+
+          <div class="lg:col-span-5">
+            <div
+              class="relative aspect-[3/4] overflow-hidden rounded-2xl bg-[var(--color-charcoal)] shadow-[0_1px_2px_rgba(0,0,0,0.04),0_20px_40px_-20px_rgba(0,0,0,0.5)]"
+            >
+              <img
+                src={withBase("img/imprese/08-offerta-speciale.webp")}
+                alt="PERMALINE installata in cantiere reale: la prima la offriamo noi"
+                width="900"
+                height="1200"
+                sizes="(min-width: 1024px) 40vw, 100vw"
+                loading="lazy"
+                decoding="async"
+                class="absolute inset-0 h-full w-full object-cover"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================
+         TESTIMONIANZE
+         ============================================ -->
+    <section
+      class="bg-[var(--color-bone)] py-16 md:py-24"
+      aria-labelledby="testi-title"
+    >
+      <div class="mx-auto max-w-7xl px-5 md:px-8">
+        <div class="max-w-4xl">
+          <span class="brand-mark" aria-hidden="true"></span>
+          <p class="eyebrow mb-3">Testimonianze</p>
+          <h2
+            id="testi-title"
+            class="heading text-3xl md:text-4xl lg:text-5xl leading-tight mb-6"
+          >
+            Chi l'ha provata,
+            <span class="block mt-2 text-[var(--color-accent)]">
+              non è più tornato indietro.
+            </span>
+          </h2>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-6 mt-12">
+          {testimonials.map((t) => (
+            <figure
+              class="rounded-2xl overflow-hidden border border-[var(--color-line)] bg-white flex flex-col"
+            >
+              <div class="relative aspect-[4/3] overflow-hidden bg-[var(--color-bone)]">
+                <img
+                  src={t.image}
+                  alt={t.alt}
+                  width="800"
+                  height="600"
+                  sizes="(min-width: 768px) 33vw, 100vw"
+                  loading="lazy"
+                  decoding="async"
+                  class="absolute inset-0 h-full w-full object-cover"
+                />
+              </div>
+              <blockquote
+                class="p-6 md:p-7 text-sm md:text-base text-[var(--color-charcoal)]/90 leading-relaxed flex-1"
+              >
+                <p>«{t.quote}»</p>
+              </blockquote>
+              <figcaption class="px-6 md:px-7 pb-6 md:pb-7">
+                <p class="heading text-sm md:text-base leading-snug">
+                  {t.name}
+                </p>
+                <p class="text-xs md:text-sm text-[var(--color-charcoal)]/75 mt-1">
+                  {t.studio}
+                </p>
+              </figcaption>
+            </figure>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================
+         CTA FINALE - 2 STRADE + FORM
+         ============================================ -->
+    <section
+      id="prenota"
+      class="bg-[var(--color-ink)] py-16 md:py-24 text-white scroll-mt-24"
+      aria-labelledby="prenota-title"
+    >
+      <div class="mx-auto max-w-7xl px-5 md:px-8">
+        <div class="max-w-4xl">
+          <span class="brand-mark" aria-hidden="true"></span>
+          <p class="eyebrow mb-3" style="color: rgba(255,255,255,0.7);">
+            Vuoi chiudere il prossimo cantiere senza ritorni?
+          </p>
+          <h2
+            id="prenota-title"
+            class="heading text-3xl md:text-4xl lg:text-5xl leading-tight mb-6 !text-white"
+          >
+            Non è una questione di botole.
+            <span class="block mt-2 text-white/70">
+              È una questione di come vuoi lavorare.
+            </span>
+          </h2>
+          <p class="text-base md:text-lg text-white/85 leading-relaxed max-w-3xl">
+            Per anni il mercato ti ha fatto accettare una perdita silenziosa:
+            tempo buttato, ritorni inutili, ritocchi da rifare, clienti da
+            gestire, margine che si assottiglia. <strong>Ora hai davanti due
+            strade.</strong>
+          </p>
+        </div>
+
+        <!-- Le due strade in 2 card affiancate -->
+        <div class="grid md:grid-cols-2 gap-6 mt-12">
+          <div class="rounded-2xl border border-white/15 bg-white/5 p-7 md:p-8 backdrop-blur-sm">
+            <p class="eyebrow mb-3" style="color: rgba(255,255,255,0.7);">
+              Strada 1
+            </p>
+            <h3 class="heading text-xl md:text-2xl leading-snug mb-4 !text-white">
+              Continuare come sempre.
+            </h3>
+            <p class="text-sm md:text-base text-white/85 leading-relaxed mb-4">
+              Scegliere la solita botola perché costa meno o perché è quella
+              disponibile. Montarla. Sperare che regga. E mettere in conto che,
+              prima o poi, ci sarà da tornarci sopra.
+            </p>
+            <div
+              class="relative aspect-[16/10] overflow-hidden rounded-xl bg-[var(--color-charcoal)] mt-4"
+            >
+              <img
+                src={withBase("img/imprese/04-strada-1-vecchia.webp")}
+                alt="Botola tradizionale: continuare come sempre, accettare i ritorni"
+                width="800"
+                height="500"
+                sizes="(min-width: 768px) 40vw, 100vw"
+                loading="lazy"
+                decoding="async"
+                class="absolute inset-0 h-full w-full object-cover"
+              />
+            </div>
+          </div>
+
+          <div class="rounded-2xl border-2 border-[var(--color-accent)] bg-[var(--color-accent)]/10 p-7 md:p-8 backdrop-blur-sm">
+            <p class="eyebrow mb-3" style="color: var(--color-accent);">
+              Strada 2 ⭐
+            </p>
+            <h3 class="heading text-xl md:text-2xl leading-snug mb-4 !text-white">
+              Chiudere il problema alla radice.
+            </h3>
+            <p class="text-sm md:text-base text-white/90 leading-relaxed mb-4">
+              Un sistema pensato per lavorare bene oggi e restare a posto domani.
+              Posa semplice. Risultato pulito. Meno richiami. Più tempo per
+              altri lavori. <strong>Più margine protetto.</strong>
+            </p>
+            <div
+              class="relative aspect-[16/10] overflow-hidden rounded-xl bg-[var(--color-charcoal)] mt-4"
+            >
+              <img
+                src={withBase("img/imprese/05-strada-2-permaline.webp")}
+                alt="PERMALINE installata: chiudere il problema alla radice"
+                width="800"
+                height="500"
+                sizes="(min-width: 768px) 40vw, 100vw"
+                loading="lazy"
+                decoding="async"
+                class="absolute inset-0 h-full w-full object-cover"
+              />
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-12 max-w-3xl">
+          <blockquote
+            class="border-l-4 pl-7 md:pl-9 py-2"
+            style="border-left-color: var(--color-accent);"
+          >
+            <p class="text-lg md:text-xl leading-snug text-white">
+              Il test definitivo è semplice. Dopo la posa, guarda la linea
+              perimetrale con luce radente. <strong>È una linea di matita
+              costante? Allora puoi andare. Non lo è? Tornerai.</strong>
+            </p>
+          </blockquote>
+        </div>
+
+        <!-- FORM PRENOTAZIONE -->
+        <div
+          class="mt-12 max-w-3xl rounded-2xl bg-white text-[var(--color-ink)] p-7 md:p-10"
+        >
+          <h3 class="heading text-2xl md:text-3xl leading-snug mb-2">
+            Richiedi la tua prima PERMALINE
+          </h3>
+          <p class="text-sm md:text-base text-[var(--color-charcoal)]/85 leading-relaxed mb-6">
+            Parla con un tecnico, descrivi il tuo prossimo lavoro e verifica
+            subito se puoi chiuderlo bene al primo colpo.
+          </p>
+
+          <form
+            action="https://formsubmit.co/info@keryxdesign.com"
+            method="POST"
+            class="grid gap-4"
+          >
+            <input
+              type="hidden"
+              name="_subject"
+              value="Nuova richiesta prima PERMALINE (impresa/cartongessista)"
+            />
+            <input type="hidden" name="_template" value="table" />
+            <input type="hidden" name="_captcha" value="false" />
+            <input
+              type="hidden"
+              name="_next"
+              value="https://keryxdesign.github.io/permaline-site/grazie"
+            />
+            <input
+              type="text"
+              name="_honey"
+              tabindex="-1"
+              autocomplete="off"
+              style="display:none"
+            />
+
+            <div class="grid sm:grid-cols-2 gap-4">
+              <div>
+                <label
+                  for="nome"
+                  class="block text-sm font-semibold mb-1.5 text-[var(--color-ink)]"
+                >
+                  Nome e cognome <span class="text-[var(--color-accent)]">*</span>
+                </label>
+                <input
+                  type="text"
+                  id="nome"
+                  name="Nome e cognome"
+                  required
+                  autocomplete="name"
+                  class="w-full rounded-xl border border-[var(--color-line)] px-4 py-3 text-base focus:border-[var(--color-accent)] focus:outline-none transition-colors"
+                />
+              </div>
+
+              <div>
+                <label
+                  for="impresa"
+                  class="block text-sm font-semibold mb-1.5 text-[var(--color-ink)]"
+                >
+                  Impresa <span class="text-[var(--color-accent)]">*</span>
+                </label>
+                <input
+                  type="text"
+                  id="impresa"
+                  name="Impresa"
+                  required
+                  autocomplete="organization"
+                  class="w-full rounded-xl border border-[var(--color-line)] px-4 py-3 text-base focus:border-[var(--color-accent)] focus:outline-none transition-colors"
+                />
+              </div>
+            </div>
+
+            <div class="grid sm:grid-cols-2 gap-4">
+              <div>
+                <label
+                  for="email"
+                  class="block text-sm font-semibold mb-1.5 text-[var(--color-ink)]"
+                >
+                  Email <span class="text-[var(--color-accent)]">*</span>
+                </label>
+                <input
+                  type="email"
+                  id="email"
+                  name="Email"
+                  required
+                  autocomplete="email"
+                  class="w-full rounded-xl border border-[var(--color-line)] px-4 py-3 text-base focus:border-[var(--color-accent)] focus:outline-none transition-colors"
+                />
+              </div>
+
+              <div>
+                <label
+                  for="telefono"
+                  class="block text-sm font-semibold mb-1.5 text-[var(--color-ink)]"
+                >
+                  Telefono <span class="text-[var(--color-accent)]">*</span>
+                </label>
+                <input
+                  type="tel"
+                  id="telefono"
+                  name="Telefono"
+                  required
+                  autocomplete="tel"
+                  class="w-full rounded-xl border border-[var(--color-line)] px-4 py-3 text-base focus:border-[var(--color-accent)] focus:outline-none transition-colors"
+                />
+              </div>
+            </div>
+
+            <div>
+              <label
+                for="tipo-lavoro"
+                class="block text-sm font-semibold mb-1.5 text-[var(--color-ink)]"
+              >
+                Tipo di lavoro / cantiere
+                <span class="text-[var(--color-accent)]">*</span>
+              </label>
+              <select
+                id="tipo-lavoro"
+                name="Tipo di lavoro"
+                required
+                class="w-full rounded-xl border border-[var(--color-line)] px-4 py-3 text-base focus:border-[var(--color-accent)] focus:outline-none transition-colors bg-white"
+              >
+                <option value="">Seleziona...</option>
+                <option value="Residenziale">Residenziale</option>
+                <option value="Hospitality">Hospitality</option>
+                <option value="Retail">Retail / commerciale</option>
+                <option value="Uffici">Uffici</option>
+                <option value="Architettura contemporanea">
+                  Architettura contemporanea
+                </option>
+                <option value="Altro">Altro</option>
+              </select>
+            </div>
+
+            <div>
+              <label
+                for="quando"
+                class="block text-sm font-semibold mb-1.5 text-[var(--color-ink)]"
+              >
+                Quando ti servirebbe?
+                <span class="text-[var(--color-accent)]">*</span>
+              </label>
+              <select
+                id="quando"
+                name="Quando"
+                required
+                class="w-full rounded-xl border border-[var(--color-line)] px-4 py-3 text-base focus:border-[var(--color-accent)] focus:outline-none transition-colors bg-white"
+              >
+                <option value="">Seleziona...</option>
+                <option value="Subito">Subito (cantiere in corso)</option>
+                <option value="Questa settimana">Questa settimana</option>
+                <option value="La prossima settimana">
+                  La prossima settimana
+                </option>
+                <option value="Entro un mese">Entro un mese</option>
+                <option value="Da definire">Da definire</option>
+              </select>
+            </div>
+
+            <div>
+              <label
+                for="descrizione"
+                class="block text-sm font-semibold mb-1.5 text-[var(--color-ink)]"
+              >
+                Descrizione del cantiere o del caso
+              </label>
+              <textarea
+                id="descrizione"
+                name="Descrizione"
+                rows="4"
+                placeholder="Tipo di impianto, posizione, misure, vincoli operativi..."
+                class="w-full rounded-xl border border-[var(--color-line)] px-4 py-3 text-base focus:border-[var(--color-accent)] focus:outline-none transition-colors resize-y"
+              ></textarea>
+            </div>
+
+            <button
+              type="submit"
+              class="mt-2 inline-flex items-center justify-center rounded-full bg-[var(--color-accent)] px-6 py-3.5 min-h-11 text-sm font-semibold text-white hover:bg-[#234f37] transition-colors"
+            >
+              Richiedi la tua prima PERMALINE
+            </button>
+
+            <p class="text-xs text-[var(--color-charcoal)]/75 mt-2 leading-relaxed">
+              Verifica tecnica gratuita. Offerta «prima PERMALINE» riservata a
+              nuovi contatti, previa verifica e disponibilità mensile.
+            </p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+  <WhatsAppFloating />
+</BaseLayout>
