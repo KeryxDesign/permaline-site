@@ -1,0 +1,55 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import Header from "@/components/Header.astro";
+import Footer from "@/components/Footer.astro";
+import WhatsAppFloating from "@/components/WhatsAppFloating.astro";
+import { withBase } from "@/lib/url";
+---
+
+<BaseLayout
+  title="Grazie — Richiesta ricevuta | PERMALINE®"
+  description="Abbiamo ricevuto la tua richiesta di confronto tecnico. Ti ricontatteremo nelle prossime 24-48 ore lavorative."
+>
+  <Header />
+
+  <main class="flex-1 flex items-center">
+    <section
+      class="w-full bg-[var(--color-paper)] py-20 md:py-32"
+      aria-labelledby="grazie-title"
+    >
+      <div class="mx-auto max-w-3xl px-5 md:px-8 text-center">
+        <span class="brand-mark mx-auto" aria-hidden="true"></span>
+        <p class="eyebrow mb-4">Richiesta ricevuta</p>
+
+        <h1
+          id="grazie-title"
+          class="heading text-3xl md:text-4xl lg:text-5xl leading-tight mb-6"
+        >
+          Grazie. Abbiamo ricevuto la tua richiesta.
+        </h1>
+
+        <p
+          class="text-lg md:text-xl text-[var(--color-charcoal)]/85 leading-relaxed mb-6"
+        >
+          Un nostro tecnico ti ricontatterà entro <strong>24-48 ore
+          lavorative</strong> per fissare il confronto sul tuo progetto.
+        </p>
+
+        <p class="text-base md:text-lg text-[var(--color-charcoal)]/75 leading-relaxed mb-10">
+          Nel frattempo, se vuoi vedere PERMALINE in altri contesti applicativi,
+          puoi tornare alla pagina principale.
+        </p>
+
+        <a
+          href={withBase("")}
+          class="inline-flex items-center justify-center rounded-full bg-[var(--color-accent)] px-6 py-3.5 min-h-11 text-sm font-semibold text-white hover:bg-[#234f37] transition-colors"
+        >
+          Torna alla pagina principale
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+  <WhatsAppFloating />
+</BaseLayout>
