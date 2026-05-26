@@ -1,0 +1,992 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import Header from "@/components/Header.astro";
+import Footer from "@/components/Footer.astro";
+import WhatsAppFloating from "@/components/WhatsAppFloating.astro";
+import { withBase } from "@/lib/url";
+
+// Limiti botole standard
+const limiti = [
+  "il telaio non si integra nella costruzione a secco",
+  "il pannello perde stabilità nel tempo",
+  "i sistemi di apertura sono fragili",
+  "le finiture compensano ciò che il sistema non risolve",
+];
+
+// 4 esigenze che PERMALINE risolve insieme
+const esigenze = [
+  "accessibilità all'impianto nel tempo",
+  "precisione della finitura",
+  "stabilità dopo utilizzi ripetuti",
+  "integrazione con progetto e cantiere",
+];
+
+// Risultato in cantiere
+const risultati = [
+  "la linea resta quella che hai lasciato il giorno della finitura",
+  "la fuga non cambia quota dopo l'utilizzo",
+  "l'anta torna sempre nella stessa posizione millimetrica",
+  "la superficie non genera microfratture lungo gli spigoli",
+];
+
+// 5 ambienti ideali
+const ambienti = [
+  {
+    title: "Residenziale di pregio",
+    body: "Abitazioni private dove ogni materiale, ogni proporzione, ogni dettaglio è stato scelto con cura. Il committente ha investito nell'idea di perfezione del proprio spazio. Ogni imperfezione — anche piccola, anche tecnica — stona.",
+    image: withBase("img/prodotto/05-residenziale.webp"),
+    alt: "Ambiente residenziale di pregio con accesso tecnico PERMALINE integrato",
+  },
+  {
+    title: "Hospitality",
+    body: "Hotel, resort, strutture ricettive dove ogni camera, ogni corridoio, ogni area comune racconta il posizionamento della struttura. La superficie è il primo messaggio che il brand trasmette all'ospite, prima ancora del servizio.",
+    image: withBase("img/prodotto/06-hospitality.webp"),
+    alt: "Ambiente hospitality con superficie continua e PERMALINE invisibile",
+  },
+  {
+    title: "Retail e showroom",
+    body: "Ambienti in cui la continuità estetica della superficie comunica il valore del brand prima ancora del prodotto esposto. Un dettaglio fuori controllo non è un problema tecnico: è un messaggio sbagliato.",
+    image: withBase("img/prodotto/07-retail.webp"),
+    alt: "Showroom retail con superficie continua e accesso tecnico PERMALINE",
+  },
+  {
+    title: "Uffici direzionali",
+    body: "Spazi in cui ordine, precisione e cura dei dettagli fisici trasmettono solidità professionale. L'immagine dell'organizzazione passa anche attraverso la qualità di ciò che si vede.",
+    image: withBase("img/prodotto/08-uffici.webp"),
+    alt: "Ufficio direzionale con PERMALINE integrato nella superficie",
+  },
+];
+
+// 2 testimonial
+const testimonials = [
+  {
+    quote:
+      "Ai miei clienti dico sempre: «Se ho lavorato bene non vi sento più». Il lavoro di progettazione sinergica con COMPASSiN permette di risolvere un problema ancora prima che si presenti.",
+    name: "Arch. Alessia Rubino",
+    studio: "Milano",
+    image: withBase("img/prodotto/10-testimonial-rubino.webp"),
+    alt: "Arch. Alessia Rubino, Milano",
+  },
+  {
+    quote:
+      "L'installazione è più veloce e permette di ottenere una rifinitura ottima, potendo consegnare al cliente un lavoro estremamente soddisfacente, senza ricevere lamentele.",
+    name: "Luca Albertelli",
+    studio: "Ambientare",
+    image: withBase("img/prodotto/09-testimonial-albertelli.webp"),
+    alt: "Luca Albertelli, Ambientare",
+  },
+];
+---
+
+<BaseLayout
+  title="Cos'è PERMALINE® — Il primo accesso tecnico di precisione per piccoli impianti"
+  description="PERMALINE® non è una botola migliorata. È una categoria nuova. Anta in composito di alluminio, telaio integrato, 4 brevetti. Progettata da cartongessisti per architetti, imprese e committenti che pretendono precisione."
+>
+  <Header />
+
+  <main class="flex-1">
+
+    <!-- ============================================
+         HERO
+         ============================================ -->
+    <section
+      class="relative overflow-hidden bg-[var(--color-paper)]"
+      aria-label="Cos'è PERMALINE"
+    >
+      <div class="mx-auto max-w-7xl px-5 md:px-8 pt-12 md:pt-20 pb-12 md:pb-16">
+        <div class="grid lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+          <div class="lg:col-span-6 max-w-xl body-prose">
+            <p class="pre-headline mb-4">
+              PERMALINE<span class="ml-0.5 align-top text-[0.45em]">®</span>
+            </p>
+
+            <h1
+              class="heading text-3xl sm:text-4xl lg:text-5xl leading-[1.1] mb-6"
+            >
+              Il primo accesso tecnico di precisione
+              <span class="block mt-2 text-[var(--color-accent)]">
+                per piccoli impianti ad alta finitura.
+              </span>
+            </h1>
+
+            <p
+              class="text-lg md:text-xl text-[var(--color-charcoal)]/90 leading-snug mb-6 font-medium"
+            >
+              Non una botola migliore.
+              <strong class="pencil-underline">Una categoria nuova.</strong>
+            </p>
+
+            <p
+              class="text-base md:text-lg text-[var(--color-charcoal)]/80 leading-relaxed mb-8"
+            >
+              PERMALINE® nasce per risolvere un problema che il mercato ha
+              normalizzato da anni: i piccoli accessi tecnici vengono trattati
+              come dettagli di poco conto, e sono <em>esattamente</em> il punto
+              in cui il lavoro perde precisione, credibilità e controllo.
+            </p>
+
+            <div class="flex flex-col sm:flex-row gap-3">
+              <a
+                href={withBase("architetti")}
+                class="inline-flex items-center justify-center rounded-full bg-[var(--color-accent)] px-6 py-3.5 min-h-11 text-sm font-semibold text-white hover:bg-[#234f37] transition-colors"
+              >
+                Sono un architetto
+              </a>
+              <a
+                href={withBase("imprese")}
+                class="inline-flex items-center justify-center rounded-full border-2 border-[var(--color-accent)] px-6 py-3.5 min-h-11 text-sm font-semibold text-[var(--color-accent)] hover:bg-[var(--color-accent)] hover:text-white transition-colors"
+              >
+                Ho un'impresa
+              </a>
+            </div>
+          </div>
+
+          <div class="lg:col-span-6">
+            <div
+              class="relative aspect-[4/3] md:aspect-[5/4] overflow-hidden rounded-2xl bg-[var(--color-bone)] shadow-[0_1px_2px_rgba(0,0,0,0.04),0_20px_40px_-20px_rgba(0,0,0,0.18)]"
+            >
+              <img
+                src={withBase("img/prodotto/01-hero.webp")}
+                alt="PERMALINE® installata su superficie continua: il primo accesso tecnico di precisione"
+                width="1600"
+                height="1200"
+                sizes="(min-width: 1024px) 50vw, 100vw"
+                loading="eager"
+                fetchpriority="high"
+                decoding="async"
+                class="absolute inset-0 h-full w-full object-cover"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="pencil-line mx-auto max-w-7xl"></div>
+    </section>
+
+    <!-- ============================================
+         IL PROBLEMA NON È PICCOLO
+         ============================================ -->
+    <section
+      class="bg-[var(--color-paper)] py-16 md:py-24"
+      aria-labelledby="problema-title"
+    >
+      <div class="mx-auto max-w-7xl px-5 md:px-8">
+        <div class="max-w-4xl">
+          <span class="brand-mark" aria-hidden="true"></span>
+          <p class="eyebrow mb-3">Il problema non è piccolo</p>
+          <h2
+            id="problema-title"
+            class="heading text-3xl md:text-4xl lg:text-5xl leading-tight mb-6"
+          >
+            Valvole, filtri, sensori, trasformatori, domotica.
+            <span class="block mt-2 text-[var(--color-charcoal)]/70">
+              I piccoli impianti sono ovunque.
+            </span>
+          </h2>
+        </div>
+
+        <div class="max-w-3xl mt-10 body-prose prose-manifesto">
+          <p class="text-lg text-[var(--color-charcoal)]/90 drop-cap">
+            E quasi sempre finiscono su pareti e soffitti che dovrebbero
+            restare continui, puliti, ordinati. Quando vengono chiusi con
+            soluzioni scelte per abitudine, disponibilità o prezzo, il
+            risultato si vede. Non subito — <strong>spesso dopo la consegna,
+            quando è già tardi.</strong>
+          </p>
+          <p class="text-base md:text-lg text-[var(--color-charcoal)]/85">
+            Ma c'è un modo per saperlo prima ancora che il problema si
+            manifesti. Si chiama
+            <strong class="pencil-underline">linea di matita</strong>.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================
+         LA LINEA CHE DICE TUTTO
+         ============================================ -->
+    <section
+      class="bg-[var(--color-bone)] py-16 md:py-24"
+      aria-labelledby="linea-title"
+    >
+      <div class="mx-auto max-w-7xl px-5 md:px-8">
+        <div class="max-w-4xl">
+          <span class="brand-mark" aria-hidden="true"></span>
+          <p class="eyebrow mb-3">La linea che dice tutto</p>
+          <h2
+            id="linea-title"
+            class="heading text-3xl md:text-4xl lg:text-5xl leading-tight mb-6"
+          >
+            La linea perimetrale di un accesso tecnico
+            <span class="block mt-2 text-[var(--color-accent)]">
+              non è un'opinione. È un dato fisico.
+            </span>
+          </h2>
+        </div>
+
+        <div class="grid lg:grid-cols-2 gap-10 lg:gap-16 items-start mt-12">
+          <div class="body-prose">
+            <p class="text-base md:text-lg text-[var(--color-charcoal)]/90">
+              Si osserva, si misura, si fotografa, si confronta nel tempo.
+            </p>
+            <p class="text-base md:text-lg text-[var(--color-charcoal)]/85 mt-4">
+              Quando un <strong>architetto</strong> ispeziona un dettaglio
+              costruttivo, il suo occhio va istintivamente alla linea.
+            </p>
+            <p class="text-base md:text-lg text-[var(--color-charcoal)]/85 mt-3">
+              Quando un <strong>posatore</strong> verifica il proprio lavoro
+              dopo la posa, controlla la linea.
+            </p>
+            <p class="text-base md:text-lg text-[var(--color-charcoal)]/85 mt-3">
+              Quando un <strong>committente</strong> osserva la superficie del
+              suo ambiente — spesso senza sapere che sta guardando un accesso
+              tecnico — vede la linea. <em>E da quella linea trae un giudizio
+              complessivo</em>.
+            </p>
+
+            <blockquote class="pull-quote mt-8">
+              <p>
+                <strong>È una linea di matita? È sempre la stessa?</strong>
+                Se non è una linea di matita costante — oggi, dopo cento
+                aperture, dopo cinque anni —
+                <mark>non è lo standard PERMALINE®.</mark>
+              </p>
+            </blockquote>
+          </div>
+
+          <div class="relative">
+            <div
+              class="relative aspect-[4/5] overflow-hidden rounded-2xl bg-[var(--color-bone)] shadow-[0_1px_2px_rgba(0,0,0,0.04),0_20px_40px_-20px_rgba(0,0,0,0.15)]"
+            >
+              <img
+                src={withBase("img/prodotto/02-linea-matita.webp")}
+                alt="Linea di matita: la fuga perimetrale costante che certifica il lavoro fatto bene"
+                width="900"
+                height="1125"
+                sizes="(min-width: 1024px) 50vw, 100vw"
+                loading="lazy"
+                decoding="async"
+                class="absolute inset-0 h-full w-full object-cover"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================
+         BOTOLE STANDARD: PERCHÉ NON FUNZIONANO (DARK)
+         ============================================ -->
+    <section
+      class="bg-[var(--color-ink)] py-16 md:py-24 text-white"
+      aria-labelledby="standard-title"
+    >
+      <div class="mx-auto max-w-7xl px-5 md:px-8">
+        <div class="max-w-4xl">
+          <span class="brand-mark" aria-hidden="true"></span>
+          <p class="eyebrow mb-3" style="color: rgba(255,255,255,0.7);">
+            Perché con le botole standard non funziona
+          </p>
+          <h2
+            id="standard-title"
+            class="heading text-3xl md:text-4xl lg:text-5xl leading-tight mb-6 !text-white"
+          >
+            Non è colpa della posa.
+            <span class="block mt-2 text-white/70">
+              È colpa del sistema.
+            </span>
+          </h2>
+          <p class="text-lg text-white/90 leading-relaxed max-w-3xl">
+            Le botole tradizionali in cartongesso nascono tutte dalla stessa
+            logica costruttiva: telai simili, stessi materiali, stessi
+            componenti adattati da altri prodotti. <strong>Cambia il nome. Non
+            cambia il principio.</strong>
+          </p>
+        </div>
+
+        <div class="grid lg:grid-cols-2 gap-10 lg:gap-16 items-start mt-12">
+          <div>
+            <p class="text-base md:text-lg text-white/85 leading-relaxed mb-4">
+              Da quella logica arrivano sempre gli stessi limiti:
+            </p>
+            <ul class="space-y-3 text-white/90">
+              {limiti.map((l) => (
+                <li class="flex items-start gap-3">
+                  <span
+                    class="mt-1.5 inline-block h-1.5 w-1.5 rounded-full bg-[var(--color-accent)] flex-shrink-0"
+                    aria-hidden="true"
+                  ></span>
+                  {l}
+                </li>
+              ))}
+            </ul>
+
+            <p class="text-base md:text-lg text-white/85 leading-relaxed mt-6">
+              Per questo lo scuretto si deforma, la complanarità si perde, la
+              stuccatura cede. <strong>E la linea di matita scompare</strong> —
+              prima all'angolo, poi lungo i lati, poi dovunque si concentri una
+              tensione o un utilizzo ripetuto.
+            </p>
+
+            <blockquote
+              class="mt-8 border-l-4 pl-7 md:pl-9 py-2"
+              style="border-left-color: var(--color-accent);"
+            >
+              <p class="text-lg md:text-xl leading-snug text-white">
+                Non sono difetti occasionali. Sono <strong>limiti
+                strutturali</strong>. Puoi cambiare marca. Non cambia il
+                comportamento.
+              </p>
+            </blockquote>
+          </div>
+
+          <div class="grid grid-cols-2 gap-4">
+            <div
+              class="relative aspect-[3/4] overflow-hidden rounded-2xl bg-[var(--color-charcoal)]"
+            >
+              <img
+                src={withBase("img/prodotto/11-botola-standard-1.webp")}
+                alt="Limite tipico di una botola standard: pannello fuori complanarità"
+                width="800"
+                height="1066"
+                sizes="(min-width: 1024px) 25vw, 50vw"
+                loading="lazy"
+                decoding="async"
+                class="absolute inset-0 h-full w-full object-cover"
+              />
+            </div>
+            <div
+              class="relative aspect-[3/4] overflow-hidden rounded-2xl bg-[var(--color-charcoal)] sm:mt-12"
+            >
+              <img
+                src={withBase("img/prodotto/12-botola-standard-2.webp")}
+                alt="Limite tipico di una botola standard: discontinuità lungo il perimetro"
+                width="800"
+                height="1066"
+                sizes="(min-width: 1024px) 25vw, 50vw"
+                loading="lazy"
+                decoding="async"
+                class="absolute inset-0 h-full w-full object-cover"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================
+         COS'È PERMALINE
+         ============================================ -->
+    <section
+      class="bg-[var(--color-paper)] py-16 md:py-24"
+      aria-labelledby="permaline-title"
+    >
+      <div class="mx-auto max-w-7xl px-5 md:px-8">
+        <div class="max-w-4xl">
+          <span class="brand-mark" aria-hidden="true"></span>
+          <p class="eyebrow mb-3">Cos'è PERMALINE</p>
+          <h2
+            id="permaline-title"
+            class="heading text-3xl md:text-4xl lg:text-5xl leading-tight mb-6"
+          >
+            Un accesso tecnico di precisione
+            <span class="block mt-2 text-[var(--color-charcoal)]/70">
+              progettato per i piccoli impianti che devono restare
+              ispezionabili senza compromettere la continuità della superficie.
+            </span>
+          </h2>
+        </div>
+
+        <div class="grid lg:grid-cols-12 gap-10 lg:gap-12 items-start mt-12">
+          <div class="lg:col-span-7 body-prose">
+            <p class="text-base md:text-lg text-[var(--color-charcoal)]/90 drop-cap">
+              Non chiude semplicemente un foro. Risolve insieme quattro
+              esigenze che nelle soluzioni standard entrano quasi sempre in
+              conflitto:
+            </p>
+
+            <ul class="mt-4 space-y-2 text-[var(--color-charcoal)]/90">
+              {esigenze.map((e) => (
+                <li class="flex items-start gap-3">
+                  <span
+                    class="mt-1.5 inline-block h-1.5 w-1.5 rounded-full bg-[var(--color-accent)] flex-shrink-0"
+                    aria-hidden="true"
+                  ></span>
+                  <strong>{e}</strong>
+                </li>
+              ))}
+            </ul>
+
+            <h3 class="heading text-xl md:text-2xl mt-10 mb-4">
+              Come funziona: un sistema, non una somma di pezzi.
+            </h3>
+
+            <p class="text-base md:text-lg text-[var(--color-charcoal)]/85">
+              L'anta non è in cartongesso: è in <strong>composito di
+              alluminio</strong>. Il telaio è studiato per integrarsi nella
+              costruzione a secco. Il sistema di apertura non è un componente
+              generico adattato — fa parte del sistema fin dalla progettazione.
+            </p>
+
+            <p class="text-base md:text-lg text-[var(--color-charcoal)]/90 mt-4">
+              <strong>Anta, telaio, apertura e logica di posa lavorano insieme
+              come un unico corpo.</strong>
+            </p>
+
+            <p class="text-base md:text-lg text-[var(--color-charcoal)]/85 mt-6">
+              Il risultato in cantiere:
+            </p>
+            <ul class="mt-3 space-y-2 text-[var(--color-charcoal)]/90">
+              {risultati.map((r) => (
+                <li class="flex items-start gap-3">
+                  <span class="text-[var(--color-accent)] font-bold flex-shrink-0">→</span>
+                  {r}
+                </li>
+              ))}
+            </ul>
+
+            <p class="text-lg md:text-xl text-[var(--color-ink)] font-medium mt-8">
+              <strong>Tradotto:</strong>
+              <mark>la linea di matita che vedi alla consegna è quella che
+              ritrovi dopo un anno, dopo cinque anni, dopo cento aperture.</mark>
+            </p>
+          </div>
+
+          <div class="lg:col-span-5">
+            <div
+              class="relative aspect-[3/4] overflow-hidden rounded-2xl bg-[var(--color-bone)] shadow-[0_1px_2px_rgba(0,0,0,0.04),0_20px_40px_-20px_rgba(0,0,0,0.18)]"
+            >
+              <img
+                src={withBase("img/prodotto/03-cos-e-permaline.webp")}
+                alt="Sistema PERMALINE: anta, telaio, apertura e logica di posa come unico corpo"
+                width="900"
+                height="1200"
+                sizes="(min-width: 1024px) 40vw, 100vw"
+                loading="lazy"
+                decoding="async"
+                class="absolute inset-0 h-full w-full object-cover"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================
+         4 BREVETTI + STORIA FONDATORI
+         ============================================ -->
+    <section
+      class="bg-[var(--color-bone)] py-16 md:py-24"
+      aria-labelledby="brevetti-title"
+    >
+      <div class="mx-auto max-w-7xl px-5 md:px-8">
+        <div class="grid lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+          <div class="lg:col-span-5 order-2 lg:order-1">
+            <div
+              class="relative aspect-[4/5] overflow-hidden rounded-2xl bg-[var(--color-bone)] shadow-[0_1px_2px_rgba(0,0,0,0.04),0_20px_40px_-20px_rgba(0,0,0,0.18)]"
+            >
+              <img
+                src={withBase("img/prodotto/04-brevetti.webp")}
+                alt="I 4 brevetti delle Chiusure A FiLO® di COMPASSiN®"
+                width="900"
+                height="1125"
+                sizes="(min-width: 1024px) 40vw, 100vw"
+                loading="lazy"
+                decoding="async"
+                class="absolute inset-0 h-full w-full object-cover"
+              />
+            </div>
+          </div>
+
+          <div class="lg:col-span-7 order-1 lg:order-2 body-prose">
+            <span class="brand-mark" aria-hidden="true"></span>
+            <p class="eyebrow mb-3">Perché solo PERMALINE può dirlo</p>
+            <h2
+              id="brevetti-title"
+              class="heading text-3xl md:text-4xl lg:text-5xl leading-tight mb-6"
+            >
+              <strong>4 brevetti.</strong>
+              <span class="block mt-2 text-[var(--color-charcoal)]/70">
+                E una conoscenza che non si compra.
+              </span>
+            </h2>
+
+            <p class="text-base md:text-lg text-[var(--color-charcoal)]/90">
+              Dietro la semplicità del risultato ci sono 4 brevetti sviluppati
+              all'interno delle <strong>Chiusure A FiLO® di
+              COMPASSiN®</strong>.
+            </p>
+
+            <p class="text-base md:text-lg text-[var(--color-charcoal)]/85 mt-4">
+              PERMALINE® è stata progettata da chi, prima di progettarla,
+              lavorava in cantiere. <strong>I fondatori di COMPASSiN® erano
+              cartongessisti.</strong> Conoscevano i problemi degli accessi
+              tecnici attraverso i ritorni in cantiere e le finiture da rifare.
+            </p>
+
+            <blockquote class="pull-quote mt-8">
+              <p>
+                Quella conoscenza non si replica partendo da un ufficio
+                tecnico. Non si acquisisce commissionando uno studio di
+                mercato. <strong><mark>Non si compra.</mark></strong>
+              </p>
+            </blockquote>
+
+            <p class="text-base md:text-lg text-[var(--color-charcoal)]/85 mt-6">
+              È il motivo per cui ogni scelta costruttiva di PERMALINE®
+              risponde a un problema reale che chi l'ha progettata ha
+              incontrato di persona.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================
+         DOVE HA SENSO - 5 AMBIENTI
+         ============================================ -->
+    <section
+      class="bg-[var(--color-paper)] py-16 md:py-24"
+      aria-labelledby="ambienti-title"
+    >
+      <div class="mx-auto max-w-7xl px-5 md:px-8">
+        <div class="max-w-4xl">
+          <span class="brand-mark" aria-hidden="true"></span>
+          <p class="eyebrow mb-3">Dove ha senso davvero</p>
+          <h2
+            id="ambienti-title"
+            class="heading text-3xl md:text-4xl lg:text-5xl leading-tight mb-6"
+          >
+            Non per ogni cantiere.
+            <span class="block mt-2 text-[var(--color-accent)]">
+              Per quelli in cui la superficie è parte del linguaggio.
+            </span>
+          </h2>
+          <p class="text-base md:text-lg text-[var(--color-charcoal)]/85 leading-relaxed max-w-3xl">
+            C'è una regola semplice che governa il rapporto tra accesso tecnico
+            e rischio estetico: <strong>più è piccolo, più è visibile</strong>.
+            Più l'ambiente è curato, più qualsiasi anomalia diventa
+            intollerabile.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-6 mt-12">
+          {ambienti.map((a) => (
+            <article
+              class="rounded-2xl overflow-hidden border border-[var(--color-line)] bg-white hover:border-[var(--color-charcoal)] transition-colors"
+            >
+              <div class="relative aspect-[16/10] overflow-hidden bg-[var(--color-bone)]">
+                <img
+                  src={a.image}
+                  alt={a.alt}
+                  width="1200"
+                  height="750"
+                  sizes="(min-width: 768px) 50vw, 100vw"
+                  loading="lazy"
+                  decoding="async"
+                  class="absolute inset-0 h-full w-full object-cover"
+                />
+              </div>
+              <div class="p-7 md:p-8">
+                <h3 class="heading text-xl md:text-2xl leading-snug mb-3">
+                  {a.title}
+                </h3>
+                <p class="text-sm md:text-base text-[var(--color-charcoal)]/85 leading-relaxed">
+                  {a.body}
+                </p>
+              </div>
+            </article>
+          ))}
+        </div>
+
+        <div class="mt-12 max-w-3xl body-prose">
+          <p class="text-base md:text-lg text-[var(--color-charcoal)]/90">
+            <strong>Interni contemporanei.</strong> Progetti dove pulizia delle
+            linee e continuità delle superfici sono il linguaggio
+            architettonico stesso — non uno stile, ma la sostanza del progetto.
+          </p>
+          <p class="text-base md:text-lg text-[var(--color-charcoal)]/85 mt-6">
+            Quando l'accesso tecnico si trova su una superficie importante, non
+            è più un dettaglio qualsiasi.
+            <strong><mark>È un punto che conferma la qualità del lavoro.
+            Oppure la tradisce.</mark></strong>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================
+         POSA IN OPERA + VIDEO PLACEHOLDER
+         ============================================ -->
+    <section
+      class="bg-[var(--color-bone)] py-16 md:py-24"
+      aria-labelledby="posa-title"
+    >
+      <div class="mx-auto max-w-7xl px-5 md:px-8">
+        <div class="max-w-4xl">
+          <span class="brand-mark" aria-hidden="true"></span>
+          <p class="eyebrow mb-3">Posa in opera</p>
+          <h2
+            id="posa-title"
+            class="heading text-3xl md:text-4xl lg:text-5xl leading-tight mb-6"
+          >
+            Progettata per installarsi in modo lineare,
+            <span class="block mt-2 text-[var(--color-charcoal)]/70">
+              senza richiedere adattamenti in cantiere.
+            </span>
+          </h2>
+          <p class="text-base md:text-lg text-[var(--color-charcoal)]/85 leading-relaxed max-w-2xl">
+            Il risultato non dipende dall'abilità del singolo posatore.
+            <strong>Dipende dal sistema.</strong>
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-6 mt-12">
+          <article class="rounded-2xl border border-[var(--color-line)] bg-white p-7 md:p-8">
+            <p class="eyebrow mb-3">Posa a parete</p>
+            <h3 class="heading text-xl md:text-2xl leading-snug mb-3">
+              Integrazione precisa nelle pareti in cartongesso
+            </h3>
+            <p class="text-sm md:text-base text-[var(--color-charcoal)]/85 leading-relaxed mb-5">
+              Per accesso agli impianti nascosti. Un processo lineare,
+              progettato per integrarsi nel lavoro senza rallentare il
+              cantiere.
+            </p>
+            <a
+              href="#supporto"
+              class="inline-flex items-center gap-2 text-[var(--color-accent)] font-semibold underline underline-offset-4 hover:text-[#234f37] transition-colors text-sm md:text-base"
+            >
+              → Video posa a parete (in arrivo)
+            </a>
+          </article>
+
+          <article class="rounded-2xl border border-[var(--color-line)] bg-white p-7 md:p-8">
+            <p class="eyebrow mb-3">Posa a soffitto</p>
+            <h3 class="heading text-xl md:text-2xl leading-snug mb-3">
+              Installazione su controsoffitto
+            </h3>
+            <p class="text-sm md:text-base text-[var(--color-charcoal)]/85 leading-relaxed mb-5">
+              Dove precisione e stabilità fanno la differenza nel tempo. Qui
+              vedi come ottenere un risultato pulito fin dalla prima posa.
+            </p>
+            <a
+              href="#supporto"
+              class="inline-flex items-center gap-2 text-[var(--color-accent)] font-semibold underline underline-offset-4 hover:text-[#234f37] transition-colors text-sm md:text-base"
+            >
+              → Video posa a soffitto (in arrivo)
+            </a>
+          </article>
+        </div>
+
+        <div class="mt-12 max-w-3xl rounded-2xl bg-[var(--color-ink)] text-white p-7 md:p-9">
+          <p class="eyebrow mb-3" style="color: rgba(255,255,255,0.7);">
+            Hai dubbi sulla posa del tuo caso specifico?
+          </p>
+          <h3 class="heading text-xl md:text-2xl leading-snug !text-white mb-3">
+            Parla con un tecnico prima di iniziare.
+          </h3>
+          <p class="text-sm md:text-base text-white/85 leading-relaxed mb-5">
+            Descrivici la situazione — impianto, posizione, dimensioni, tipo di
+            supporto — e ti diciamo subito come procedere.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-3">
+            <a
+              href="https://wa.me/393755718600?text=Salve,%20vorrei%20parlare%20del%20supporto%20tecnico%20PERMALINE%20per%20il%20mio%20caso"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center justify-center gap-2 rounded-full bg-[#25D366] px-5 py-3 min-h-11 text-sm font-semibold text-white hover:bg-[#1ea954] transition-colors"
+            >
+              <svg width="18" height="18" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true">
+                <path d="M19.11 17.205c-.372 0-1.088 1.39-1.518 1.39a.63.63 0 0 1-.315-.1c-.802-.402-1.504-.817-2.163-1.447-.545-.516-1.146-1.29-1.46-1.963a.426.426 0 0 1-.073-.215c0-.33.99-.945.99-1.49 0-.143-.73-2.09-.832-2.335-.143-.372-.214-.487-.6-.487-.187 0-.36-.043-.53-.043-.302 0-.53.115-.746.315-.688.645-1.032 1.318-1.06 2.264v.114c-.015.99.472 1.977 1.017 2.78 1.23 1.82 2.506 3.41 4.554 4.34.616.287 2.035.96 2.708.96.387 0 2.135-.387 2.464-.832.225-.305.357-.733.357-1.122 0-.043 0-.043 0-.085-.058-.058-1.39-.83-1.793-.83zm-3.252 5.92h-.014c-1.59 0-3.18-.45-4.554-1.255L7.18 23.013l1.18-3.51A8.84 8.84 0 0 1 7.06 14.6c0-4.872 3.99-8.85 8.86-8.85 2.365 0 4.602.913 6.28 2.578a8.85 8.85 0 0 1 2.6 6.27c-.007 4.876-3.997 8.85-8.943 8.85zm7.563-16.4A10.62 10.62 0 0 0 15.86 4.04 10.55 10.55 0 0 0 5.32 14.6c0 1.85.487 3.654 1.41 5.247L5.236 25.4l5.69-1.49a10.55 10.55 0 0 0 5.045 1.282h.005c5.834 0 10.583-4.74 10.583-10.572 0-2.83-1.09-5.49-3.097-7.495z" />
+              </svg>
+              WhatsApp +39 375 571 8600
+            </a>
+            <a
+              href="mailto:supporto@compassin.it"
+              class="inline-flex items-center justify-center gap-2 rounded-full border-2 border-white/40 px-5 py-3 min-h-11 text-sm font-semibold text-white hover:bg-white hover:text-[var(--color-ink)] transition-colors"
+            >
+              ✉ supporto@compassin.it
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================
+         COSA CAMBIA DAVVERO
+         ============================================ -->
+    <section
+      class="bg-[var(--color-paper)] py-16 md:py-24"
+      aria-labelledby="cambia-title"
+    >
+      <div class="mx-auto max-w-7xl px-5 md:px-8">
+        <div class="max-w-4xl">
+          <span class="brand-mark" aria-hidden="true"></span>
+          <p class="eyebrow mb-3">Cosa cambia davvero</p>
+          <h2
+            id="cambia-title"
+            class="heading text-3xl md:text-4xl lg:text-5xl leading-tight mb-6"
+          >
+            Un risultato verificabile a occhio nudo.
+            <span class="block mt-2 text-[var(--color-accent)]">
+              Non una promessa — un parametro.
+            </span>
+          </h2>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-6 mt-12">
+          <div class="rounded-2xl border border-[var(--color-line)] bg-white p-7 md:p-8">
+            <p class="eyebrow mb-3">Per chi progetta</p>
+            <h3 class="heading text-lg md:text-xl leading-snug mb-3">
+              L'accesso tecnico smette di essere una variabile fuori controllo.
+            </h3>
+            <p class="text-sm md:text-base text-[var(--color-charcoal)]/85 leading-relaxed">
+              Lo definisci con gli stessi criteri con cui hai definito tutto il
+              resto. La linea che hai approvato alla consegna è quella che
+              ritroverai.
+            </p>
+          </div>
+
+          <div class="rounded-2xl border border-[var(--color-line)] bg-white p-7 md:p-8">
+            <p class="eyebrow mb-3">Per chi realizza</p>
+            <h3 class="heading text-lg md:text-xl leading-snug mb-3">
+              Meno ritocchi, meno ritorni, meno variabilità in posa.
+            </h3>
+            <p class="text-sm md:text-base text-[var(--color-charcoal)]/85 leading-relaxed">
+              Chiudi il lavoro e passi al cantiere dopo. Punto.
+            </p>
+          </div>
+
+          <div class="rounded-2xl border-2 border-[var(--color-accent)] bg-[var(--color-accent-soft)] p-7 md:p-8">
+            <p class="eyebrow mb-3" style="color: var(--color-accent);">
+              Per entrambi
+            </p>
+            <h3 class="heading text-lg md:text-xl leading-snug mb-3">
+              Un risultato verificabile a occhio nudo, in qualsiasi momento.
+            </h3>
+            <p class="text-sm md:text-base text-[var(--color-charcoal)]/90 leading-relaxed">
+              Da chiunque. <strong>Non una promessa. Un parametro.</strong>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================
+         TESTIMONIANZE
+         ============================================ -->
+    <section
+      class="bg-[var(--color-bone)] py-16 md:py-24"
+      aria-labelledby="testi-title"
+    >
+      <div class="mx-auto max-w-7xl px-5 md:px-8">
+        <div class="max-w-4xl">
+          <span class="brand-mark" aria-hidden="true"></span>
+          <p class="eyebrow mb-3">Cosa dicono i professionisti</p>
+          <h2
+            id="testi-title"
+            class="heading text-3xl md:text-4xl lg:text-5xl leading-tight mb-6"
+          >
+            Chi l'ha usata
+            <span class="block mt-2 text-[var(--color-accent)]">
+              non è più tornato indietro.
+            </span>
+          </h2>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-6 mt-12">
+          {testimonials.map((t) => (
+            <figure
+              class="rounded-2xl overflow-hidden border border-[var(--color-line)] bg-white flex flex-col md:flex-row"
+            >
+              <div class="relative aspect-square md:aspect-auto md:w-1/3 overflow-hidden bg-[var(--color-bone)] flex-shrink-0">
+                <img
+                  src={t.image}
+                  alt={t.alt}
+                  width="600"
+                  height="600"
+                  sizes="(min-width: 768px) 25vw, 100vw"
+                  loading="lazy"
+                  decoding="async"
+                  class="absolute inset-0 h-full w-full object-cover"
+                />
+              </div>
+              <div class="p-6 md:p-7 flex-1">
+                <blockquote class="text-sm md:text-base text-[var(--color-charcoal)]/90 leading-relaxed mb-4">
+                  <p>«{t.quote}»</p>
+                </blockquote>
+                <figcaption>
+                  <p class="heading text-sm md:text-base leading-snug">
+                    {t.name}
+                  </p>
+                  <p class="text-xs md:text-sm text-[var(--color-charcoal)]/75 mt-1">
+                    {t.studio}
+                  </p>
+                </figcaption>
+              </div>
+            </figure>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================
+         SE VUOI APPROFONDIRE: SPLIT ARCHITETTI / IMPRESE
+         ============================================ -->
+    <section
+      class="bg-[var(--color-paper)] py-16 md:py-24"
+      aria-labelledby="approfondire-title"
+    >
+      <div class="mx-auto max-w-7xl px-5 md:px-8">
+        <div class="text-center max-w-3xl mx-auto">
+          <span class="brand-mark mx-auto" aria-hidden="true"></span>
+          <p class="eyebrow mb-3">Se vuoi approfondire</p>
+          <h2
+            id="approfondire-title"
+            class="heading text-3xl md:text-4xl leading-tight mb-10"
+          >
+            Due percorsi. Lo stesso standard.
+          </h2>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-5 md:gap-6">
+          <a
+            href={withBase("architetti")}
+            class="group block rounded-2xl overflow-hidden bg-[var(--color-ink)] border border-[var(--color-ink)] text-white hover:bg-black transition-all duration-300"
+          >
+            <div class="p-7 md:p-9">
+              <p class="eyebrow mb-3" style="color: rgba(255,255,255,0.7);">
+                Sei un architetto o un progettista?
+              </p>
+              <h3 class="heading text-2xl md:text-3xl leading-snug mb-5 !text-white">
+                Proteggi il controllo del dettaglio
+              </h3>
+              <p class="text-base md:text-lg leading-relaxed mb-8 text-white">
+                Scopri come PERMALINE® protegge il controllo del dettaglio
+                negli ambienti ad alta finitura.
+              </p>
+              <span
+                class="inline-flex items-center gap-2 rounded-full px-5 py-2.5 min-h-11 text-sm font-semibold bg-[var(--color-accent)] text-white group-hover:bg-[#234f37] transition-colors"
+              >
+                Vai alla pagina architetti
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="transition-transform duration-300 group-hover:translate-x-1" aria-hidden="true">
+                  <line x1="5" y1="12" x2="19" y2="12" />
+                  <polyline points="12 5 19 12 12 19" />
+                </svg>
+              </span>
+            </div>
+          </a>
+
+          <a
+            href={withBase("imprese")}
+            class="group block rounded-2xl overflow-hidden bg-white border border-[var(--color-line)] text-[var(--color-ink)] hover:border-[var(--color-charcoal)] transition-all duration-300"
+          >
+            <div class="p-7 md:p-9">
+              <p class="eyebrow mb-3">Sei un'impresa o lavori in cantiere?</p>
+              <h3 class="heading text-2xl md:text-3xl leading-snug mb-5">
+                Posa una volta. E vai avanti.
+              </h3>
+              <p class="text-base md:text-lg leading-relaxed mb-8 text-[var(--color-charcoal)]/90">
+                Scopri perché PERMALINE® è l'accesso tecnico di precisione che
+                posi una volta sola.
+              </p>
+              <span
+                class="inline-flex items-center gap-2 rounded-full px-5 py-2.5 min-h-11 text-sm font-semibold bg-[var(--color-accent)] text-white group-hover:bg-[#234f37] transition-colors"
+              >
+                Vai alla pagina imprese
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="transition-transform duration-300 group-hover:translate-x-1" aria-hidden="true">
+                  <line x1="5" y1="12" x2="19" y2="12" />
+                  <polyline points="12 5 19 12 12 19" />
+                </svg>
+              </span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================
+         SUPPORTO DIRETTO (DARK)
+         ============================================ -->
+    <section
+      id="supporto"
+      class="bg-[var(--color-ink)] py-16 md:py-24 text-white scroll-mt-24"
+      aria-labelledby="supporto-title"
+    >
+      <div class="mx-auto max-w-7xl px-5 md:px-8">
+        <div class="max-w-4xl">
+          <span class="brand-mark" aria-hidden="true"></span>
+          <p class="eyebrow mb-3" style="color: rgba(255,255,255,0.7);">
+            Supporto diretto
+          </p>
+          <h2
+            id="supporto-title"
+            class="heading text-3xl md:text-4xl lg:text-5xl leading-tight mb-6 !text-white"
+          >
+            Hai un progetto in corso o un cantiere da iniziare?
+            <span class="block mt-2 text-white/70">
+              Parla con un tecnico COMPASSiN®.
+            </span>
+          </h2>
+          <p class="text-base md:text-lg text-white/85 leading-relaxed max-w-3xl">
+            Prima si chiarisce il tipo di accesso da gestire, più è facile
+            evitare compromessi, errori e ritorni inutili.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-5 mt-12 max-w-5xl">
+          <a
+            href="https://wa.me/393755718600?text=Salve,%20vorrei%20parlare%20del%20supporto%20tecnico%20PERMALINE"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="rounded-2xl border border-white/15 bg-white/5 p-7 md:p-8 hover:border-white/40 hover:bg-white/10 transition-colors backdrop-blur-sm group"
+          >
+            <p class="eyebrow mb-3" style="color: rgba(255,255,255,0.7);">
+              WhatsApp
+            </p>
+            <h3 class="heading text-lg md:text-xl leading-snug mb-2 !text-white">
+              +39 375 571 8600
+            </h3>
+            <p class="text-sm text-white/75 leading-relaxed">
+              Risposta rapida in giornata, anche con foto del cantiere.
+            </p>
+          </a>
+
+          <a
+            href="tel:+390298281059"
+            class="rounded-2xl border border-white/15 bg-white/5 p-7 md:p-8 hover:border-white/40 hover:bg-white/10 transition-colors backdrop-blur-sm group"
+          >
+            <p class="eyebrow mb-3" style="color: rgba(255,255,255,0.7);">
+              Telefono
+            </p>
+            <h3 class="heading text-lg md:text-xl leading-snug mb-2 !text-white">
+              +39 02 98 28 10 59
+            </h3>
+            <p class="text-sm text-white/75 leading-relaxed">
+              Per chiarire dubbi tecnici direttamente con un nostro tecnico.
+            </p>
+          </a>
+
+          <a
+            href="mailto:supporto@compassin.it"
+            class="rounded-2xl border-2 border-[var(--color-accent)] bg-[var(--color-accent)]/10 p-7 md:p-8 hover:bg-[var(--color-accent)]/20 transition-colors backdrop-blur-sm group"
+          >
+            <p class="eyebrow mb-3" style="color: var(--color-accent);">
+              Email
+            </p>
+            <h3 class="heading text-lg md:text-xl leading-snug mb-2 !text-white">
+              supporto@compassin.it
+            </h3>
+            <p class="text-sm text-white/85 leading-relaxed">
+              Richiesta tecnica dedicata, con risposta entro 24h lavorative.
+            </p>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+  <WhatsAppFloating />
+</BaseLayout>
