@@ -1,0 +1,89 @@
+---
+import { withBase } from "@/lib/url";
+
+const casi = [
+  {
+    image: withBase("img/home/ambiente-banca.webp"),
+    label: "Banca",
+    body: "Sportello tecnico nascosto in ambiente direzionale, integrato nella superficie continua.",
+  },
+  {
+    image: withBase("img/home/ambiente-chiavari.webp"),
+    label: "Hospitality",
+    body: "Residenza privata, accesso tecnico a parete senza interrompere la linea della finitura.",
+  },
+  {
+    image: withBase("img/home/ambiente-negozio-soffitto.webp"),
+    label: "Retail",
+    body: "Installazione a soffitto in spazio commerciale, fuga uniforme verificabile a luce radente.",
+  },
+  {
+    image: withBase("img/home/ambiente-extra.webp"),
+    label: "Residenziale",
+    body: "Accesso tecnico a parete in residenza privata, perfetta complanarità con la superficie.",
+  },
+  {
+    image: withBase("img/home/01-prodotto-1.webp"),
+    label: "Dettaglio costruttivo",
+    body: "La linea perimetrale di PERMALINE in primo piano: costante, sottile, uniforme.",
+  },
+  {
+    image: withBase("img/home/02-prodotto-2.webp"),
+    label: "Sistema tecnico",
+    body: "Anta in composito di alluminio, telaio integrato, apertura precisa: un unico sistema.",
+  },
+];
+---
+
+<section
+  class="bg-[var(--color-bone)] py-16 md:py-24"
+  aria-labelledby="opera-title"
+>
+  <div class="mx-auto max-w-7xl px-5 md:px-8">
+    <div class="text-center max-w-3xl mx-auto">
+      <span class="brand-mark mx-auto" aria-hidden="true"></span>
+      <p class="eyebrow mb-3">PERMALINE in opera</p>
+      <h2
+        id="opera-title"
+        class="heading text-3xl md:text-4xl leading-tight mb-4"
+      >
+        Casi reali, ambienti diversi.
+        <span class="block mt-2 text-[var(--color-accent)]">
+          Lo stesso standard.
+        </span>
+      </h2>
+      <p class="text-base md:text-lg text-[var(--color-charcoal)]/85 leading-relaxed">
+        Banca, retail, hospitality, residenziale. Installazioni a parete e
+        soffitto, su misura, in contesti dove la superficie è parte del
+        progetto.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mt-12">
+      {casi.map((caso) => (
+        <figure
+          class="group rounded-2xl overflow-hidden border border-[var(--color-line)] bg-white hover:border-[var(--color-charcoal)] transition-colors"
+        >
+          <div class="relative aspect-[4/3] overflow-hidden bg-[var(--color-bone)]">
+            <img
+              src={caso.image}
+              alt={caso.body}
+              width="1200"
+              height="900"
+              sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+              loading="lazy"
+              decoding="async"
+              class="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+            />
+          </div>
+          <figcaption class="p-5 md:p-6">
+            <p class="eyebrow mb-2">{caso.label}</p>
+            <p class="text-sm md:text-base text-[var(--color-charcoal)]/85 leading-relaxed">
+              {caso.body}
+            </p>
+          </figcaption>
+        </figure>
+      ))}
+    </div>
+  </div>
+</section>
