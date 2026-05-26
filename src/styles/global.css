@@ -133,21 +133,18 @@ body.no-scroll {
   }
 }
 
-/* Underline "linea di matita" LORI fix #3 */
+/* Underline "linea di matita" — wavy verde per non confondersi con link */
 .pencil-underline {
-  position: relative;
-  display: inline-block;
-  padding-bottom: 0.1em;
+  text-decoration: underline wavy var(--color-accent);
+  text-decoration-thickness: 1.5px;
+  text-underline-offset: 5px;
 }
 
-.pencil-underline::after {
-  content: "";
-  position: absolute;
-  left: -0.15em;
-  right: -0.15em;
-  bottom: 0;
-  height: 2px;
-  background: var(--color-ink);
+/* Variante su fondo scuro: wavy bianco */
+.pencil-underline-white {
+  text-decoration: underline wavy rgba(255, 255, 255, 0.85);
+  text-decoration-thickness: 1.5px;
+  text-underline-offset: 5px;
 }
 
 /* Focus visibile globale PIXEL fix critico a11y */
