@@ -1,0 +1,66 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import Header from "@/components/Header.astro";
+import Footer from "@/components/Footer.astro";
+import WhatsAppFloating from "@/components/WhatsAppFloating.astro";
+import { withBase } from "@/lib/url";
+---
+
+<BaseLayout
+  title="Grazie | Richiesta prima PERMALINE ricevuta | PERMALINE®"
+  description="Abbiamo ricevuto la tua richiesta di prima PERMALINE. Ti ricontattiamo entro 24-48 ore lavorative con pricing, condizioni e tempi di consegna."
+>
+  <Header />
+
+  <main class="flex-1 flex items-center">
+    <section
+      class="w-full bg-[var(--color-paper)] py-20 md:py-32"
+      aria-labelledby="grazie-title"
+    >
+      <div class="mx-auto max-w-3xl px-5 md:px-8 text-center">
+        <span class="brand-mark mx-auto" aria-hidden="true"></span>
+        <p class="eyebrow mb-4">Richiesta ricevuta</p>
+
+        <h1
+          id="grazie-title"
+          class="heading text-3xl md:text-4xl lg:text-5xl leading-tight mb-6"
+        >
+          Grazie. Ti rispondiamo con prezzo e tempi.
+        </h1>
+
+        <p
+          class="text-lg md:text-xl text-[var(--color-charcoal)]/85 leading-relaxed mb-6"
+        >
+          Entro <strong>24-48 ore lavorative</strong> ti ricontattiamo con
+          pricing della prima PERMALINE, condizioni di consegna e modalità di
+          installazione adatte al tuo cantiere.
+        </p>
+
+        <p class="text-base md:text-lg text-[var(--color-charcoal)]/75 leading-relaxed mb-10">
+          Se vuoi anticipare i tempi, puoi scriverci direttamente su WhatsApp.
+          Rispondiamo negli orari di ufficio.
+        </p>
+
+        <div class="flex flex-col sm:flex-row gap-3 justify-center">
+          <a
+            href="https://wa.me/393755718600"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center justify-center rounded-full bg-[var(--color-accent)] px-6 py-3.5 min-h-11 text-sm font-semibold text-white hover:bg-[#234f37] transition-colors"
+          >
+            Scrivi su WhatsApp
+          </a>
+          <a
+            href={withBase("imprese")}
+            class="inline-flex items-center justify-center rounded-full border border-[var(--color-line)] px-6 py-3.5 min-h-11 text-sm font-semibold text-[var(--color-charcoal)] hover:border-[var(--color-charcoal)] transition-colors"
+          >
+            Torna a Imprese
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+  <WhatsAppFloating />
+</BaseLayout>

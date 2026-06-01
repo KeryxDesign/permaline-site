@@ -1,0 +1,84 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import Header from "@/components/Header.astro";
+import Footer from "@/components/Footer.astro";
+import WhatsAppFloating from "@/components/WhatsAppFloating.astro";
+import { withBase } from "@/lib/url";
+---
+
+<BaseLayout
+  title="Pagina non trovata | PERMALINE®"
+  description="L'indirizzo che hai digitato non corrisponde a nessuna pagina del sito PERMALINE."
+>
+  <Header />
+
+  <main class="flex-1 flex items-center">
+    <section
+      class="w-full bg-[var(--color-paper)] py-20 md:py-32"
+      aria-labelledby="error-title"
+    >
+      <div class="mx-auto max-w-3xl px-5 md:px-8 text-center">
+        <p
+          class="eyebrow mb-4"
+          style="color: var(--color-accent);"
+        >
+          Errore 404
+        </p>
+
+        <h1
+          id="error-title"
+          class="heading text-3xl md:text-4xl lg:text-5xl leading-tight mb-6"
+        >
+          Qui non c'è linea da proteggere.
+        </h1>
+
+        <p
+          class="text-lg md:text-xl text-[var(--color-charcoal)]/85 leading-relaxed mb-6"
+        >
+          L'indirizzo che hai digitato non corrisponde a nessuna pagina del sito.
+          Forse il link è vecchio, o c'è un refuso nell'URL.
+        </p>
+
+        <p class="text-base md:text-lg text-[var(--color-charcoal)]/75 leading-relaxed mb-10">
+          Puoi ripartire da una di queste pagine.
+        </p>
+
+        <div class="flex flex-col sm:flex-row gap-3 justify-center flex-wrap">
+          <a
+            href={withBase("")}
+            class="inline-flex items-center justify-center rounded-full bg-[var(--color-accent)] px-6 py-3.5 min-h-11 text-sm font-semibold text-white hover:bg-[#234f37] transition-colors"
+          >
+            Pagina principale
+          </a>
+          <a
+            href={withBase("cos-e-permaline")}
+            class="inline-flex items-center justify-center rounded-full border border-[var(--color-line)] px-6 py-3.5 min-h-11 text-sm font-semibold text-[var(--color-charcoal)] hover:border-[var(--color-charcoal)] transition-colors"
+          >
+            Cos'è PERMALINE
+          </a>
+          <a
+            href={withBase("architetti")}
+            class="inline-flex items-center justify-center rounded-full border border-[var(--color-line)] px-6 py-3.5 min-h-11 text-sm font-semibold text-[var(--color-charcoal)] hover:border-[var(--color-charcoal)] transition-colors"
+          >
+            Architetti
+          </a>
+          <a
+            href={withBase("imprese")}
+            class="inline-flex items-center justify-center rounded-full border border-[var(--color-line)] px-6 py-3.5 min-h-11 text-sm font-semibold text-[var(--color-charcoal)] hover:border-[var(--color-charcoal)] transition-colors"
+          >
+            Imprese
+          </a>
+          <a
+            href={withBase("contatti")}
+            class="inline-flex items-center justify-center rounded-full border border-[var(--color-line)] px-6 py-3.5 min-h-11 text-sm font-semibold text-[var(--color-charcoal)] hover:border-[var(--color-charcoal)] transition-colors"
+          >
+            Contatti
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+  <WhatsAppFloating />
+</BaseLayout>

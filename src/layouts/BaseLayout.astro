@@ -96,6 +96,9 @@ const jsonLd = {
       <meta name="robots" content="noindex, nofollow" />
     )}
 
+    <!-- Anti-clickjacking: impedisce embedding in iframe esterni -->
+    <meta http-equiv="Content-Security-Policy" content="frame-ancestors 'none'" />
+
     {isProduction && (
       <>
         <script is:inline>
@@ -153,6 +156,57 @@ const jsonLd = {
     />
 
     <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+
+    <!-- UTM capture (persistente in sessione) + GA4 conversion event sui form lead -->
+    <script is:inline>
+      (function () {
+        var UTM_KEYS = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content'];
+        var EXTRA_KEYS = ['initial_referrer', 'landing_page'];
+
+        // 1) Salva UTM + referrer + landing_page in sessionStorage al primo arrivo
+        try {
+          var params = new URLSearchParams(window.location.search);
+          UTM_KEYS.forEach(function (k) {
+            var v = params.get(k);
+            if (v && !sessionStorage.getItem(k)) sessionStorage.setItem(k, v);
+          });
+          if (!sessionStorage.getItem('initial_referrer')) {
+            sessionStorage.setItem('initial_referrer', document.referrer || '(direct)');
+          }
+          if (!sessionStorage.getItem('landing_page')) {
+            sessionStorage.setItem('landing_page', window.location.pathname);
+          }
+        } catch (e) {}
+
+        // 2) Popola hidden field nei form Formsubmit + invia evento GA4 al submit
+        document.addEventListener('DOMContentLoaded', function () {
+          var forms = document.querySelectorAll('form[action*="formsubmit.co"]');
+          forms.forEach(function (form) {
+            // Inietta UTM + referrer + landing_page come hidden
+            UTM_KEYS.concat(EXTRA_KEYS).forEach(function (name) {
+              if (form.querySelector('input[name="' + name + '"]')) return;
+              var input = document.createElement('input');
+              input.type = 'hidden';
+              input.name = name;
+              try { input.value = sessionStorage.getItem(name) || ''; } catch (e) { input.value = ''; }
+              form.appendChild(input);
+            });
+
+            // GA4 conversion event al submit (parte anche con consent denied, come modeled)
+            form.addEventListener('submit', function () {
+              if (typeof window.gtag === 'function') {
+                var formType = form.getAttribute('data-form-type') || 'unknown';
+                window.gtag('event', 'generate_lead', {
+                  form_type: formType,
+                  value: 1,
+                  currency: 'EUR'
+                });
+              }
+            });
+          });
+        });
+      })();
+    </script>
   </head>
   <body class="min-h-screen flex flex-col">
     <slot />
