@@ -10,40 +10,74 @@ import { withBase } from "@/lib/url";
   aria-describedby="cookie-body"
   data-cookie-banner
 >
-  <h2 id="cookie-title" class="heading text-lg mb-2">Cookie tecnici</h2>
+  <h2 id="cookie-title" class="heading text-lg mb-2">Privacy e cookie</h2>
   <p id="cookie-body" class="text-sm text-[var(--color-charcoal)]/85 leading-relaxed mb-4">
-    Usiamo solo cookie tecnici essenziali per il funzionamento del sito.
-    Nessun cookie di profilazione, nessun tracking di terze parti.
+    Usiamo cookie tecnici per far funzionare il sito e
+    <strong>Google Analytics</strong> per capire come viene letto.
+    Niente pubblicità personalizzata, niente vendita dei tuoi dati.
   </p>
-  <div class="flex flex-col sm:flex-row gap-2">
+  <div class="flex flex-col sm:flex-row gap-2 mb-3">
     <button
       type="button"
-      class="inline-flex items-center justify-center rounded-full bg-[var(--color-charcoal)] px-5 py-2.5 min-h-11 text-sm font-semibold text-white hover:bg-[var(--color-ink)] transition-colors"
+      class="inline-flex items-center justify-center rounded-full bg-[var(--color-charcoal)] px-5 py-2.5 min-h-11 text-sm font-semibold text-white hover:bg-[var(--color-ink)] transition-colors flex-1"
       data-cookie-accept
     >
-      Ho capito
+      Accetta
     </button>
-    <a
-      href={withBase("privacy")}
-      class="inline-flex items-center justify-center rounded-full border border-[var(--color-line)] px-5 py-2.5 min-h-11 text-sm font-semibold text-[var(--color-charcoal)] hover:border-[var(--color-charcoal)] transition-colors"
+    <button
+      type="button"
+      class="inline-flex items-center justify-center rounded-full border border-[var(--color-line)] px-5 py-2.5 min-h-11 text-sm font-semibold text-[var(--color-charcoal)] hover:border-[var(--color-charcoal)] transition-colors flex-1"
+      data-cookie-reject
     >
-      Privacy policy
-    </a>
+      Rifiuta
+    </button>
   </div>
+  <a
+    href={withBase("privacy")}
+    class="inline-block text-xs text-[var(--color-charcoal)]/70 hover:text-[var(--color-charcoal)] underline underline-offset-2"
+  >
+    Leggi la privacy policy
+  </a>
 </aside>
 
 <script>
   const KEY = "permaline.cookie.v1";
   const banner = document.getElementById("cookie-banner");
   const accept = document.querySelector("[data-cookie-accept]");
+  const reject = document.querySelector("[data-cookie-reject]");
 
-  if (banner && !localStorage.getItem(KEY)) {
-    // Mostra dopo un piccolo delay per non disturbare la prima impressione
+  // Mostra il banner solo se non c'è una scelta esplicita su analytics
+  let savedAnalytics: string | null = null;
+  try {
+    const raw = localStorage.getItem(KEY);
+    if (raw) {
+      const parsed = JSON.parse(raw);
+      if (parsed && (parsed.analytics === "granted" || parsed.analytics === "denied")) {
+        savedAnalytics = parsed.analytics;
+      }
+    }
+  } catch (e) {
+    // ignore
+  }
+
+  if (banner && !savedAnalytics) {
     setTimeout(() => banner.classList.remove("hidden"), 1200);
   }
 
-  accept?.addEventListener("click", () => {
-    localStorage.setItem(KEY, JSON.stringify({ accepted: true, ts: Date.now() }));
+  function setConsent(analytics: "granted" | "denied") {
+    localStorage.setItem(
+      KEY,
+      JSON.stringify({ analytics, ts: Date.now() })
+    );
+    // Aggiorna Consent Mode v2 (gtag inizializzato in BaseLayout solo in production)
+    if (typeof (window as any).gtag === "function") {
+      (window as any).gtag("consent", "update", {
+        analytics_storage: analytics,
+      });
+    }
     banner?.classList.add("hidden");
-  });
+  }
+
+  accept?.addEventListener("click", () => setConsent("granted"));
+  reject?.addEventListener("click", () => setConsent("denied"));
 </script>

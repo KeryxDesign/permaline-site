@@ -96,6 +96,37 @@ const jsonLd = {
       <meta name="robots" content="noindex, nofollow" />
     )}
 
+    {isProduction && (
+      <>
+        <script is:inline>
+          // Google Consent Mode v2 — default deny, override con consenso salvato
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          window.gtag = gtag;
+
+          var analyticsConsent = 'denied';
+          try {
+            var saved = JSON.parse(localStorage.getItem('permaline.cookie.v1') || 'null');
+            if (saved && saved.analytics === 'granted') analyticsConsent = 'granted';
+          } catch (e) {}
+
+          gtag('consent', 'default', {
+            'ad_storage': 'denied',
+            'ad_user_data': 'denied',
+            'ad_personalization': 'denied',
+            'analytics_storage': analyticsConsent,
+            'functionality_storage': 'granted',
+            'security_storage': 'granted',
+            'wait_for_update': 500
+          });
+
+          gtag('js', new Date());
+          gtag('config', 'G-BTEK711MN0', { anonymize_ip: true });
+        </script>
+        <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-BTEK711MN0"></script>
+      </>
+    )}
+
     <link rel="icon" type="image/png" href={withBase("favicon.png")} />
 
     <meta property="og:type" content="website" />
