@@ -19,6 +19,9 @@ const {
 const canonical = new URL(Astro.url.pathname, Astro.site).toString();
 const ogImageAbsolute = new URL(ogImage, Astro.site).toString();
 
+// Indicizzazione: noindex su preview (GitHub Pages), index su permaline.it
+const isProduction = process.env.DEPLOY_TARGET === 'production';
+
 const jsonLd = {
   "@context": "https://schema.org",
   "@graph": [
@@ -89,8 +92,9 @@ const jsonLd = {
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
 
-    <!-- Temp domain: blocca indicizzazione finche non si migra a permaline.it -->
-    <meta name="robots" content="noindex, nofollow" />
+    {!isProduction && (
+      <meta name="robots" content="noindex, nofollow" />
+    )}
 
     <link rel="icon" type="image/png" href={withBase("favicon.png")} />
 
