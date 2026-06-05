@@ -784,12 +784,18 @@ const testimonials = [
                 </a>
               </div>
             </div>
-            {/* SLOT PERSONA SCONTORNATA — placeholder per foto tecnico scontornato (sfondo trasparente). Sostituire SVG con <img src="img/prodotto/cta-tecnico.webp" /> quando arriva foto stock. */}
-            <div class="relative bg-gradient-to-br from-[var(--color-charcoal)] to-[var(--color-ink)] flex items-end justify-center min-h-[200px] md:min-h-[280px]" aria-hidden="true">
-              <svg viewBox="0 0 200 240" class="absolute bottom-0 left-1/2 -translate-x-1/2 h-[90%] w-auto" xmlns="http://www.w3.org/2000/svg">
-                <ellipse cx="100" cy="60" rx="34" ry="38" fill="rgba(255,255,255,0.18)" />
-                <path d="M32 240 Q32 130 100 130 Q168 130 168 240 Z" fill="rgba(255,255,255,0.18)" />
-              </svg>
+            <div class="relative min-h-[260px] md:min-h-[320px] overflow-hidden">
+              <img
+                src={withBase("img/prodotto/cta-assistenza.webp")}
+                alt="Tecnici Chiusure A FiLO al lavoro su un progetto: confronto tecnico dedicato"
+                width="1200"
+                height="1600"
+                sizes="(min-width: 768px) 40vw, 100vw"
+                loading="lazy"
+                decoding="async"
+                class="absolute inset-0 h-full w-full object-cover object-center"
+              />
+              <div class="absolute inset-0 bg-gradient-to-l from-transparent via-transparent to-[var(--color-ink)]/30" aria-hidden="true"></div>
             </div>
           </div>
         </div>
@@ -1060,12 +1066,18 @@ const testimonials = [
               evitare compromessi, errori e ritorni inutili.
             </p>
           </div>
-          {/* SLOT PERSONA SCONTORNATA — placeholder per foto tecnico scontornato (sfondo trasparente). Sostituire SVG con <img src="img/prodotto/cta-tecnico.webp" /> quando arriva foto stock. */}
-          <div class="relative flex items-end justify-center min-h-[240px] md:min-h-[320px]" aria-hidden="true">
-            <svg viewBox="0 0 200 240" class="h-full w-auto max-h-[360px]" xmlns="http://www.w3.org/2000/svg">
-              <ellipse cx="100" cy="60" rx="34" ry="38" fill="rgba(255,255,255,0.18)" />
-              <path d="M32 240 Q32 130 100 130 Q168 130 168 240 Z" fill="rgba(255,255,255,0.18)" />
-            </svg>
+          <div class="relative min-h-[300px] md:min-h-[400px] rounded-2xl overflow-hidden">
+            <img
+              src={withBase("img/prodotto/cta-assistenza.webp")}
+              alt="Tecnici Chiusure A FiLO al lavoro su un progetto: supporto diretto su capitolato e cantiere"
+              width="1200"
+              height="1600"
+              sizes="(min-width: 768px) 33vw, 100vw"
+              loading="lazy"
+              decoding="async"
+              class="absolute inset-0 h-full w-full object-cover object-center"
+            />
+            <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[var(--color-ink)]/40" aria-hidden="true"></div>
           </div>
         </div>
 
