@@ -208,8 +208,8 @@ const usi = [
               class="relative aspect-[4/3] md:aspect-[5/4] overflow-hidden rounded-2xl bg-[var(--color-bone)] shadow-[0_1px_2px_rgba(0,0,0,0.04),0_20px_40px_-20px_rgba(0,0,0,0.18)]"
             >
               <img
-                src={withBase("img/imprese/01-hero.webp")}
-                alt="Accesso tecnico PERMALINE installato a filo in cantiere finito"
+                src={withBase("img/imprese/14-prima-foto-new.webp")}
+                alt="Accesso tecnico PERMALINE installato a filo: superficie continua dopo la posa"
                 width="1600"
                 height="1200"
                 sizes="(min-width: 1024px) 50vw, 100vw"
@@ -320,14 +320,28 @@ const usi = [
           </p>
         </div>
 
-        <div class="grid lg:grid-cols-3 gap-10 lg:gap-12 items-start mt-12">
-          <div class="lg:col-span-1">
+        <div class="grid lg:grid-cols-3 gap-10 lg:gap-12 items-stretch mt-12">
+          <div class="lg:col-span-1 grid gap-5">
             <div
               class="relative aspect-[4/3] overflow-hidden rounded-2xl bg-[var(--color-charcoal)] shadow-[0_1px_2px_rgba(0,0,0,0.04),0_20px_40px_-20px_rgba(0,0,0,0.5)]"
             >
               <img
                 src={withBase("img/imprese/03-quanto-costa.webp")}
                 alt="Calcolatrice e fattura: il costo invisibile dei ritorni in cantiere"
+                width="1200"
+                height="900"
+                sizes="(min-width: 1024px) 33vw, 100vw"
+                loading="lazy"
+                decoding="async"
+                class="absolute inset-0 h-full w-full object-cover"
+              />
+            </div>
+            <div
+              class="relative aspect-[4/3] overflow-hidden rounded-2xl bg-[var(--color-charcoal)] shadow-[0_1px_2px_rgba(0,0,0,0.04),0_20px_40px_-20px_rgba(0,0,0,0.5)]"
+            >
+              <img
+                src={withBase("img/imprese/15-quanto-ti-costa-extra.webp")}
+                alt="Quanto ti costa davvero un ritorno in cantiere: il dettaglio del problema reale"
                 width="1200"
                 height="900"
                 sizes="(min-width: 1024px) 33vw, 100vw"
@@ -399,31 +413,31 @@ const usi = [
               Quando pensi che una botola valga l'altra, la scelta smette di
               essere tecnica e diventa automatica. Allora scegli:
             </p>
-            <ul class="mt-4 space-y-2 text-[var(--color-charcoal)]/85">
+            <ul class="mt-4 space-y-2 text-base md:text-lg text-[var(--color-charcoal)]/85">
               <li class="flex items-start gap-3">
                 <span
-                  class="mt-1.5 inline-block h-1.5 w-1.5 rounded-full bg-[var(--color-accent)] flex-shrink-0"
+                  class="mt-2.5 inline-block h-1.5 w-1.5 rounded-full bg-[var(--color-accent)] flex-shrink-0"
                   aria-hidden="true"
                 ></span>
                 quella che costa meno
               </li>
               <li class="flex items-start gap-3">
                 <span
-                  class="mt-1.5 inline-block h-1.5 w-1.5 rounded-full bg-[var(--color-accent)] flex-shrink-0"
+                  class="mt-2.5 inline-block h-1.5 w-1.5 rounded-full bg-[var(--color-accent)] flex-shrink-0"
                   aria-hidden="true"
                 ></span>
                 quella disponibile subito
               </li>
               <li class="flex items-start gap-3">
                 <span
-                  class="mt-1.5 inline-block h-1.5 w-1.5 rounded-full bg-[var(--color-accent)] flex-shrink-0"
+                  class="mt-2.5 inline-block h-1.5 w-1.5 rounded-full bg-[var(--color-accent)] flex-shrink-0"
                   aria-hidden="true"
                 ></span>
                 quella che hai sempre usato
               </li>
               <li class="flex items-start gap-3">
                 <span
-                  class="mt-1.5 inline-block h-1.5 w-1.5 rounded-full bg-[var(--color-accent)] flex-shrink-0"
+                  class="mt-2.5 inline-block h-1.5 w-1.5 rounded-full bg-[var(--color-accent)] flex-shrink-0"
                   aria-hidden="true"
                 ></span>
                 quella che «tanto basta chiudere il foro»
@@ -438,6 +452,43 @@ const usi = [
               Ma il vero costo non è quando compri. È quando si crepa, l'anta
               si abbassa, la fuga cambia, devi tornare a sistemarla, il cliente
               si lamenta, perdi tempo che nessuno ti paga.
+            </p>
+
+            <p class="text-base md:text-lg text-[var(--color-charcoal)]/90 mt-6">
+              <strong>Se hai:</strong>
+            </p>
+            <ul class="mt-3 space-y-2 text-base md:text-lg text-[var(--color-charcoal)]/85">
+              <li class="flex items-start gap-3">
+                <span
+                  class="mt-2.5 inline-block h-1.5 w-1.5 rounded-full bg-[var(--color-accent)] flex-shrink-0"
+                  aria-hidden="true"
+                ></span>
+                pannello mobile in cartongesso
+              </li>
+              <li class="flex items-start gap-3">
+                <span
+                  class="mt-2.5 inline-block h-1.5 w-1.5 rounded-full bg-[var(--color-accent)] flex-shrink-0"
+                  aria-hidden="true"
+                ></span>
+                telaio pensato per adattarsi e non per integrarsi
+              </li>
+              <li class="flex items-start gap-3">
+                <span
+                  class="mt-2.5 inline-block h-1.5 w-1.5 rounded-full bg-[var(--color-accent)] flex-shrink-0"
+                  aria-hidden="true"
+                ></span>
+                componenti standard soggetti a usura
+              </li>
+              <li class="flex items-start gap-3">
+                <span
+                  class="mt-2.5 inline-block h-1.5 w-1.5 rounded-full bg-[var(--color-accent)] flex-shrink-0"
+                  aria-hidden="true"
+                ></span>
+                sistemi di apertura generici
+              </li>
+            </ul>
+            <p class="text-base md:text-lg text-[var(--color-charcoal)]/90 mt-4">
+              <strong>stai scegliendo varianti dello stesso problema.</strong>
             </p>
 
             <blockquote class="pull-quote mt-8">
@@ -467,18 +518,38 @@ const usi = [
           </div>
         </div>
 
+        <div class="mt-14 rounded-2xl bg-[var(--color-bone)] border-2 border-[var(--color-accent)]/30 overflow-hidden">
+          <div class="grid md:grid-cols-[1fr_1fr] items-stretch">
+            <div class="p-7 md:p-10 flex flex-col justify-center body-prose">
+              <p class="eyebrow mb-3">Il test che chiude la discussione</p>
+              <p class="text-base md:text-lg text-[var(--color-charcoal)]/90">
+                C'è un modo semplice per verificarlo. Si chiama
+                <strong class="pencil-underline">linea di matita</strong>.
+              </p>
+              <p class="text-base md:text-lg text-[var(--color-charcoal)]/85 mt-4">
+                Dopo la posa, osserva il perimetro dell'accesso con luce radente.
+                Se la fuga è uniforme, costante, sottile come il tratto di una
+                matita: il lavoro è fatto bene. Se cambia spessore, si interrompe,
+                racconta il cedimento di un materiale: <em>prima o poi ti
+                richiamano</em>.
+              </p>
+            </div>
+            <div class="relative aspect-[4/3] md:aspect-auto bg-[var(--color-bone)]">
+              <img
+                src={withBase("img/imprese/16-linea-matita.webp")}
+                alt="Linea di matita: la fuga perimetrale costante che certifica il lavoro fatto bene"
+                width="1200"
+                height="900"
+                sizes="(min-width: 768px) 50vw, 100vw"
+                loading="lazy"
+                decoding="async"
+                class="absolute inset-0 h-full w-full object-cover"
+              />
+            </div>
+          </div>
+        </div>
+
         <div class="mt-12 max-w-3xl body-prose">
-          <p class="text-base md:text-lg text-[var(--color-charcoal)]/90">
-            C'è un modo semplice per verificarlo. Si chiama
-            <strong class="pencil-underline">linea di matita</strong>.
-          </p>
-          <p class="text-base md:text-lg text-[var(--color-charcoal)]/85 mt-4">
-            Dopo la posa, osserva il perimetro dell'accesso con luce radente.
-            Se la fuga è uniforme, costante, sottile come il tratto di una
-            matita: il lavoro è fatto bene. Se cambia spessore, si interrompe,
-            racconta il cedimento di un materiale: <em>prima o poi ti
-            richiamano</em>.
-          </p>
           <p class="text-base md:text-lg text-[var(--color-charcoal)]/85 mt-4">
             Non serve uno strumento. Non serve uno specialista. Basta guardare.
             <strong>E quella linea ti dice già adesso se ci tornerai sopra o
@@ -511,7 +582,7 @@ const usi = [
           </h2>
         </div>
 
-        <div class="grid lg:grid-cols-12 gap-10 lg:gap-12 items-start mt-12">
+        <div class="grid lg:grid-cols-12 gap-10 lg:gap-12 items-stretch mt-12">
           <div class="lg:col-span-7 body-prose">
             <p class="text-base md:text-lg text-[var(--color-charcoal)]/90 drop-cap">
               PERMALINE nasce per piccoli impianti a parete e soffitto dove
@@ -522,24 +593,24 @@ const usi = [
             <p class="text-base md:text-lg text-[var(--color-charcoal)]/85 mt-4">
               Sotto la finitura c'è:
             </p>
-            <ul class="mt-3 space-y-2 text-[var(--color-charcoal)]/90">
+            <ul class="mt-3 space-y-2 text-base md:text-lg text-[var(--color-charcoal)]/90">
               <li class="flex items-start gap-3">
                 <span
-                  class="mt-1.5 inline-block h-1.5 w-1.5 rounded-full bg-[var(--color-accent)] flex-shrink-0"
+                  class="mt-2.5 inline-block h-1.5 w-1.5 rounded-full bg-[var(--color-accent)] flex-shrink-0"
                   aria-hidden="true"
                 ></span>
                 <strong>telaio stabile</strong>
               </li>
               <li class="flex items-start gap-3">
                 <span
-                  class="mt-1.5 inline-block h-1.5 w-1.5 rounded-full bg-[var(--color-accent)] flex-shrink-0"
+                  class="mt-2.5 inline-block h-1.5 w-1.5 rounded-full bg-[var(--color-accent)] flex-shrink-0"
                   aria-hidden="true"
                 ></span>
                 <strong>anta in composito di alluminio</strong>
               </li>
               <li class="flex items-start gap-3">
                 <span
-                  class="mt-1.5 inline-block h-1.5 w-1.5 rounded-full bg-[var(--color-accent)] flex-shrink-0"
+                  class="mt-2.5 inline-block h-1.5 w-1.5 rounded-full bg-[var(--color-accent)] flex-shrink-0"
                   aria-hidden="true"
                 ></span>
                 <strong>apertura precisa integrata nel sistema</strong>
@@ -549,7 +620,7 @@ const usi = [
             <p class="text-base md:text-lg text-[var(--color-charcoal)]/85 mt-6">
               Risultato:
             </p>
-            <ul class="mt-3 space-y-2 text-[var(--color-charcoal)]/90">
+            <ul class="mt-3 space-y-2 text-base md:text-lg text-[var(--color-charcoal)]/90">
               <li class="flex items-start gap-3">
                 <span class="text-[var(--color-accent)] font-bold flex-shrink-0">→</span>
                 non si abbassa
@@ -577,7 +648,7 @@ const usi = [
 
           <div class="lg:col-span-5">
             <div
-              class="relative aspect-[3/4] overflow-hidden rounded-2xl bg-[var(--color-bone)] shadow-[0_1px_2px_rgba(0,0,0,0.04),0_20px_40px_-20px_rgba(0,0,0,0.18)]"
+              class="relative h-full min-h-[400px] overflow-hidden rounded-2xl bg-[var(--color-bone)] shadow-[0_1px_2px_rgba(0,0,0,0.04),0_20px_40px_-20px_rgba(0,0,0,0.18)]"
             >
               <img
                 src={withBase("img/imprese/13-cos-e-permaline.webp")}
@@ -647,17 +718,81 @@ const usi = [
           <div class="relative">
             <div
               class="relative aspect-[4/3] overflow-hidden rounded-2xl bg-[var(--color-bone)] shadow-[0_1px_2px_rgba(0,0,0,0.04),0_20px_40px_-20px_rgba(0,0,0,0.15)]"
+              data-usi-slider
+              aria-roledescription="carousel"
+              aria-label="Esempi di applicazione PERMALINE"
             >
-              <img
-                src={withBase("img/imprese/06-dove-si-usa.webp")}
-                alt="Esempi di applicazione PERMALINE: valvole impianti, filtri VMC, accessi tecnici"
-                width="1200"
-                height="900"
-                sizes="(min-width: 1024px) 50vw, 100vw"
-                loading="lazy"
-                decoding="async"
-                class="absolute inset-0 h-full w-full object-cover"
-              />
+              <picture>
+                <img
+                  src={withBase("img/imprese/06-dove-si-usa.webp")}
+                  alt="Esempi di applicazione PERMALINE: valvole impianti, filtri VMC, accessi tecnici"
+                  width="1200"
+                  height="900"
+                  sizes="(min-width: 1024px) 50vw, 100vw"
+                  loading="lazy"
+                  decoding="async"
+                  class="absolute inset-0 h-full w-full object-cover transition-opacity duration-1000 opacity-100"
+                  data-usi-slide
+                  data-index="0"
+                />
+              </picture>
+              <picture>
+                <img
+                  src={withBase("img/imprese/17-dove-si-usa-2.webp")}
+                  alt="Applicazione PERMALINE: accesso tecnico integrato in superficie continua"
+                  width="1200"
+                  height="900"
+                  sizes="(min-width: 1024px) 50vw, 100vw"
+                  loading="lazy"
+                  decoding="async"
+                  class="absolute inset-0 h-full w-full object-cover transition-opacity duration-1000 opacity-0"
+                  data-usi-slide
+                  data-index="1"
+                />
+              </picture>
+              <picture>
+                <img
+                  src={withBase("img/imprese/18-dove-si-usa-3.webp")}
+                  alt="Applicazione PERMALINE: posa professionale a parete in cartongesso"
+                  width="1200"
+                  height="900"
+                  sizes="(min-width: 1024px) 50vw, 100vw"
+                  loading="lazy"
+                  decoding="async"
+                  class="absolute inset-0 h-full w-full object-cover transition-opacity duration-1000 opacity-0"
+                  data-usi-slide
+                  data-index="2"
+                />
+              </picture>
+              <picture>
+                <img
+                  src={withBase("img/imprese/19-dove-si-usa-4.webp")}
+                  alt="Applicazione PERMALINE: dettaglio risultato finito a filo superficie"
+                  width="1200"
+                  height="900"
+                  sizes="(min-width: 1024px) 50vw, 100vw"
+                  loading="lazy"
+                  decoding="async"
+                  class="absolute inset-0 h-full w-full object-cover transition-opacity duration-1000 opacity-0"
+                  data-usi-slide
+                  data-index="3"
+                />
+              </picture>
+
+              <div class="absolute bottom-4 left-0 right-0 flex justify-center gap-1" data-usi-dots>
+                <button type="button" class="group h-11 w-11 inline-flex items-center justify-center" aria-label="Vai alla foto 1 di 4" aria-current="true" data-usi-dot data-index="0">
+                  <span class="h-1.5 w-6 rounded-full bg-white transition-colors" data-usi-dot-pill></span>
+                </button>
+                <button type="button" class="group h-11 w-11 inline-flex items-center justify-center" aria-label="Vai alla foto 2 di 4" aria-current="false" data-usi-dot data-index="1">
+                  <span class="h-1.5 w-6 rounded-full bg-white/40 transition-colors" data-usi-dot-pill></span>
+                </button>
+                <button type="button" class="group h-11 w-11 inline-flex items-center justify-center" aria-label="Vai alla foto 3 di 4" aria-current="false" data-usi-dot data-index="2">
+                  <span class="h-1.5 w-6 rounded-full bg-white/40 transition-colors" data-usi-dot-pill></span>
+                </button>
+                <button type="button" class="group h-11 w-11 inline-flex items-center justify-center" aria-label="Vai alla foto 4 di 4" aria-current="false" data-usi-dot data-index="3">
+                  <span class="h-1.5 w-6 rounded-full bg-white/40 transition-colors" data-usi-dot-pill></span>
+                </button>
+              </div>
             </div>
           </div>
         </div>
@@ -688,17 +823,64 @@ const usi = [
           <div class="lg:col-span-5">
             <div
               class="relative aspect-[4/5] overflow-hidden rounded-2xl bg-[var(--color-bone)] shadow-[0_1px_2px_rgba(0,0,0,0.04),0_20px_40px_-20px_rgba(0,0,0,0.18)]"
+              data-cambia-slider
+              aria-roledescription="carousel"
+              aria-label="Cosa cambia per te con PERMALINE"
             >
-              <img
-                src={withBase("img/imprese/07-cosa-cambia.webp")}
-                alt="Cartongessista che chiude un cantiere con PERMALINE e va avanti"
-                width="900"
-                height="1125"
-                sizes="(min-width: 1024px) 40vw, 100vw"
-                loading="lazy"
-                decoding="async"
-                class="absolute inset-0 h-full w-full object-cover"
-              />
+              <picture>
+                <img
+                  src={withBase("img/imprese/20-cosa-cambia-1.webp")}
+                  alt="Cantiere chiuso con PERMALINE: posa pulita pronta per il committente"
+                  width="900"
+                  height="1125"
+                  sizes="(min-width: 1024px) 40vw, 100vw"
+                  loading="lazy"
+                  decoding="async"
+                  class="absolute inset-0 h-full w-full object-cover transition-opacity duration-1000 opacity-100"
+                  data-cambia-slide
+                  data-index="0"
+                />
+              </picture>
+              <picture>
+                <img
+                  src={withBase("img/imprese/21-cosa-cambia-2.webp")}
+                  alt="Secondo esempio del lavoro che cambia con PERMALINE: meno ritocchi, meno ritorni"
+                  width="900"
+                  height="1125"
+                  sizes="(min-width: 1024px) 40vw, 100vw"
+                  loading="lazy"
+                  decoding="async"
+                  class="absolute inset-0 h-full w-full object-cover transition-opacity duration-1000 opacity-0"
+                  data-cambia-slide
+                  data-index="1"
+                />
+              </picture>
+              <picture>
+                <img
+                  src={withBase("img/imprese/22-cosa-cambia-3.webp")}
+                  alt="Terzo esempio del risultato che resta: chiudi il lavoro e passi avanti"
+                  width="900"
+                  height="1125"
+                  sizes="(min-width: 1024px) 40vw, 100vw"
+                  loading="lazy"
+                  decoding="async"
+                  class="absolute inset-0 h-full w-full object-cover transition-opacity duration-1000 opacity-0"
+                  data-cambia-slide
+                  data-index="2"
+                />
+              </picture>
+
+              <div class="absolute bottom-4 left-0 right-0 flex justify-center gap-1" data-cambia-dots>
+                <button type="button" class="group h-11 w-11 inline-flex items-center justify-center" aria-label="Vai alla foto 1 di 3" aria-current="true" data-cambia-dot data-index="0">
+                  <span class="h-1.5 w-6 rounded-full bg-white transition-colors" data-cambia-dot-pill></span>
+                </button>
+                <button type="button" class="group h-11 w-11 inline-flex items-center justify-center" aria-label="Vai alla foto 2 di 3" aria-current="false" data-cambia-dot data-index="1">
+                  <span class="h-1.5 w-6 rounded-full bg-white/40 transition-colors" data-cambia-dot-pill></span>
+                </button>
+                <button type="button" class="group h-11 w-11 inline-flex items-center justify-center" aria-label="Vai alla foto 3 di 3" aria-current="false" data-cambia-dot data-index="2">
+                  <span class="h-1.5 w-6 rounded-full bg-white/40 transition-colors" data-cambia-dot-pill></span>
+                </button>
+              </div>
             </div>
           </div>
 
@@ -834,15 +1016,29 @@ const usi = [
             </p>
           </div>
 
-          <div class="lg:col-span-5">
+          <div class="lg:col-span-5 grid gap-5">
             <div
-              class="relative aspect-[3/4] overflow-hidden rounded-2xl bg-[var(--color-charcoal)] shadow-[0_1px_2px_rgba(0,0,0,0.04),0_20px_40px_-20px_rgba(0,0,0,0.5)]"
+              class="relative aspect-[4/3] overflow-hidden rounded-2xl bg-[var(--color-charcoal)] shadow-[0_1px_2px_rgba(0,0,0,0.04),0_20px_40px_-20px_rgba(0,0,0,0.5)]"
             >
               <img
-                src={withBase("img/imprese/08-offerta-speciale.webp")}
-                alt="PERMALINE installata in cantiere reale: la prima la offriamo noi"
-                width="900"
-                height="1200"
+                src={withBase("img/imprese/23-foto-prodotto-1.webp")}
+                alt="PERMALINE: dettaglio del prodotto a vista"
+                width="1200"
+                height="900"
+                sizes="(min-width: 1024px) 40vw, 100vw"
+                loading="lazy"
+                decoding="async"
+                class="absolute inset-0 h-full w-full object-cover"
+              />
+            </div>
+            <div
+              class="relative aspect-[4/3] overflow-hidden rounded-2xl bg-[var(--color-charcoal)] shadow-[0_1px_2px_rgba(0,0,0,0.04),0_20px_40px_-20px_rgba(0,0,0,0.5)]"
+            >
+              <img
+                src={withBase("img/imprese/24-foto-prodotto-2.webp")}
+                alt="PERMALINE: secondo dettaglio del prodotto pronto per la posa"
+                width="1200"
+                height="900"
                 sizes="(min-width: 1024px) 40vw, 100vw"
                 loading="lazy"
                 decoding="async"
@@ -958,17 +1154,17 @@ const usi = [
               prima o poi, ci sarà da tornarci sopra.
             </p>
             <div
-              class="relative aspect-[16/10] overflow-hidden rounded-xl bg-[var(--color-charcoal)] mt-4"
+              class="relative aspect-[3/4] overflow-hidden rounded-xl bg-[var(--color-charcoal)] mt-4"
             >
               <img
                 src={withBase("img/imprese/04-strada-1-vecchia.webp")}
                 alt="Botola tradizionale: continuare come sempre, accettare i ritorni"
-                width="800"
-                height="500"
+                width="600"
+                height="800"
                 sizes="(min-width: 768px) 40vw, 100vw"
                 loading="lazy"
                 decoding="async"
-                class="absolute inset-0 h-full w-full object-cover"
+                class="absolute inset-0 h-full w-full object-cover object-bottom"
               />
             </div>
           </div>
@@ -986,17 +1182,17 @@ const usi = [
               altri lavori. <strong>Più margine protetto.</strong>
             </p>
             <div
-              class="relative aspect-[16/10] overflow-hidden rounded-xl bg-[var(--color-charcoal)] mt-4"
+              class="relative aspect-[3/4] overflow-hidden rounded-xl bg-[var(--color-charcoal)] mt-4"
             >
               <img
                 src={withBase("img/imprese/05-strada-2-permaline.webp")}
                 alt="PERMALINE installata: chiudere il problema alla radice"
-                width="800"
-                height="500"
+                width="600"
+                height="800"
                 sizes="(min-width: 768px) 40vw, 100vw"
                 loading="lazy"
                 decoding="async"
-                class="absolute inset-0 h-full w-full object-cover"
+                class="absolute inset-0 h-full w-full object-cover object-bottom"
               />
             </div>
           </div>
@@ -1136,12 +1332,10 @@ const usi = [
                 class="block text-sm font-semibold mb-1.5 text-[var(--color-ink)]"
               >
                 Tipo di lavoro / cantiere
-                <span class="text-[var(--color-accent)]">*</span>
               </label>
               <select
                 id="tipo-lavoro"
                 name="Tipo di lavoro"
-                required
                 class="w-full rounded-xl border border-[var(--color-line)] px-4 py-3 text-base focus:border-[var(--color-accent)] focus:outline-none transition-colors bg-white"
               >
                 <option value="">Seleziona...</option>
@@ -1197,6 +1391,47 @@ const usi = [
               ></textarea>
             </div>
 
+            <div class="grid gap-3 mt-2">
+              <label class="flex items-start gap-3 cursor-pointer">
+                <input
+                  type="checkbox"
+                  id="consenso-privacy"
+                  name="Consenso Privacy Policy"
+                  value="Sì"
+                  required
+                  class="mt-1 h-4 w-4 rounded border-[var(--color-line)] text-[var(--color-accent)] focus:ring-2 focus:ring-[var(--color-accent)] focus:ring-offset-1 flex-shrink-0"
+                />
+                <span class="text-xs md:text-sm text-[var(--color-charcoal)]/90 leading-relaxed">
+                  Acconsento al trattamento dei miei dati personali e al loro
+                  trattamento anche al di fuori della UE secondo quanto
+                  specificato nella vostra
+                  <a
+                    href={withBase("privacy")}
+                    target="_blank"
+                    rel="noopener"
+                    class="font-semibold text-[var(--color-accent)] underline underline-offset-2 hover:text-[#234f37]"
+                  >Privacy Policy</a>
+                  <span class="text-[var(--color-accent)]">*</span>
+                </span>
+              </label>
+
+              <label class="flex items-start gap-3 cursor-pointer">
+                <input
+                  type="checkbox"
+                  id="consenso-contatto"
+                  name="Consenso a essere contattato"
+                  value="Sì"
+                  required
+                  class="mt-1 h-4 w-4 rounded border-[var(--color-line)] text-[var(--color-accent)] focus:ring-2 focus:ring-[var(--color-accent)] focus:ring-offset-1 flex-shrink-0"
+                />
+                <span class="text-xs md:text-sm text-[var(--color-charcoal)]/90 leading-relaxed">
+                  Sì, desidero essere contattato per ricevere informazioni sul
+                  prodotto e l'offerta a me dedicata
+                  <span class="text-[var(--color-accent)]">*</span>
+                </span>
+              </label>
+            </div>
+
             <button
               type="submit"
               class="mt-2 inline-flex items-center justify-center rounded-full bg-[var(--color-accent)] px-6 py-3.5 min-h-11 text-sm font-semibold text-white hover:bg-[#234f37] transition-colors"
@@ -1217,3 +1452,61 @@ const usi = [
   <Footer />
   <WhatsAppFloating />
 </BaseLayout>
+
+<script>
+  // Helper generico per slider crossfade
+  function initSlider(rootSelector: string, slideAttr: string, dotAttr: string, pillAttr: string) {
+    const root = document.querySelector(rootSelector);
+    if (!root) return;
+    const slides = root.querySelectorAll<HTMLImageElement>(`[${slideAttr}]`);
+    const dots = root.querySelectorAll<HTMLButtonElement>(`[${dotAttr}]`);
+    const pills = root.querySelectorAll<HTMLSpanElement>(`[${pillAttr}]`);
+    let current = 0;
+    let timer: ReturnType<typeof setInterval> | null = null;
+
+    function show(i: number) {
+      slides.forEach((s, idx) => {
+        s.style.opacity = idx === i ? "1" : "0";
+      });
+      dots.forEach((d, idx) => {
+        d.setAttribute("aria-current", idx === i ? "true" : "false");
+      });
+      pills.forEach((p, idx) => {
+        p.classList.toggle("bg-white", idx === i);
+        p.classList.toggle("bg-white/40", idx !== i);
+      });
+      current = i;
+    }
+
+    function next() {
+      show((current + 1) % slides.length);
+    }
+
+    function start() {
+      stop();
+      timer = setInterval(next, 4500);
+    }
+
+    function stop() {
+      if (timer) {
+        clearInterval(timer);
+        timer = null;
+      }
+    }
+
+    dots.forEach((d) => {
+      d.addEventListener("click", () => {
+        const idx = parseInt(d.dataset.index || "0", 10);
+        show(idx);
+        start();
+      });
+    });
+
+    root.addEventListener("mouseenter", stop);
+    root.addEventListener("mouseleave", start);
+    start();
+  }
+
+  initSlider("[data-usi-slider]", "data-usi-slide", "data-usi-dot", "data-usi-dot-pill");
+  initSlider("[data-cambia-slider]", "data-cambia-slide", "data-cambia-dot", "data-cambia-dot-pill");
+</script>

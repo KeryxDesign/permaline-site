@@ -47,6 +47,12 @@ const jsonLd = {
     },
     {
       "@type": "Brand",
+      "@id": "https://www.compassin.it/#brand-chiusure-a-filo",
+      name: "Chiusure A FiLO",
+      parentOrganization: { "@id": "https://www.compassin.it/#organization" },
+    },
+    {
+      "@type": "Brand",
       "@id": canonical + "#brand",
       name: "PERMALINE",
       logo: new URL(withBase("logo/permaline.svg"), Astro.site).toString(),
@@ -133,7 +139,7 @@ const jsonLd = {
     <link rel="icon" type="image/png" href={withBase("favicon.png")} />
 
     <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="PERMALINE | Compassin" />
+    <meta property="og:site_name" content="PERMALINE | Chiusure A FiLO" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical} />

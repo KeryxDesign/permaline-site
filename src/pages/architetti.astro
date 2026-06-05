@@ -290,13 +290,13 @@ const condizioni = [
 
           <div class="relative">
             <div
-              class="relative aspect-[4/3] overflow-hidden rounded-2xl bg-[var(--color-bone)] shadow-[0_1px_2px_rgba(0,0,0,0.04),0_20px_40px_-20px_rgba(0,0,0,0.15)]"
+              class="relative aspect-[3/4] overflow-hidden rounded-2xl bg-[var(--color-bone)] shadow-[0_1px_2px_rgba(0,0,0,0.04),0_20px_40px_-20px_rgba(0,0,0,0.15)]"
             >
               <img
                 src={withBase("img/architetti/02-linea-perimetrale.webp")}
                 alt="Linea perimetrale costante di un accesso tecnico PERMALINE"
-                width="1200"
-                height="900"
+                width="900"
+                height="1200"
                 sizes="(min-width: 1024px) 50vw, 100vw"
                 loading="lazy"
                 decoding="async"
@@ -349,16 +349,16 @@ const condizioni = [
           </p>
         </div>
 
-        <div class="grid lg:grid-cols-3 gap-10 lg:gap-12 items-start mt-12">
+        <div class="grid lg:grid-cols-3 gap-10 lg:gap-12 items-stretch mt-12">
           <div class="lg:col-span-1">
             <div
-              class="relative aspect-[4/3] overflow-hidden rounded-2xl bg-[var(--color-charcoal)] shadow-[0_1px_2px_rgba(0,0,0,0.04),0_20px_40px_-20px_rgba(0,0,0,0.5)]"
+              class="relative h-full min-h-[400px] overflow-hidden rounded-2xl bg-[var(--color-charcoal)] shadow-[0_1px_2px_rgba(0,0,0,0.04),0_20px_40px_-20px_rgba(0,0,0,0.5)]"
             >
               <img
-                src={withBase("img/architetti/03-progettare-botole.webp")}
-                alt="Schema progettuale di accessi tecnici integrati nell'architettura"
-                width="1200"
-                height="900"
+                src={withBase("img/architetti/20-perche-costo-reale-new.webp")}
+                alt="Dettaglio del costo reale: accesso tecnico fuori linea che ricade sul progetto"
+                width="900"
+                height="1200"
                 sizes="(min-width: 1024px) 33vw, 100vw"
                 loading="lazy"
                 decoding="async"
@@ -442,16 +442,16 @@ const condizioni = [
             <div
               class="rounded-2xl overflow-hidden border border-[var(--color-line)] bg-white hover:border-[var(--color-charcoal)] transition-colors"
             >
-              <div class="relative aspect-[4/3] overflow-hidden bg-[var(--color-bone)]">
+              <div class="relative aspect-[3/4] overflow-hidden bg-[var(--color-bone)]">
                 <img
                   src={limite.image}
                   alt={limite.alt}
-                  width="800"
-                  height="600"
+                  width="600"
+                  height="800"
                   sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
                   loading="lazy"
                   decoding="async"
-                  class="absolute inset-0 h-full w-full object-cover"
+                  class="absolute inset-0 h-full w-full object-cover object-center"
                 />
               </div>
               <div class="p-6">
@@ -735,37 +735,37 @@ const condizioni = [
             <ul class="mt-4 space-y-3">
               <li class="flex items-start gap-3">
                 <span
-                  class="mt-1.5 inline-block h-1.5 w-1.5 rounded-full bg-[var(--color-accent)] flex-shrink-0"
+                  class="mt-2.5 inline-block h-1.5 w-1.5 rounded-full bg-[var(--color-accent)] flex-shrink-0"
                   aria-hidden="true"
                 ></span>
-                <span class="text-[var(--color-charcoal)]/90">
+                <span class="text-base md:text-lg text-[var(--color-charcoal)]/90">
                   mantenere la <strong>complanarità</strong>
                 </span>
               </li>
               <li class="flex items-start gap-3">
                 <span
-                  class="mt-1.5 inline-block h-1.5 w-1.5 rounded-full bg-[var(--color-accent)] flex-shrink-0"
+                  class="mt-2.5 inline-block h-1.5 w-1.5 rounded-full bg-[var(--color-accent)] flex-shrink-0"
                   aria-hidden="true"
                 ></span>
-                <span class="text-[var(--color-charcoal)]/90">
+                <span class="text-base md:text-lg text-[var(--color-charcoal)]/90">
                   proteggere la <strong>linea di matita</strong>
                 </span>
               </li>
               <li class="flex items-start gap-3">
                 <span
-                  class="mt-1.5 inline-block h-1.5 w-1.5 rounded-full bg-[var(--color-accent)] flex-shrink-0"
+                  class="mt-2.5 inline-block h-1.5 w-1.5 rounded-full bg-[var(--color-accent)] flex-shrink-0"
                   aria-hidden="true"
                 ></span>
-                <span class="text-[var(--color-charcoal)]/90">
+                <span class="text-base md:text-lg text-[var(--color-charcoal)]/90">
                   preservare la <strong>pulizia della superficie</strong>
                 </span>
               </li>
               <li class="flex items-start gap-3">
                 <span
-                  class="mt-1.5 inline-block h-1.5 w-1.5 rounded-full bg-[var(--color-accent)] flex-shrink-0"
+                  class="mt-2.5 inline-block h-1.5 w-1.5 rounded-full bg-[var(--color-accent)] flex-shrink-0"
                   aria-hidden="true"
                 ></span>
-                <span class="text-[var(--color-charcoal)]/90">
+                <span class="text-base md:text-lg text-[var(--color-charcoal)]/90">
                   evitare che apertura, chiusura e assestamenti alterino il
                   dettaglio
                 </span>
@@ -840,18 +840,18 @@ const condizioni = [
             <h3 class="heading text-2xl md:text-3xl leading-snug mb-4">
               Per chiudere in modo preciso e invisibile accessi come:
             </h3>
-            <ul class="space-y-2 text-[var(--color-charcoal)]/90">
+            <ul class="space-y-2 text-base md:text-lg text-[var(--color-charcoal)]/90">
               {usi.map((uso) => (
                 <li class="flex items-start gap-3">
                   <span
-                    class="mt-1.5 inline-block h-1.5 w-1.5 rounded-full bg-[var(--color-accent)] flex-shrink-0"
+                    class="mt-2.5 inline-block h-1.5 w-1.5 rounded-full bg-[var(--color-accent)] flex-shrink-0"
                     aria-hidden="true"
                   ></span>
                   {uso}
                 </li>
               ))}
             </ul>
-            <p class="text-sm text-[var(--color-charcoal)]/75 mt-6">
+            <p class="text-base md:text-lg text-[var(--color-charcoal)]/90 mt-6">
               Soffitto o parete. Su misura.
             </p>
           </div>
@@ -988,8 +988,8 @@ const condizioni = [
               class="relative aspect-[3/4] overflow-hidden rounded-2xl bg-[var(--color-bone)]"
             >
               <img
-                src={withBase("img/architetti/13-casi-1.webp")}
-                alt="Esempio di PERMALINE in ambiente residenziale di pregio"
+                src={withBase("img/architetti/21-quando-ha-senso-1.webp")}
+                alt="Esempio di PERMALINE installato in ambiente di pregio: la botola visibile sulla superficie continua"
                 width="800"
                 height="1066"
                 loading="lazy"
@@ -1001,8 +1001,8 @@ const condizioni = [
               class="relative aspect-[3/4] overflow-hidden rounded-2xl bg-[var(--color-bone)] sm:mt-8"
             >
               <img
-                src={withBase("img/architetti/14-casi-2.webp")}
-                alt="Esempio di PERMALINE in ambiente hospitality o retail"
+                src={withBase("img/architetti/22-quando-ha-senso-2.webp")}
+                alt="Secondo esempio di PERMALINE installato: accesso tecnico integrato nella linea perimetrale"
                 width="800"
                 height="1066"
                 sizes="(min-width: 1024px) 25vw, 50vw"
@@ -1161,7 +1161,7 @@ const condizioni = [
                 class="relative aspect-[4/3] overflow-hidden rounded-2xl bg-[var(--color-bone)]"
               >
                 <img
-                  src={withBase("img/architetti/18-finale-prima.webp")}
+                  src={withBase("img/architetti/23-prima-dopo-new.webp")}
                   alt="Accesso tecnico tradizionale, prima dell'intervento PERMALINE"
                   width="1200"
                   height="900"
@@ -1180,7 +1180,7 @@ const condizioni = [
                 class="relative aspect-[4/3] overflow-hidden rounded-2xl bg-[var(--color-bone)]"
               >
                 <img
-                  src={withBase("img/architetti/19-finale-dopo.webp")}
+                  src={withBase("img/architetti/24-prima-dopo-new-2.webp")}
                   alt="Accesso tecnico PERMALINE installato, dopo l'intervento"
                   width="1200"
                   height="900"
@@ -1340,12 +1340,13 @@ const condizioni = [
                   for="telefono"
                   class="block text-sm font-semibold mb-1.5 text-[var(--color-ink)]"
                 >
-                  Telefono
+                  Telefono <span class="text-[var(--color-accent)]">*</span>
                 </label>
                 <input
                   type="tel"
                   id="telefono"
                   name="Telefono"
+                  required
                   autocomplete="tel"
                   class="w-full rounded-xl border border-[var(--color-line)] px-4 py-3 text-base focus:border-[var(--color-accent)] focus:outline-none transition-colors"
                 />
@@ -1358,12 +1359,10 @@ const condizioni = [
                 class="block text-sm font-semibold mb-1.5 text-[var(--color-ink)]"
               >
                 Tipo di progetto
-                <span class="text-[var(--color-accent)]">*</span>
               </label>
               <select
                 id="tipo-progetto"
                 name="Tipo di progetto"
-                required
                 class="w-full rounded-xl border border-[var(--color-line)] px-4 py-3 text-base focus:border-[var(--color-accent)] focus:outline-none transition-colors bg-white"
               >
                 <option value="">Seleziona...</option>
@@ -1417,6 +1416,47 @@ const condizioni = [
                 rows="4"
                 class="w-full rounded-xl border border-[var(--color-line)] px-4 py-3 text-base focus:border-[var(--color-accent)] focus:outline-none transition-colors resize-y"
               ></textarea>
+            </div>
+
+            <div class="grid gap-3 mt-2">
+              <label class="flex items-start gap-3 cursor-pointer">
+                <input
+                  type="checkbox"
+                  id="consenso-privacy"
+                  name="Consenso Privacy Policy"
+                  value="Sì"
+                  required
+                  class="mt-1 h-4 w-4 rounded border-[var(--color-line)] text-[var(--color-accent)] focus:ring-2 focus:ring-[var(--color-accent)] focus:ring-offset-1 flex-shrink-0"
+                />
+                <span class="text-xs md:text-sm text-[var(--color-charcoal)]/90 leading-relaxed">
+                  Acconsento al trattamento dei miei dati personali e al loro
+                  trattamento anche al di fuori della UE secondo quanto
+                  specificato nella vostra
+                  <a
+                    href={withBase("privacy")}
+                    target="_blank"
+                    rel="noopener"
+                    class="font-semibold text-[var(--color-accent)] underline underline-offset-2 hover:text-[#234f37]"
+                  >Privacy Policy</a>
+                  <span class="text-[var(--color-accent)]">*</span>
+                </span>
+              </label>
+
+              <label class="flex items-start gap-3 cursor-pointer">
+                <input
+                  type="checkbox"
+                  id="consenso-contatto"
+                  name="Consenso a essere contattato"
+                  value="Sì"
+                  required
+                  class="mt-1 h-4 w-4 rounded border-[var(--color-line)] text-[var(--color-accent)] focus:ring-2 focus:ring-[var(--color-accent)] focus:ring-offset-1 flex-shrink-0"
+                />
+                <span class="text-xs md:text-sm text-[var(--color-charcoal)]/90 leading-relaxed">
+                  Sì, desidero essere contattato per ricevere informazioni sul
+                  prodotto e l'offerta a me dedicata
+                  <span class="text-[var(--color-accent)]">*</span>
+                </span>
+              </label>
             </div>
 
             <button

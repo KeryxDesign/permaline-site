@@ -29,31 +29,35 @@ const risultati = [
   "la superficie non genera microfratture lungo gli spigoli",
 ];
 
-// 5 ambienti ideali
+// 4 ambienti ideali (ordine richiesto Ecaterina: hospitality prima di residenziale)
 const ambienti = [
-  {
-    title: "Residenziale di pregio",
-    body: "Abitazioni private dove ogni materiale, ogni proporzione, ogni dettaglio è stato scelto con cura. Il committente ha investito nell'idea di perfezione del proprio spazio. Ogni imperfezione, anche piccola, anche tecnica, stona.",
-    image: withBase("img/prodotto/05-residenziale.webp"),
-    alt: "Ingresso residenziale con accesso tecnico PERMALINE integrato a filo parete",
-  },
   {
     title: "Hospitality",
     body: "Hotel, resort, strutture ricettive dove ogni camera, ogni corridoio, ogni area comune racconta il posizionamento della struttura. La superficie è il primo messaggio che il brand trasmette all'ospite, prima ancora del servizio.",
     image: withBase("img/prodotto/06-hospitality.webp"),
     alt: "Dettaglio architettonico hospitality con due accessi tecnici PERMALINE su parete e soffitto",
+    objectPosition: "object-center",
+  },
+  {
+    title: "Residenziale di pregio",
+    body: "Abitazioni private dove ogni materiale, ogni proporzione, ogni dettaglio è stato scelto con cura. Il committente ha investito nell'idea di perfezione del proprio spazio. Ogni imperfezione, anche piccola, anche tecnica, stona.",
+    image: withBase("img/prodotto/05-residenziale.webp"),
+    alt: "Ingresso residenziale con accesso tecnico PERMALINE integrato a filo parete",
+    objectPosition: "object-right",
   },
   {
     title: "Retail e showroom",
     body: "Ambienti in cui la continuità estetica della superficie comunica il valore del brand prima ancora del prodotto esposto. Un dettaglio fuori controllo non è un problema tecnico: è un messaggio sbagliato.",
     image: withBase("img/prodotto/07-retail.webp"),
     alt: "Showroom retail con due accessi tecnici PERMALINE integrati nel soffitto continuo",
+    objectPosition: "object-center",
   },
   {
     title: "Uffici direzionali",
     body: "Spazi in cui ordine, precisione e cura dei dettagli fisici trasmettono solidità professionale. L'immagine dell'organizzazione passa anche attraverso la qualità di ciò che si vede.",
     image: withBase("img/prodotto/08-uffici.webp"),
     alt: "Open space ufficio direzionale con accessi tecnici PERMALINE integrati nel controsoffitto",
+    objectPosition: "object-top",
   },
 ];
 
@@ -61,7 +65,7 @@ const ambienti = [
 const testimonials = [
   {
     quote:
-      "Ai miei clienti dico sempre: «Se ho lavorato bene non vi sento più». Il lavoro di progettazione sinergica con COMPASSiN permette di risolvere un problema ancora prima che si presenti.",
+      "Ai miei clienti dico sempre: «Se ho lavorato bene non vi sento più». Il lavoro di progettazione sinergica con Chiusure A FiLO permette di risolvere un problema ancora prima che si presenti.",
     name: "Arch. Alessia Rubino",
     studio: "Milano",
     image: withBase("img/prodotto/10-testimonial-rubino.webp"),
@@ -257,17 +261,17 @@ const testimonials = [
 
           <div class="relative">
             <div
-              class="relative aspect-[4/5] overflow-hidden rounded-2xl bg-[var(--color-bone)] shadow-[0_1px_2px_rgba(0,0,0,0.04),0_20px_40px_-20px_rgba(0,0,0,0.15)]"
+              class="relative aspect-[3/4] overflow-hidden rounded-2xl bg-[var(--color-bone)] shadow-[0_1px_2px_rgba(0,0,0,0.04),0_20px_40px_-20px_rgba(0,0,0,0.15)]"
             >
               <img
                 src={withBase("img/prodotto/02-linea-matita.webp")}
                 alt="Linea di matita: la fuga perimetrale costante che certifica il lavoro fatto bene"
                 width="900"
-                height="1125"
+                height="1200"
                 sizes="(min-width: 1024px) 50vw, 100vw"
                 loading="lazy"
                 decoding="async"
-                class="absolute inset-0 h-full w-full object-cover"
+                class="absolute inset-0 h-full w-full object-cover object-top"
               />
             </div>
           </div>
@@ -313,10 +317,20 @@ const testimonials = [
             <ul class="space-y-3 text-white/90">
               {limiti.map((l) => (
                 <li class="flex items-start gap-3">
-                  <span
-                    class="mt-1.5 inline-block h-1.5 w-1.5 rounded-full bg-[var(--color-accent)] flex-shrink-0"
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    fill="none"
+                    stroke="#ef4444"
+                    stroke-width="2.5"
+                    stroke-linecap="round"
+                    class="mt-1 flex-shrink-0"
                     aria-hidden="true"
-                  ></span>
+                  >
+                    <line x1="3" y1="3" x2="13" y2="13" />
+                    <line x1="13" y1="3" x2="3" y2="13" />
+                  </svg>
                   {l}
                 </li>
               ))}
@@ -485,17 +499,61 @@ const testimonials = [
           <div class="lg:col-span-5 order-2 lg:order-1">
             <div
               class="relative aspect-[4/5] overflow-hidden rounded-2xl bg-[var(--color-bone)] shadow-[0_1px_2px_rgba(0,0,0,0.04),0_20px_40px_-20px_rgba(0,0,0,0.18)]"
+              data-brevetti-slider
+              aria-roledescription="carousel"
+              aria-label="Dettagli del sistema PERMALINE"
             >
-              <img
-                src={withBase("img/prodotto/04-brevetti.webp")}
-                alt="I 4 brevetti delle Chiusure A FiLO® di COMPASSiN®"
-                width="900"
-                height="1125"
-                sizes="(min-width: 1024px) 40vw, 100vw"
-                loading="lazy"
-                decoding="async"
-                class="absolute inset-0 h-full w-full object-cover"
-              />
+              <picture>
+                <img
+                  src={withBase("img/prodotto/18-perche-solo-cerniere.webp")}
+                  alt="Dettaglio cerniere del sistema PERMALINE: precisione meccanica del telaio integrato"
+                  width="900"
+                  height="1125"
+                  sizes="(min-width: 1024px) 40vw, 100vw"
+                  loading="lazy"
+                  decoding="async"
+                  class="absolute inset-0 h-full w-full object-cover transition-opacity duration-1000 opacity-100"
+                  data-brevetti-slide
+                  data-index="0"
+                />
+              </picture>
+              <picture>
+                <img
+                  src={withBase("img/prodotto/19-perche-solo-premi-apri.webp")}
+                  alt="Dettaglio del sistema di apertura premi-apri PERMALINE: meccanismo integrato a filo"
+                  width="900"
+                  height="1125"
+                  sizes="(min-width: 1024px) 40vw, 100vw"
+                  loading="lazy"
+                  decoding="async"
+                  class="absolute inset-0 h-full w-full object-cover transition-opacity duration-1000 opacity-0"
+                  data-brevetti-slide
+                  data-index="1"
+                />
+              </picture>
+
+              <div class="absolute bottom-4 left-0 right-0 flex justify-center gap-1" data-brevetti-dots>
+                <button
+                  type="button"
+                  class="group h-11 w-11 inline-flex items-center justify-center"
+                  aria-label="Vai alla foto 1 di 2"
+                  aria-current="true"
+                  data-brevetti-dot
+                  data-index="0"
+                >
+                  <span class="h-1.5 w-6 rounded-full bg-white transition-colors" data-brevetti-dot-pill></span>
+                </button>
+                <button
+                  type="button"
+                  class="group h-11 w-11 inline-flex items-center justify-center"
+                  aria-label="Vai alla foto 2 di 2"
+                  aria-current="false"
+                  data-brevetti-dot
+                  data-index="1"
+                >
+                  <span class="h-1.5 w-6 rounded-full bg-white/40 transition-colors" data-brevetti-dot-pill></span>
+                </button>
+              </div>
             </div>
           </div>
 
@@ -515,12 +573,12 @@ const testimonials = [
             <p class="text-base md:text-lg text-[var(--color-charcoal)]/90">
               Dietro la semplicità del risultato ci sono 4 brevetti sviluppati
               all'interno delle <strong>Chiusure A FiLO® di
-              COMPASSiN®</strong>.
+              Chiusure A FiLO®</strong>.
             </p>
 
             <p class="text-base md:text-lg text-[var(--color-charcoal)]/85 mt-4">
               PERMALINE® è stata progettata da chi, prima di progettarla,
-              lavorava in cantiere. <strong>I fondatori di COMPASSiN® erano
+              lavorava in cantiere. <strong>I fondatori di Chiusure A FiLO® erano
               cartongessisti.</strong> Conoscevano i problemi degli accessi
               tecnici attraverso i ritorni in cantiere e le finiture da rifare.
             </p>
@@ -529,7 +587,7 @@ const testimonials = [
               <p>
                 Quella conoscenza non si replica partendo da un ufficio
                 tecnico. Non si acquisisce commissionando uno studio di
-                mercato. <strong><mark>Non si compra.</mark></strong>
+                mercato. <strong>Non si compra.</strong>
               </p>
             </blockquote>
 
@@ -585,7 +643,7 @@ const testimonials = [
                   sizes="(min-width: 768px) 50vw, 100vw"
                   loading="lazy"
                   decoding="async"
-                  class="absolute inset-0 h-full w-full object-cover"
+                  class={`absolute inset-0 h-full w-full object-cover ${a.objectPosition}`}
                 />
               </div>
               <div class="p-7 md:p-8">
@@ -644,43 +702,16 @@ const testimonials = [
 
         <div class="grid md:grid-cols-2 gap-6 mt-12">
           <article class="rounded-2xl overflow-hidden border border-[var(--color-line)] bg-white">
-            <div class="relative aspect-[16/10] overflow-hidden bg-[var(--color-bone)]">
-              <img
-                src={withBase("img/prodotto/13-posa-parete.webp")}
-                alt="Tecnico cartongessista installa accesso tecnico PERMALINE su parete in cartongesso"
-                width="1200"
-                height="750"
-                sizes="(min-width: 768px) 50vw, 100vw"
+            <div class="relative aspect-video overflow-hidden bg-black">
+              <iframe
+                src="https://www.youtube-nocookie.com/embed/06uyxrDyeHo"
+                title="Video posa a soffitto PERMALINE"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen
                 loading="lazy"
-                decoding="async"
-                class="absolute inset-0 h-full w-full object-cover"
-              />
-            </div>
-            <div class="p-7 md:p-8">
-              <p class="eyebrow mb-3">Posa a parete</p>
-              <h3 class="heading text-xl md:text-2xl leading-snug mb-3">
-                Integrazione precisa nelle pareti in cartongesso
-              </h3>
-              <p class="text-sm md:text-base text-[var(--color-charcoal)]/85 leading-relaxed">
-                Per accesso agli impianti nascosti. Un processo lineare,
-                progettato per integrarsi nel lavoro senza rallentare il
-                cantiere.
-              </p>
-            </div>
-          </article>
-
-          <article class="rounded-2xl overflow-hidden border border-[var(--color-line)] bg-white">
-            <div class="relative aspect-[16/10] overflow-hidden bg-[var(--color-bone)]">
-              <img
-                src={withBase("img/prodotto/14-posa-soffitto.webp")}
-                alt="Controsoffitto con accessi tecnici PERMALINE integrati a filo, ufficio direzionale"
-                width="1200"
-                height="750"
-                sizes="(min-width: 768px) 50vw, 100vw"
-                loading="lazy"
-                decoding="async"
-                class="absolute inset-0 h-full w-full object-cover"
-              />
+                class="absolute inset-0 h-full w-full"
+              ></iframe>
             </div>
             <div class="p-7 md:p-8">
               <p class="eyebrow mb-3">Posa a soffitto</p>
@@ -690,6 +721,31 @@ const testimonials = [
               <p class="text-sm md:text-base text-[var(--color-charcoal)]/85 leading-relaxed">
                 Dove precisione e stabilità fanno la differenza nel tempo. Qui
                 vedi come ottenere un risultato pulito fin dalla prima posa.
+              </p>
+            </div>
+          </article>
+
+          <article class="rounded-2xl overflow-hidden border border-[var(--color-line)] bg-white">
+            <div class="relative aspect-video overflow-hidden bg-black">
+              <iframe
+                src="https://www.youtube-nocookie.com/embed/wF481K3bfYk"
+                title="Video posa a parete PERMALINE"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen
+                loading="lazy"
+                class="absolute inset-0 h-full w-full"
+              ></iframe>
+            </div>
+            <div class="p-7 md:p-8">
+              <p class="eyebrow mb-3">Posa a parete</p>
+              <h3 class="heading text-xl md:text-2xl leading-snug mb-3">
+                Integrazione a parete
+              </h3>
+              <p class="text-sm md:text-base text-[var(--color-charcoal)]/85 leading-relaxed">
+                Per accesso agli impianti nascosti. Un processo lineare,
+                progettato per integrarsi nel lavoro senza rallentare il
+                cantiere.
               </p>
             </div>
           </article>
@@ -996,7 +1052,7 @@ const testimonials = [
             >
               Hai un progetto in corso o un cantiere da iniziare?
               <span class="block mt-2 text-white/70">
-                Parla con un tecnico COMPASSiN®.
+                Parla con un tecnico Chiusure A FiLO®.
               </span>
             </h2>
             <p class="text-base md:text-lg text-white/85 leading-relaxed max-w-3xl">
@@ -1068,3 +1124,57 @@ const testimonials = [
   <Footer />
   <WhatsAppFloating />
 </BaseLayout>
+
+<script>
+  // Mini-slider per la sezione "Perché solo PERMALINE può dirlo" (2 foto: cerniere + premi-apri)
+  const brevettiSlider = document.querySelector("[data-brevetti-slider]");
+  if (brevettiSlider) {
+    const slides = brevettiSlider.querySelectorAll<HTMLImageElement>("[data-brevetti-slide]");
+    const dots = brevettiSlider.querySelectorAll<HTMLButtonElement>("[data-brevetti-dot]");
+    const pills = brevettiSlider.querySelectorAll<HTMLSpanElement>("[data-brevetti-dot-pill]");
+    let current = 0;
+    let timer: ReturnType<typeof setInterval> | null = null;
+
+    function show(i: number) {
+      slides.forEach((s, idx) => {
+        s.style.opacity = idx === i ? "1" : "0";
+      });
+      dots.forEach((d, idx) => {
+        d.setAttribute("aria-current", idx === i ? "true" : "false");
+      });
+      pills.forEach((p, idx) => {
+        p.classList.toggle("bg-white", idx === i);
+        p.classList.toggle("bg-white/40", idx !== i);
+      });
+      current = i;
+    }
+
+    function next() {
+      show((current + 1) % slides.length);
+    }
+
+    function start() {
+      stop();
+      timer = setInterval(next, 4500);
+    }
+
+    function stop() {
+      if (timer) {
+        clearInterval(timer);
+        timer = null;
+      }
+    }
+
+    dots.forEach((d) => {
+      d.addEventListener("click", () => {
+        const idx = parseInt(d.dataset.index || "0", 10);
+        show(idx);
+        start();
+      });
+    });
+
+    brevettiSlider.addEventListener("mouseenter", stop);
+    brevettiSlider.addEventListener("mouseleave", start);
+    start();
+  }
+</script>
