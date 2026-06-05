@@ -35,25 +35,25 @@ const ambienti = [
     title: "Residenziale di pregio",
     body: "Abitazioni private dove ogni materiale, ogni proporzione, ogni dettaglio è stato scelto con cura. Il committente ha investito nell'idea di perfezione del proprio spazio. Ogni imperfezione, anche piccola, anche tecnica, stona.",
     image: withBase("img/prodotto/05-residenziale.webp"),
-    alt: "Ambiente residenziale di pregio con accesso tecnico PERMALINE integrato",
+    alt: "Ingresso residenziale con accesso tecnico PERMALINE integrato a filo parete",
   },
   {
     title: "Hospitality",
     body: "Hotel, resort, strutture ricettive dove ogni camera, ogni corridoio, ogni area comune racconta il posizionamento della struttura. La superficie è il primo messaggio che il brand trasmette all'ospite, prima ancora del servizio.",
     image: withBase("img/prodotto/06-hospitality.webp"),
-    alt: "Ambiente hospitality con superficie continua e PERMALINE invisibile",
+    alt: "Dettaglio architettonico hospitality con due accessi tecnici PERMALINE su parete e soffitto",
   },
   {
     title: "Retail e showroom",
     body: "Ambienti in cui la continuità estetica della superficie comunica il valore del brand prima ancora del prodotto esposto. Un dettaglio fuori controllo non è un problema tecnico: è un messaggio sbagliato.",
     image: withBase("img/prodotto/07-retail.webp"),
-    alt: "Showroom retail con superficie continua e accesso tecnico PERMALINE",
+    alt: "Showroom retail con due accessi tecnici PERMALINE integrati nel soffitto continuo",
   },
   {
     title: "Uffici direzionali",
     body: "Spazi in cui ordine, precisione e cura dei dettagli fisici trasmettono solidità professionale. L'immagine dell'organizzazione passa anche attraverso la qualità di ciò che si vede.",
     image: withBase("img/prodotto/08-uffici.webp"),
-    alt: "Ufficio direzionale con PERMALINE integrato nella superficie",
+    alt: "Open space ufficio direzionale con accessi tecnici PERMALINE integrati nel controsoffitto",
   },
 ];
 
@@ -643,71 +643,98 @@ const testimonials = [
         </div>
 
         <div class="grid md:grid-cols-2 gap-6 mt-12">
-          <article class="rounded-2xl border border-[var(--color-line)] bg-white p-7 md:p-8">
-            <p class="eyebrow mb-3">Posa a parete</p>
-            <h3 class="heading text-xl md:text-2xl leading-snug mb-3">
-              Integrazione precisa nelle pareti in cartongesso
-            </h3>
-            <p class="text-sm md:text-base text-[var(--color-charcoal)]/85 leading-relaxed mb-5">
-              Per accesso agli impianti nascosti. Un processo lineare,
-              progettato per integrarsi nel lavoro senza rallentare il
-              cantiere.
-            </p>
-            <a
-              href="#supporto"
-              class="inline-flex items-center gap-2 text-[var(--color-accent)] font-semibold underline underline-offset-4 hover:text-[#234f37] transition-colors text-sm md:text-base"
-            >
-              → Video posa a parete (in arrivo)
-            </a>
+          <article class="rounded-2xl overflow-hidden border border-[var(--color-line)] bg-white">
+            <div class="relative aspect-[16/10] overflow-hidden bg-[var(--color-bone)]">
+              <img
+                src={withBase("img/prodotto/13-posa-parete.webp")}
+                alt="Tecnico cartongessista installa accesso tecnico PERMALINE su parete in cartongesso"
+                width="1200"
+                height="750"
+                sizes="(min-width: 768px) 50vw, 100vw"
+                loading="lazy"
+                decoding="async"
+                class="absolute inset-0 h-full w-full object-cover"
+              />
+            </div>
+            <div class="p-7 md:p-8">
+              <p class="eyebrow mb-3">Posa a parete</p>
+              <h3 class="heading text-xl md:text-2xl leading-snug mb-3">
+                Integrazione precisa nelle pareti in cartongesso
+              </h3>
+              <p class="text-sm md:text-base text-[var(--color-charcoal)]/85 leading-relaxed">
+                Per accesso agli impianti nascosti. Un processo lineare,
+                progettato per integrarsi nel lavoro senza rallentare il
+                cantiere.
+              </p>
+            </div>
           </article>
 
-          <article class="rounded-2xl border border-[var(--color-line)] bg-white p-7 md:p-8">
-            <p class="eyebrow mb-3">Posa a soffitto</p>
-            <h3 class="heading text-xl md:text-2xl leading-snug mb-3">
-              Installazione su controsoffitto
-            </h3>
-            <p class="text-sm md:text-base text-[var(--color-charcoal)]/85 leading-relaxed mb-5">
-              Dove precisione e stabilità fanno la differenza nel tempo. Qui
-              vedi come ottenere un risultato pulito fin dalla prima posa.
-            </p>
-            <a
-              href="#supporto"
-              class="inline-flex items-center gap-2 text-[var(--color-accent)] font-semibold underline underline-offset-4 hover:text-[#234f37] transition-colors text-sm md:text-base"
-            >
-              → Video posa a soffitto (in arrivo)
-            </a>
+          <article class="rounded-2xl overflow-hidden border border-[var(--color-line)] bg-white">
+            <div class="relative aspect-[16/10] overflow-hidden bg-[var(--color-bone)]">
+              <img
+                src={withBase("img/prodotto/14-posa-soffitto.webp")}
+                alt="Controsoffitto con accessi tecnici PERMALINE integrati a filo, ufficio direzionale"
+                width="1200"
+                height="750"
+                sizes="(min-width: 768px) 50vw, 100vw"
+                loading="lazy"
+                decoding="async"
+                class="absolute inset-0 h-full w-full object-cover"
+              />
+            </div>
+            <div class="p-7 md:p-8">
+              <p class="eyebrow mb-3">Posa a soffitto</p>
+              <h3 class="heading text-xl md:text-2xl leading-snug mb-3">
+                Installazione su controsoffitto
+              </h3>
+              <p class="text-sm md:text-base text-[var(--color-charcoal)]/85 leading-relaxed">
+                Dove precisione e stabilità fanno la differenza nel tempo. Qui
+                vedi come ottenere un risultato pulito fin dalla prima posa.
+              </p>
+            </div>
           </article>
         </div>
 
-        <div class="mt-12 max-w-3xl rounded-2xl bg-[var(--color-ink)] text-white p-7 md:p-9">
-          <p class="eyebrow mb-3" style="color: rgba(255,255,255,0.7);">
-            Hai dubbi sulla posa del tuo caso specifico?
-          </p>
-          <h3 class="heading text-xl md:text-2xl leading-snug !text-white mb-3">
-            Parla con un tecnico prima di iniziare.
-          </h3>
-          <p class="text-sm md:text-base text-white/85 leading-relaxed mb-5">
-            Descrivici la situazione (impianto, posizione, dimensioni, tipo di
-            supporto) e ti diciamo subito come procedere.
-          </p>
-          <div class="flex flex-col sm:flex-row gap-3">
-            <a
-              href="https://wa.me/393755718600?text=Salve,%20vorrei%20parlare%20del%20supporto%20tecnico%20PERMALINE%20per%20il%20mio%20caso"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="inline-flex items-center justify-center gap-2 rounded-full bg-[#25D366] px-5 py-3 min-h-11 text-sm font-semibold text-white hover:bg-[#1ea954] transition-colors"
-            >
-              <svg width="18" height="18" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true">
-                <path d="M19.11 17.205c-.372 0-1.088 1.39-1.518 1.39a.63.63 0 0 1-.315-.1c-.802-.402-1.504-.817-2.163-1.447-.545-.516-1.146-1.29-1.46-1.963a.426.426 0 0 1-.073-.215c0-.33.99-.945.99-1.49 0-.143-.73-2.09-.832-2.335-.143-.372-.214-.487-.6-.487-.187 0-.36-.043-.53-.043-.302 0-.53.115-.746.315-.688.645-1.032 1.318-1.06 2.264v.114c-.015.99.472 1.977 1.017 2.78 1.23 1.82 2.506 3.41 4.554 4.34.616.287 2.035.96 2.708.96.387 0 2.135-.387 2.464-.832.225-.305.357-.733.357-1.122 0-.043 0-.043 0-.085-.058-.058-1.39-.83-1.793-.83zm-3.252 5.92h-.014c-1.59 0-3.18-.45-4.554-1.255L7.18 23.013l1.18-3.51A8.84 8.84 0 0 1 7.06 14.6c0-4.872 3.99-8.85 8.86-8.85 2.365 0 4.602.913 6.28 2.578a8.85 8.85 0 0 1 2.6 6.27c-.007 4.876-3.997 8.85-8.943 8.85zm7.563-16.4A10.62 10.62 0 0 0 15.86 4.04 10.55 10.55 0 0 0 5.32 14.6c0 1.85.487 3.654 1.41 5.247L5.236 25.4l5.69-1.49a10.55 10.55 0 0 0 5.045 1.282h.005c5.834 0 10.583-4.74 10.583-10.572 0-2.83-1.09-5.49-3.097-7.495z" />
+        <div class="mt-12 max-w-5xl rounded-2xl bg-[var(--color-ink)] text-white overflow-hidden">
+          <div class="grid md:grid-cols-[1.4fr_1fr] items-stretch">
+            <div class="p-7 md:p-10 flex flex-col justify-center text-left">
+              <p class="eyebrow mb-3" style="color: rgba(255,255,255,0.7);">
+                Hai dubbi sulla posa del tuo caso specifico?
+              </p>
+              <h3 class="heading text-xl md:text-2xl leading-snug !text-white mb-3">
+                Parla con un tecnico prima di iniziare.
+              </h3>
+              <p class="text-sm md:text-base text-white/85 leading-relaxed mb-5">
+                Descrivici la situazione (impianto, posizione, dimensioni, tipo di
+                supporto) e ti diciamo subito come procedere.
+              </p>
+              <div class="flex flex-col sm:flex-row gap-3">
+                <a
+                  href="https://wa.me/393755718600?text=Salve,%20vorrei%20parlare%20del%20supporto%20tecnico%20PERMALINE%20per%20il%20mio%20caso"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-flex items-center justify-center gap-2 rounded-full bg-[#25D366] px-5 py-3 min-h-11 text-sm font-semibold text-white hover:bg-[#1ea954] transition-colors"
+                >
+                  <svg width="18" height="18" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true">
+                    <path d="M19.11 17.205c-.372 0-1.088 1.39-1.518 1.39a.63.63 0 0 1-.315-.1c-.802-.402-1.504-.817-2.163-1.447-.545-.516-1.146-1.29-1.46-1.963a.426.426 0 0 1-.073-.215c0-.33.99-.945.99-1.49 0-.143-.73-2.09-.832-2.335-.143-.372-.214-.487-.6-.487-.187 0-.36-.043-.53-.043-.302 0-.53.115-.746.315-.688.645-1.032 1.318-1.06 2.264v.114c-.015.99.472 1.977 1.017 2.78 1.23 1.82 2.506 3.41 4.554 4.34.616.287 2.035.96 2.708.96.387 0 2.135-.387 2.464-.832.225-.305.357-.733.357-1.122 0-.043 0-.043 0-.085-.058-.058-1.39-.83-1.793-.83zm-3.252 5.92h-.014c-1.59 0-3.18-.45-4.554-1.255L7.18 23.013l1.18-3.51A8.84 8.84 0 0 1 7.06 14.6c0-4.872 3.99-8.85 8.86-8.85 2.365 0 4.602.913 6.28 2.578a8.85 8.85 0 0 1 2.6 6.27c-.007 4.876-3.997 8.85-8.943 8.85zm7.563-16.4A10.62 10.62 0 0 0 15.86 4.04 10.55 10.55 0 0 0 5.32 14.6c0 1.85.487 3.654 1.41 5.247L5.236 25.4l5.69-1.49a10.55 10.55 0 0 0 5.045 1.282h.005c5.834 0 10.583-4.74 10.583-10.572 0-2.83-1.09-5.49-3.097-7.495z" />
+                  </svg>
+                  WhatsApp +39 375 571 8600
+                </a>
+                <a
+                  href="mailto:supporto@compassin.it"
+                  class="inline-flex items-center justify-center gap-2 rounded-full border-2 border-white/40 px-5 py-3 min-h-11 text-sm font-semibold text-white hover:bg-white hover:text-[var(--color-ink)] transition-colors"
+                >
+                  ✉ supporto@compassin.it
+                </a>
+              </div>
+            </div>
+            {/* SLOT PERSONA SCONTORNATA — placeholder per foto tecnico scontornato (sfondo trasparente). Sostituire SVG con <img src="img/prodotto/cta-tecnico.webp" /> quando arriva foto stock. */}
+            <div class="relative bg-gradient-to-br from-[var(--color-charcoal)] to-[var(--color-ink)] flex items-end justify-center min-h-[200px] md:min-h-[280px]" aria-hidden="true">
+              <svg viewBox="0 0 200 240" class="absolute bottom-0 left-1/2 -translate-x-1/2 h-[90%] w-auto" xmlns="http://www.w3.org/2000/svg">
+                <ellipse cx="100" cy="60" rx="34" ry="38" fill="rgba(255,255,255,0.18)" />
+                <path d="M32 240 Q32 130 100 130 Q168 130 168 240 Z" fill="rgba(255,255,255,0.18)" />
               </svg>
-              WhatsApp +39 375 571 8600
-            </a>
-            <a
-              href="mailto:supporto@compassin.it"
-              class="inline-flex items-center justify-center gap-2 rounded-full border-2 border-white/40 px-5 py-3 min-h-11 text-sm font-semibold text-white hover:bg-white hover:text-[var(--color-ink)] transition-colors"
-            >
-              ✉ supporto@compassin.it
-            </a>
+            </div>
           </div>
         </div>
       </div>
@@ -736,39 +763,81 @@ const testimonials = [
         </div>
 
         <div class="grid md:grid-cols-3 gap-6 mt-12">
-          <div class="rounded-2xl border border-[var(--color-line)] bg-white p-7 md:p-8">
-            <p class="eyebrow mb-3">Per chi progetta</p>
-            <h3 class="heading text-lg md:text-xl leading-snug mb-3">
-              L'accesso tecnico smette di essere una variabile fuori controllo.
-            </h3>
-            <p class="text-sm md:text-base text-[var(--color-charcoal)]/85 leading-relaxed">
-              Lo definisci con gli stessi criteri con cui hai definito tutto il
-              resto. La linea che hai approvato alla consegna è quella che
-              ritroverai.
-            </p>
-          </div>
+          <article class="rounded-2xl overflow-hidden border border-[var(--color-line)] bg-white flex flex-col">
+            <div class="relative aspect-[4/3] overflow-hidden bg-[var(--color-bone)]">
+              <img
+                src={withBase("img/prodotto/15-per-chi-progetta.webp")}
+                alt="Schizzo a matita di corridoio con accessi tecnici PERMALINE in progettazione"
+                width="800"
+                height="600"
+                sizes="(min-width: 768px) 33vw, 100vw"
+                loading="lazy"
+                decoding="async"
+                class="absolute inset-0 h-full w-full object-cover"
+              />
+            </div>
+            <div class="p-7 md:p-8 flex-1">
+              <p class="eyebrow mb-3">Per chi progetta</p>
+              <h3 class="heading text-lg md:text-xl leading-snug mb-3">
+                L'accesso tecnico smette di essere una variabile fuori controllo.
+              </h3>
+              <p class="text-sm md:text-base text-[var(--color-charcoal)]/85 leading-relaxed">
+                Lo definisci con gli stessi criteri con cui hai definito tutto il
+                resto. La linea che hai approvato alla consegna è quella che
+                ritroverai.
+              </p>
+            </div>
+          </article>
 
-          <div class="rounded-2xl border border-[var(--color-line)] bg-white p-7 md:p-8">
-            <p class="eyebrow mb-3">Per chi realizza</p>
-            <h3 class="heading text-lg md:text-xl leading-snug mb-3">
-              Meno ritocchi, meno ritorni, meno variabilità in posa.
-            </h3>
-            <p class="text-sm md:text-base text-[var(--color-charcoal)]/85 leading-relaxed">
-              Chiudi il lavoro e passi al cantiere dopo. Punto.
-            </p>
-          </div>
+          <article class="rounded-2xl overflow-hidden border border-[var(--color-line)] bg-white flex flex-col">
+            <div class="relative aspect-[4/3] overflow-hidden bg-[var(--color-bone)]">
+              <img
+                src={withBase("img/prodotto/16-per-chi-realizza.webp")}
+                alt="Primo piano del telaio in alluminio dell'accesso tecnico PERMALINE pronto per la posa"
+                width="800"
+                height="600"
+                sizes="(min-width: 768px) 33vw, 100vw"
+                loading="lazy"
+                decoding="async"
+                class="absolute inset-0 h-full w-full object-cover"
+              />
+            </div>
+            <div class="p-7 md:p-8 flex-1">
+              <p class="eyebrow mb-3">Per chi realizza</p>
+              <h3 class="heading text-lg md:text-xl leading-snug mb-3">
+                Meno ritocchi, meno ritorni, meno variabilità in posa.
+              </h3>
+              <p class="text-sm md:text-base text-[var(--color-charcoal)]/85 leading-relaxed">
+                Chiudi il lavoro e passi al cantiere dopo. Punto.
+              </p>
+            </div>
+          </article>
 
-          <div class="rounded-2xl border-2 border-[var(--color-accent)] bg-[var(--color-accent-soft)] p-7 md:p-8">
-            <p class="eyebrow mb-3" style="color: var(--color-accent);">
-              Per entrambi
-            </p>
-            <h3 class="heading text-lg md:text-xl leading-snug mb-3">
-              Un risultato verificabile a occhio nudo, in qualsiasi momento.
-            </h3>
-            <p class="text-sm md:text-base text-[var(--color-charcoal)]/90 leading-relaxed">
-              Da chiunque. <strong>Non una promessa. Un parametro.</strong>
-            </p>
-          </div>
+          <article class="rounded-2xl overflow-hidden border-2 border-[var(--color-accent)] bg-[var(--color-accent-soft)] flex flex-col">
+            <div class="relative aspect-[4/3] overflow-hidden bg-[var(--color-bone)]">
+              <img
+                src={withBase("img/prodotto/17-per-entrambi.webp")}
+                alt="Accesso tecnico PERMALINE integrato a soffitto, risultato finito a vista"
+                width="800"
+                height="600"
+                sizes="(min-width: 768px) 33vw, 100vw"
+                loading="lazy"
+                decoding="async"
+                class="absolute inset-0 h-full w-full object-cover"
+              />
+            </div>
+            <div class="p-7 md:p-8 flex-1">
+              <p class="eyebrow mb-3" style="color: var(--color-accent);">
+                Per entrambi
+              </p>
+              <h3 class="heading text-lg md:text-xl leading-snug mb-3">
+                Un risultato verificabile a occhio nudo, in qualsiasi momento.
+              </h3>
+              <p class="text-sm md:text-base text-[var(--color-charcoal)]/90 leading-relaxed">
+                Da chiunque. <strong>Non una promessa. Un parametro.</strong>
+              </p>
+            </div>
+          </article>
         </div>
       </div>
     </section>
@@ -915,24 +984,33 @@ const testimonials = [
       aria-labelledby="supporto-title"
     >
       <div class="mx-auto max-w-7xl px-5 md:px-8">
-        <div class="max-w-4xl">
-          <span class="brand-mark" aria-hidden="true"></span>
-          <p class="eyebrow mb-3" style="color: rgba(255,255,255,0.7);">
-            Supporto diretto
-          </p>
-          <h2
-            id="supporto-title"
-            class="heading text-3xl md:text-4xl lg:text-5xl leading-tight mb-6 !text-white"
-          >
-            Hai un progetto in corso o un cantiere da iniziare?
-            <span class="block mt-2 text-white/70">
-              Parla con un tecnico COMPASSiN®.
-            </span>
-          </h2>
-          <p class="text-base md:text-lg text-white/85 leading-relaxed max-w-3xl">
-            Prima si chiarisce il tipo di accesso da gestire, più è facile
-            evitare compromessi, errori e ritorni inutili.
-          </p>
+        <div class="grid md:grid-cols-[1.6fr_1fr] gap-8 md:gap-12 items-center">
+          <div class="text-left">
+            <span class="brand-mark" aria-hidden="true"></span>
+            <p class="eyebrow mb-3" style="color: rgba(255,255,255,0.7);">
+              Supporto diretto
+            </p>
+            <h2
+              id="supporto-title"
+              class="heading text-3xl md:text-4xl lg:text-5xl leading-tight mb-6 !text-white"
+            >
+              Hai un progetto in corso o un cantiere da iniziare?
+              <span class="block mt-2 text-white/70">
+                Parla con un tecnico COMPASSiN®.
+              </span>
+            </h2>
+            <p class="text-base md:text-lg text-white/85 leading-relaxed max-w-3xl">
+              Prima si chiarisce il tipo di accesso da gestire, più è facile
+              evitare compromessi, errori e ritorni inutili.
+            </p>
+          </div>
+          {/* SLOT PERSONA SCONTORNATA — placeholder per foto tecnico scontornato (sfondo trasparente). Sostituire SVG con <img src="img/prodotto/cta-tecnico.webp" /> quando arriva foto stock. */}
+          <div class="relative flex items-end justify-center min-h-[240px] md:min-h-[320px]" aria-hidden="true">
+            <svg viewBox="0 0 200 240" class="h-full w-auto max-h-[360px]" xmlns="http://www.w3.org/2000/svg">
+              <ellipse cx="100" cy="60" rx="34" ry="38" fill="rgba(255,255,255,0.18)" />
+              <path d="M32 240 Q32 130 100 130 Q168 130 168 240 Z" fill="rgba(255,255,255,0.18)" />
+            </svg>
+          </div>
         </div>
 
         <div class="grid md:grid-cols-3 gap-5 mt-12 max-w-5xl">
