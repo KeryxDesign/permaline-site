@@ -1,0 +1,41 @@
+---
+// Form lead Permaline embeddato dal CRM Snyffo Hub (GoHighLevel white-label).
+// Form universale unico: nhZ9UkL0445WhnKKr0zt (location Compass In 6FE84Sk9Dsgr1jBKXCdb).
+// Il dropdown "Sei un..." (Architetto / Impresa) segmenta il lead nel CRM via custom field.
+// I lead entrano direttamente nel CRM Compass In. Notifiche e autoresponse gestite lato Snyffo.
+import { withBase } from "@/lib/url";
+---
+
+<div class="snyffo-form">
+  <iframe
+    src="https://api.snyffohub.com/widget/form/nhZ9UkL0445WhnKKr0zt"
+    style="width:100%;min-height:675px;border:none;border-radius:8px;display:block"
+    id="inline-nhZ9UkL0445WhnKKr0zt"
+    data-layout="{'id':'INLINE'}"
+    data-trigger-type="alwaysShow"
+    data-trigger-value=""
+    data-activation-type="alwaysActivated"
+    data-activation-value=""
+    data-deactivation-type="neverDeactivate"
+    data-deactivation-value=""
+    data-form-name="Permaline - Form Universale"
+    data-height="675"
+    data-layout-iframe-id="inline-nhZ9UkL0445WhnKKr0zt"
+    data-form-id="nhZ9UkL0445WhnKKr0zt"
+    title="Modulo di contatto PERMALINE"
+    loading="lazy"
+  >
+  </iframe>
+
+  <p class="mt-4 text-xs text-[var(--color-charcoal)]/70 leading-relaxed">
+    Inviando il form acconsenti a essere ricontattato da COMPASSiN S.r.l. per
+    rispondere alla tua richiesta. I tuoi dati sono trattati nel rispetto del
+    GDPR e della legge svizzera sulla protezione dei dati (nLPD): leggi
+    l'<a
+      href={withBase("privacy")}
+      class="font-semibold text-[var(--color-accent)] underline underline-offset-2 hover:text-[#234f37]"
+    >Informativa privacy</a>.
+  </p>
+</div>
+
+<script is:inline src="https://api.snyffohub.com/js/form_embed.js"></script>
