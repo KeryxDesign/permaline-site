@@ -1,0 +1,211 @@
+---
+import { getCollection, render } from "astro:content";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import Header from "@/components/Header.astro";
+import Footer from "@/components/Footer.astro";
+import WhatsAppFloating from "@/components/WhatsAppFloating.astro";
+import { withBase } from "@/lib/url";
+
+export async function getStaticPaths() {
+  const faqs = await getCollection("faq");
+  const sorted = faqs.sort((a, b) => a.data.order - b.data.order);
+  return sorted.map((entry, i) => ({
+    params: { slug: entry.id.replace(/^\d+-/, "") },
+    props: {
+      entry,
+      prev: i > 0 ? sorted[i - 1] : null,
+      next: i < sorted.length - 1 ? sorted[i + 1] : null,
+    },
+  }));
+}
+
+const { entry, prev, next } = Astro.props;
+const { Content } = await render(entry);
+const slugOf = (id: string) => id.replace(/^\d+-/, "");
+---
+
+<BaseLayout
+  title={`${entry.data.question} | FAQ PERMALINE®`}
+  description={entry.data.excerpt}
+>
+  <Header />
+
+  <main class="flex-1">
+    <!-- HERO ARTICOLO -->
+    <article>
+      <header class="bg-[var(--color-paper)] pt-10 md:pt-14 pb-8 md:pb-12">
+        <div class="mx-auto max-w-3xl px-5 md:px-8">
+          <nav class="mb-6 text-sm" aria-label="Percorso">
+            <a
+              href={withBase("faq")}
+              class="inline-flex items-center gap-1.5 text-[var(--color-accent)] font-semibold hover:gap-2.5 transition-all"
+            >
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                aria-hidden="true"
+              >
+                <line x1="19" y1="12" x2="5" y2="12"></line>
+                <polyline points="12 19 5 12 12 5"></polyline>
+              </svg>
+              Tutte le domande
+            </a>
+          </nav>
+
+          <span class="brand-mark" aria-hidden="true"></span>
+          <p class="eyebrow mb-3">Domanda frequente</p>
+          <h1 class="heading text-3xl md:text-4xl lg:text-5xl leading-[1.1]">
+            {entry.data.question}
+          </h1>
+        </div>
+      </header>
+
+      <!-- FOTO PRINCIPALE -->
+      <div class="mx-auto max-w-4xl px-5 md:px-8 -mt-2 mb-10 md:mb-14">
+        <div
+          class="relative aspect-[16/9] overflow-hidden rounded-2xl bg-[var(--color-bone)] shadow-[0_1px_2px_rgba(0,0,0,0.04),0_20px_40px_-20px_rgba(0,0,0,0.15)]"
+        >
+          {
+            entry.data.image ? (
+              <img
+                src={withBase(entry.data.image)}
+                alt={entry.data.imageAlt || entry.data.question}
+                width="1280"
+                height="720"
+                sizes="(min-width: 896px) 896px, 100vw"
+                loading="eager"
+                decoding="async"
+                class="absolute inset-0 h-full w-full object-cover"
+              />
+            ) : (
+              <div
+                class="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-[var(--color-bone)] to-[var(--color-mist)]"
+                aria-hidden="true"
+              >
+                <span class="brand-mark !mb-0 opacity-40" />
+              </div>
+            )
+          }
+        </div>
+      </div>
+
+      <!-- CORPO RISPOSTA -->
+      <div class="mx-auto max-w-3xl px-5 md:px-8 pb-14 md:pb-20">
+        <div class="faq-prose">
+          <Content />
+        </div>
+
+        <!-- CTA in fondo -->
+        {
+          entry.data.cta === "tutorial-posa" ? (
+            <div class="mt-12 rounded-2xl bg-[var(--color-ink)] text-white p-7 md:p-9">
+              <p
+                class="eyebrow mb-3"
+                style="color: rgba(255,255,255,0.7);"
+              >
+                Vedi la posa in video
+              </p>
+              <h2 class="heading text-xl md:text-2xl leading-snug !text-white mb-5">
+                Due tutorial: posa a soffitto e a parete.
+              </h2>
+              <div class="flex flex-col sm:flex-row gap-3">
+                <a
+                  href="https://youtu.be/06uyxrDyeHo"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-flex items-center justify-center gap-2 rounded-full bg-[var(--color-accent)] px-5 py-3 min-h-11 text-sm font-semibold text-white hover:bg-[#234f37] transition-colors"
+                >
+                  Tutorial posa a soffitto
+                </a>
+                <a
+                  href="https://youtu.be/wF481K3bfYk"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-flex items-center justify-center gap-2 rounded-full border-2 border-white/40 px-5 py-3 min-h-11 text-sm font-semibold text-white hover:bg-white hover:text-[var(--color-ink)] transition-colors"
+                >
+                  Tutorial posa a parete
+                </a>
+              </div>
+            </div>
+          ) : (
+            <div class="mt-12 rounded-2xl bg-[var(--color-ink)] text-white p-7 md:p-9">
+              <p
+                class="eyebrow mb-3"
+                style="color: rgba(255,255,255,0.7);"
+              >
+                Parla con un tecnico
+              </p>
+              <h2 class="heading text-xl md:text-2xl leading-snug !text-white mb-3">
+                Hai un caso specifico da valutare?
+              </h2>
+              <p class="text-sm md:text-base text-white/85 leading-relaxed mb-5">
+                Raccontaci impianto, posizione e tipo di supporto. Ti diciamo
+                subito se PERMALINE è la soluzione corretta per il tuo cantiere.
+              </p>
+              <div class="flex flex-col sm:flex-row gap-3">
+                <a
+                  href="https://wa.me/393755718600?text=Salve,%20vorrei%20parlare%20del%20supporto%20tecnico%20PERMALINE"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-flex items-center justify-center gap-2 rounded-full bg-[#25D366] px-5 py-3 min-h-11 text-sm font-semibold text-white hover:bg-[#1ea954] transition-colors"
+                >
+                  WhatsApp +39 375 571 8600
+                </a>
+                <a
+                  href="mailto:supporto@compassin.it"
+                  class="inline-flex items-center justify-center gap-2 rounded-full border-2 border-white/40 px-5 py-3 min-h-11 text-sm font-semibold text-white hover:bg-white hover:text-[var(--color-ink)] transition-colors"
+                >
+                  supporto@compassin.it
+                </a>
+              </div>
+            </div>
+          )
+        }
+
+        <!-- NAV prev/next -->
+        <nav
+          class="mt-12 grid sm:grid-cols-2 gap-4"
+          aria-label="Altre domande"
+        >
+          {
+            prev && (
+              <a
+                href={withBase(`faq/${slugOf(prev.id)}`)}
+                class="group rounded-2xl border border-[var(--color-line)] bg-white p-5 hover:border-[var(--color-charcoal)] transition-colors"
+              >
+                <p class="text-xs text-[var(--color-charcoal)]/60 mb-1.5">
+                  Domanda precedente
+                </p>
+                <p class="text-sm md:text-base font-semibold text-[var(--color-ink)] leading-snug">
+                  {prev.data.question}
+                </p>
+              </a>
+            )
+          }
+          {
+            next && (
+              <a
+                href={withBase(`faq/${slugOf(next.id)}`)}
+                class="group rounded-2xl border border-[var(--color-line)] bg-white p-5 hover:border-[var(--color-charcoal)] transition-colors sm:text-right"
+              >
+                <p class="text-xs text-[var(--color-charcoal)]/60 mb-1.5">
+                  Domanda successiva
+                </p>
+                <p class="text-sm md:text-base font-semibold text-[var(--color-ink)] leading-snug">
+                  {next.data.question}
+                </p>
+              </a>
+            )
+          }
+        </nav>
+      </div>
+    </article>
+  </main>
+
+  <Footer />
+  <WhatsAppFloating />
+</BaseLayout>

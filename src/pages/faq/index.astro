@@ -1,0 +1,140 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import Header from "@/components/Header.astro";
+import Footer from "@/components/Footer.astro";
+import WhatsAppFloating from "@/components/WhatsAppFloating.astro";
+import { withBase } from "@/lib/url";
+
+const faqs = (await getCollection("faq")).sort(
+  (a, b) => a.data.order - b.data.order
+);
+
+// Slug pulito senza prefisso numerico
+const slugOf = (id: string) => id.replace(/^\d+-/, "");
+---
+
+<BaseLayout
+  title="Domande frequenti su PERMALINE® | Accessi tecnici di precisione"
+  description="Tutte le risposte su PERMALINE: materiali, posa, tempi, resistenza all'umidità, installazione a parete e soffitto. Le domande che architetti e imprese ci fanno più spesso."
+>
+  <Header />
+
+  <main class="flex-1">
+    <!-- HERO -->
+    <section
+      class="bg-[var(--color-paper)] py-14 md:py-20"
+      aria-labelledby="faq-title"
+    >
+      <div class="mx-auto max-w-7xl px-5 md:px-8">
+        <div class="max-w-3xl">
+          <span class="brand-mark" aria-hidden="true"></span>
+          <p class="eyebrow mb-3">Domande frequenti</p>
+          <h1
+            id="faq-title"
+            class="heading text-3xl sm:text-4xl lg:text-5xl leading-[1.1] mb-6"
+          >
+            Le risposte alle domande
+            <span class="block mt-2 text-[var(--color-accent)]">
+              che ci fanno più spesso.
+            </span>
+          </h1>
+          <p
+            class="text-base md:text-lg text-[var(--color-charcoal)]/85 leading-relaxed"
+          >
+            Materiali, posa, tempi, resistenza, integrazione a parete e a
+            soffitto. Tutto quello che architetti e imprese vogliono sapere
+            prima di scegliere PERMALINE®.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- GRIGLIA RIQUADRI FAQ -->
+    <section class="bg-[var(--color-paper)] pb-16 md:pb-24">
+      <div class="mx-auto max-w-7xl px-5 md:px-8">
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {
+            faqs.map((faq) => (
+              <a
+                href={withBase(`faq/${slugOf(faq.id)}`)}
+                class="group flex flex-col rounded-2xl overflow-hidden border border-[var(--color-line)] bg-white hover:border-[var(--color-charcoal)] transition-colors"
+              >
+                <div class="relative aspect-[16/10] overflow-hidden bg-[var(--color-bone)]">
+                  {faq.data.image ? (
+                    <img
+                      src={withBase(faq.data.image)}
+                      alt={faq.data.imageAlt || faq.data.question}
+                      width="800"
+                      height="500"
+                      sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+                      loading="lazy"
+                      decoding="async"
+                      class="absolute inset-0 h-full w-full object-cover"
+                    />
+                  ) : (
+                    <div
+                      class="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-[var(--color-bone)] to-[var(--color-mist)]"
+                      aria-hidden="true"
+                    >
+                      <span class="brand-mark !mb-0 opacity-40" />
+                    </div>
+                  )}
+                </div>
+                <div class="flex flex-col flex-1 p-6 md:p-7">
+                  <h2 class="heading text-lg md:text-xl leading-snug mb-3">
+                    {faq.data.question}
+                  </h2>
+                  <p class="text-sm md:text-base text-[var(--color-charcoal)]/80 leading-relaxed mb-5 line-clamp-3">
+                    {faq.data.excerpt}
+                  </p>
+                  <span class="mt-auto inline-flex items-center gap-2 text-sm font-semibold text-[var(--color-accent)] group-hover:gap-3 transition-all">
+                    Leggi la risposta
+                    <svg
+                      width="16"
+                      height="16"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      class="transition-transform duration-300 group-hover:translate-x-1"
+                      aria-hidden="true"
+                    >
+                      <line x1="5" y1="12" x2="19" y2="12" />
+                      <polyline points="12 5 19 12 12 19" />
+                    </svg>
+                  </span>
+                </div>
+              </a>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA SUPPORTO -->
+    <section class="bg-[var(--color-ink)] py-16 md:py-20 text-white">
+      <div class="mx-auto max-w-3xl px-5 md:px-8 text-center">
+        <span class="brand-mark mx-auto" aria-hidden="true"></span>
+        <h2 class="heading text-2xl md:text-3xl leading-snug mb-4 !text-white">
+          Non hai trovato la tua domanda?
+        </h2>
+        <p class="text-base md:text-lg text-white/85 leading-relaxed mb-8">
+          Raccontaci il tuo caso (impianto, posizione, parete o soffitto) e un
+          tecnico ti dice subito se PERMALINE è la soluzione corretta.
+        </p>
+        <a
+          href="https://wa.me/393755718600?text=Salve,%20ho%20una%20domanda%20su%20PERMALINE"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center justify-center gap-2 rounded-full bg-[#25D366] px-6 py-3.5 min-h-11 text-sm font-semibold text-white hover:bg-[#1ea954] transition-colors"
+        >
+          Scrivi su WhatsApp
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+  <WhatsAppFloating />
+</BaseLayout>
