@@ -275,6 +275,24 @@ html.a11y-reduce-motion *::after {
   color: rgba(255, 255, 255, 0.95);
 }
 
+/* Tag <mark> nativo: evidenziazione ocra tenue (mai giallo fluo del browser).
+   Stessa famiglia cromatica del pencil-underline che il cliente ha approvato. */
+mark {
+  background-color: hsl(40 72% 70% / 0.5);
+  color: inherit;
+  padding: 0 0.12em;
+  border-radius: 2px;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
+/* <mark> su fondo scuro: ocra leggermente più caldo e opaco per restare leggibile */
+.bg-\[var\(--color-ink\)\] mark,
+.bg-\[var\(--color-charcoal\)\] mark {
+  background-color: hsl(42 80% 66% / 0.55);
+  color: var(--color-ink);
+}
+
 /* Highlight DRD: barra verde brand a 60% di altezza, mai giallo fluo */
 .mark {
   background: linear-gradient(

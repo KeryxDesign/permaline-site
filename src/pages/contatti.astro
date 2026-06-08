@@ -18,15 +18,6 @@ const canali = [
     icon: "whatsapp",
   },
   {
-    label: "Telefono",
-    primary: "+39 02 98 28 10 59",
-    body: "Per chiarire dubbi tecnici direttamente con un nostro tecnico. Lun-Ven, orario d'ufficio.",
-    href: "tel:+390298281059",
-    external: false,
-    accent: false,
-    icon: "phone",
-  },
-  {
     label: "Email tecnica",
     primary: "supporto@compassin.it",
     body: "Richiesta tecnica dedicata. Risposta entro 24 ore lavorative.",
@@ -58,7 +49,7 @@ const social = [
 
 <BaseLayout
   title="Contatti | PERMALINE® supporto tecnico diretto"
-  description="Parla con un tecnico Chiusure A FiLO®. WhatsApp +39 375 571 8600, telefono +39 02 98 28 10 59, email supporto@compassin.it. Risposta entro 24 ore lavorative."
+  description="Parla con un tecnico Chiusure A FiLO®. WhatsApp +39 375 571 8600, email supporto@compassin.it. Risposta entro 24 ore lavorative."
 >
   <Header />
 
@@ -120,7 +111,7 @@ const social = [
           </p>
         </div>
 
-        <div class="grid md:grid-cols-3 gap-5 mt-12">
+        <div class="grid md:grid-cols-2 gap-5 mt-12 max-w-3xl">
           {canali.map((c) => (
             <a
               href={c.href}
