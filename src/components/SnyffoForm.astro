@@ -6,10 +6,19 @@
 import { withBase } from "@/lib/url";
 ---
 
-<div class="snyffo-form">
+<div class="snyffo-form relative">
+  <!-- Skeleton mostrato finché l'iframe del form non ha finito di caricare -->
+  <div
+    class="snyffo-skeleton absolute inset-0 flex flex-col items-center justify-center gap-3 rounded-lg bg-[var(--color-bone)] text-center px-6"
+    aria-hidden="true"
+  >
+    <span class="h-7 w-7 rounded-full border-2 border-[var(--color-line)] border-t-[var(--color-accent)] animate-spin"></span>
+    <span class="text-sm text-[var(--color-charcoal)]/70">Caricamento del modulo&hellip;</span>
+  </div>
+
   <iframe
     src="https://api.snyffohub.com/widget/form/nhZ9UkL0445WhnKKr0zt"
-    style="width:100%;min-height:878px;border:none;border-radius:8px;display:block"
+    style="width:100%;min-height:878px;border:none;border-radius:8px;display:block;position:relative;z-index:1"
     id="inline-nhZ9UkL0445WhnKKr0zt"
     data-layout="{'id':'INLINE'}"
     data-trigger-type="alwaysShow"
@@ -23,7 +32,7 @@ import { withBase } from "@/lib/url";
     data-layout-iframe-id="inline-nhZ9UkL0445WhnKKr0zt"
     data-form-id="nhZ9UkL0445WhnKKr0zt"
     title="Permaline - Form Universale"
-    loading="lazy"
+    loading="eager"
   >
   </iframe>
 
@@ -39,3 +48,19 @@ import { withBase } from "@/lib/url";
 </div>
 
 <script is:inline src="https://api.snyffohub.com/js/form_embed.js"></script>
+
+<script is:inline>
+  // Nasconde lo skeleton quando l'iframe del form ha finito di caricare
+  (function () {
+    var iframe = document.getElementById("inline-nhZ9UkL0445WhnKKr0zt");
+    if (!iframe) return;
+    var skeleton = iframe.parentElement.querySelector(".snyffo-skeleton");
+    if (!skeleton) return;
+    function hide() {
+      skeleton.style.display = "none";
+    }
+    iframe.addEventListener("load", hide);
+    // Fallback: nascondi comunque dopo 12s se l'evento load non scatta
+    setTimeout(hide, 12000);
+  })();
+</script>

@@ -161,6 +161,9 @@ const jsonLd = {
       rel="stylesheet"
     />
 
+    <!-- Preconnect al CRM Snyffo: DNS+TLS pronti in anticipo per il form lead -->
+    <link rel="preconnect" href="https://api.snyffohub.com" crossorigin />
+
     <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
 
     <!-- UTM capture (persistente in sessione) + GA4 conversion event sui form lead -->
