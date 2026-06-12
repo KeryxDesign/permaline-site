@@ -50,17 +50,41 @@ import { withBase } from "@/lib/url";
 <script is:inline src="https://api.snyffohub.com/js/form_embed.js"></script>
 
 <script is:inline>
-  // Nasconde lo skeleton quando l'iframe del form ha finito di caricare
+  // Watchdog form Snyffo: nasconde lo skeleton quando il form dà segni di vita,
+  // e ricarica automaticamente l'iframe se il boot fallisce (evita il "devo ricaricare la pagina").
   (function () {
     var iframe = document.getElementById("inline-nhZ9UkL0445WhnKKr0zt");
     if (!iframe) return;
     var skeleton = iframe.parentElement.querySelector(".snyffo-skeleton");
-    if (!skeleton) return;
-    function hide() {
-      skeleton.style.display = "none";
+    var alive = false;
+    var retried = false;
+
+    function hideSkeleton() {
+      if (skeleton) skeleton.style.display = "none";
     }
-    iframe.addEventListener("load", hide);
-    // Fallback: nascondi comunque dopo 12s se l'evento load non scatta
-    setTimeout(hide, 12000);
+
+    // Il form Snyffo invia postMessage (per il resize) quando la sua app è renderizzata:
+    // è il segnale affidabile che il boot è andato a buon fine.
+    window.addEventListener("message", function (e) {
+      if (e.origin && e.origin.indexOf("snyffohub.com") !== -1) {
+        alive = true;
+        hideSkeleton();
+      }
+    });
+
+    // Watchdog: se entro 8s nessun segnale, il boot è fallito → ricarica l'iframe una volta sola.
+    setTimeout(function () {
+      if (!alive && !retried) {
+        retried = true;
+        var src = iframe.src;
+        iframe.src = "about:blank";
+        setTimeout(function () {
+          iframe.src = src;
+        }, 150);
+      }
+    }, 8000);
+
+    // Fallback estremo: togli comunque lo skeleton dopo 18s per non lasciarlo appeso.
+    setTimeout(hideSkeleton, 18000);
   })();
 </script>
