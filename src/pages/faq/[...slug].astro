@@ -22,11 +22,16 @@ export async function getStaticPaths() {
 const { entry, prev, next } = Astro.props;
 const { Content } = await render(entry);
 const slugOf = (id: string) => id.replace(/^\d+-/, "");
+
+// Immagine di anteprima social (Open Graph): og-NN.jpg generata con foto + titolo
+const ogNum = entry.id.match(/^\d+/)?.[0];
+const ogImage = ogNum ? withBase(`img/faq/og/og-${ogNum}.jpg`) : undefined;
 ---
 
 <BaseLayout
   title={`${entry.data.question} | FAQ PERMALINE®`}
   description={entry.data.excerpt}
+  ogImage={ogImage}
 >
   <Header />
 
