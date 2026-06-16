@@ -2,8 +2,8 @@
 question: "Per posare PERMALINE® serve attrezzatura speciale?"
 excerpt: "No. PERMALINE si posa con la normale attrezzatura che ogni cartongessista utilizza nel sistema a secco. Non servono utensili dedicati o componenti fuori standard."
 order: 8
-image: ""
-imageAlt: ""
+image: "img/faq/faq-08.webp"
+imageAlt: "Cartongessista al lavoro con la normale attrezzatura del secco"
 cta: "supporto"
 ---
 

@@ -2,8 +2,8 @@
 question: "Di che materiale è fatta PERMALINE®?"
 excerpt: "PERMALINE è realizzata in composito di alluminio: un materiale tecnico inerte, indeformabile e completamente diverso dal cartongesso."
 order: 4
-image: ""
-imageAlt: ""
+image: "img/faq/faq-04.webp"
+imageAlt: "Anta PERMALINE in composito di alluminio"
 cta: "supporto"
 ---
 

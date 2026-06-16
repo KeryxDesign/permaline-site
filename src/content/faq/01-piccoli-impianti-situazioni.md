@@ -2,8 +2,8 @@
 question: "Quali sono i piccoli impianti e le situazioni da chiudere con PERMALINE®?"
 excerpt: "PERMALINE è pensata per chiudere i piccoli impianti di regolazione e controllo che devono restare accessibili nel tempo senza mai farsi notare."
 order: 1
-image: ""
-imageAlt: ""
+image: "img/faq/faq-01.webp"
+imageAlt: "Ingresso residenziale con accesso tecnico PERMALINE integrato a soffitto"
 cta: "supporto"
 ---
 

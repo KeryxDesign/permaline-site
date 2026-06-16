@@ -2,8 +2,8 @@
 question: "Quanto tempo serve per installare PERMALINE®?"
 excerpt: "Per inserire e fissare il telaio bastano circa 10 minuti. PERMALINE arriva con telaio già pronto e la sequenza di posa nella costruzione a secco è chiara e lineare."
 order: 3
-image: ""
-imageAlt: ""
+image: "img/faq/faq-03.webp"
+imageAlt: "Posa del telaio PERMALINE in cantiere"
 cta: "tutorial-posa"
 ---
 

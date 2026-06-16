@@ -2,8 +2,8 @@
 question: "PERMALINE® può essere installata a soffitto e a parete?"
 excerpt: "Sì. PERMALINE può essere installata sia a soffitto sia a parete, ed è progettata per funzionare correttamente in entrambe le applicazioni senza variazioni nel tempo."
 order: 6
-image: ""
-imageAlt: ""
+image: "img/faq/faq-06.webp"
+imageAlt: "PERMALINE installata in atrio scala, su parete e soffitto"
 cta: "supporto"
 ---
 

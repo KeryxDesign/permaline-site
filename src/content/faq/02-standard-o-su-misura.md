@@ -2,8 +2,8 @@
 question: "PERMALINE® è standard o su misura?"
 excerpt: "PERMALINE non è una botola standard. È un accesso tecnico di precisione, realizzato su misura in funzione dell'impianto da ispezionare e della sua posizione."
 order: 2
-image: ""
-imageAlt: ""
+image: "img/faq/faq-02.webp"
+imageAlt: "Progettazione su misura degli accessi tecnici PERMALINE"
 cta: "supporto"
 ---
 

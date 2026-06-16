@@ -2,8 +2,8 @@
 question: "Posso posare PERMALINE® in autonomia o serve un tecnico specializzato?"
 excerpt: "Se lavori il cartongesso, o ti affidi a un cartongessista professionista, PERMALINE® è un gioco da ragazzi. È progettata da chi ha lavorato nel secco prima di fare prodotti."
 order: 7
-image: ""
-imageAlt: ""
+image: "img/faq/faq-07.webp"
+imageAlt: "Posa a soffitto di PERMALINE in controsoffitto"
 cta: "supporto"
 ---
 

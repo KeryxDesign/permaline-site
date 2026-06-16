@@ -2,8 +2,8 @@
 question: "Posso tinteggiare o rifinire il pannello di PERMALINE®?"
 excerpt: "Sì. PERMALINE può essere tinteggiata o rifinita esattamente come la parete o il soffitto in cui è inserita. L'anta è fornita con una superficie già pronta."
 order: 11
-image: ""
-imageAlt: ""
+image: "img/faq/faq-11.webp"
+imageAlt: "PERMALINE in salotto, anta rifinita come la parete"
 cta: "supporto"
 ---
 

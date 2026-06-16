@@ -2,8 +2,8 @@
 question: "Perché scegliere PERMALINE® e non una botola standard in cartongesso?"
 excerpt: "Perché le botole standard in cartongesso hanno limiti tecnici intrinseci che si riflettono sulla posa, sul risultato finale e sulla funzionalità nel tempo."
 order: 10
-image: ""
-imageAlt: ""
+image: "img/faq/faq-10.webp"
+imageAlt: "PERMALINE integrata in corridoio con superficie continua"
 cta: "supporto"
 ---
 

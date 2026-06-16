@@ -2,8 +2,8 @@
 question: "PERMALINE® resiste all'umidità o all'acqua?"
 excerpt: "Sì. PERMALINE è progettata per rimanere stabile e complanare anche in ambienti umidi o in presenza di acqua. Non è un optional, ma una condizione tecnica necessaria."
 order: 9
-image: ""
-imageAlt: ""
+image: "img/faq/faq-09.webp"
+imageAlt: "PERMALINE in bagno di pregio, resistente all'umidita"
 cta: "supporto"
 ---
 
