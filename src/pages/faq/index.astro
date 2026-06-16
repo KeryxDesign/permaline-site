@@ -53,21 +53,21 @@ const slugOf = (id: string) => id.replace(/^\d+-/, "");
     <!-- GRIGLIA RIQUADRI FAQ -->
     <section class="bg-[var(--color-paper)] pb-16 md:pb-24">
       <div class="mx-auto max-w-7xl px-5 md:px-8">
-        <div class="grid md:grid-cols-2 gap-4 md:gap-5">
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {
             faqs.map((faq) => (
               <a
                 href={withBase(`faq/${slugOf(faq.id)}`)}
-                class="group flex items-stretch rounded-2xl overflow-hidden border border-[var(--color-line)] bg-white hover:border-[var(--color-charcoal)] hover:shadow-[0_8px_30px_-12px_rgba(0,0,0,0.12)] transition-all"
+                class="group flex flex-col rounded-2xl overflow-hidden border border-[var(--color-line)] bg-white hover:border-[var(--color-charcoal)] transition-colors"
               >
-                <div class="relative w-28 sm:w-36 flex-shrink-0 overflow-hidden bg-[var(--color-bone)]">
+                <div class="relative aspect-[16/10] overflow-hidden bg-[var(--color-bone)]">
                   {faq.data.image ? (
                     <img
                       src={withBase(faq.data.image)}
                       alt={faq.data.imageAlt || faq.data.question}
-                      width="300"
-                      height="400"
-                      sizes="160px"
+                      width="800"
+                      height="500"
+                      sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
                       loading="lazy"
                       decoding="async"
                       class="absolute inset-0 h-full w-full object-cover"
@@ -81,15 +81,18 @@ const slugOf = (id: string) => id.replace(/^\d+-/, "");
                     </div>
                   )}
                 </div>
-                <div class="flex flex-col justify-center flex-1 p-5 md:p-6">
-                  <h2 class="heading text-base md:text-lg leading-snug mb-2">
+                <div class="flex flex-col flex-1 p-6 md:p-7">
+                  <h2 class="heading text-lg md:text-xl leading-snug mb-3">
                     {faq.data.question}
                   </h2>
-                  <span class="inline-flex items-center gap-1.5 text-sm font-semibold text-[var(--color-accent)] group-hover:gap-2.5 transition-all">
+                  <p class="text-sm md:text-base text-[var(--color-charcoal)]/80 leading-relaxed mb-5 line-clamp-3">
+                    {faq.data.excerpt}
+                  </p>
+                  <span class="mt-auto inline-flex items-center gap-2 text-sm font-semibold text-[var(--color-accent)] group-hover:gap-3 transition-all">
                     Leggi la risposta
                     <svg
-                      width="15"
-                      height="15"
+                      width="16"
+                      height="16"
                       viewBox="0 0 24 24"
                       fill="none"
                       stroke="currentColor"
