@@ -12,6 +12,8 @@ const faqs = (await getCollection("faq")).sort(
 
 // Slug pulito senza prefisso numerico
 const slugOf = (id: string) => id.replace(/^\d+-/, "");
+// Immagine composita (foto + titolo) usata come thumbnail della card
+const ogOf = (id: string) => `img/faq/og/og-${id.match(/^\d+/)?.[0]}.jpg`;
 ---
 
 <BaseLayout
@@ -53,42 +55,25 @@ const slugOf = (id: string) => id.replace(/^\d+-/, "");
     <!-- GRIGLIA RIQUADRI FAQ -->
     <section class="bg-[var(--color-paper)] pb-16 md:pb-24">
       <div class="mx-auto max-w-7xl px-5 md:px-8">
-        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="grid sm:grid-cols-2 gap-6 max-w-5xl mx-auto">
           {
             faqs.map((faq) => (
               <a
                 href={withBase(`faq/${slugOf(faq.id)}`)}
-                class="group flex flex-col rounded-2xl overflow-hidden border border-[var(--color-line)] bg-white hover:border-[var(--color-charcoal)] transition-colors"
+                class="group block rounded-2xl overflow-hidden border border-[var(--color-line)] bg-white hover:border-[var(--color-charcoal)] hover:shadow-[0_8px_30px_-12px_rgba(0,0,0,0.12)] transition-all"
               >
-                <div class="relative aspect-[16/10] overflow-hidden bg-[var(--color-bone)]">
-                  {faq.data.image ? (
-                    <img
-                      src={withBase(faq.data.image)}
-                      alt={faq.data.imageAlt || faq.data.question}
-                      width="800"
-                      height="500"
-                      sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
-                      loading="eager"
-                      decoding="async"
-                      class="absolute inset-0 h-full w-full object-cover"
-                    />
-                  ) : (
-                    <div
-                      class="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-[var(--color-bone)] to-[var(--color-mist)]"
-                      aria-hidden="true"
-                    >
-                      <span class="brand-mark !mb-0 opacity-40" />
-                    </div>
-                  )}
-                </div>
-                <div class="flex flex-col flex-1 p-6 md:p-7">
-                  <h2 class="heading text-lg md:text-xl leading-snug mb-3">
-                    {faq.data.question}
-                  </h2>
-                  <p class="text-sm md:text-base text-[var(--color-charcoal)]/80 leading-relaxed mb-5 line-clamp-3">
-                    {faq.data.excerpt}
-                  </p>
-                  <span class="mt-auto inline-flex items-center gap-2 text-sm font-semibold text-[var(--color-accent)] group-hover:gap-3 transition-all">
+                <h2 class="sr-only">{faq.data.question}</h2>
+                <img
+                  src={withBase(ogOf(faq.id))}
+                  alt={faq.data.question}
+                  width="1200"
+                  height="630"
+                  loading="eager"
+                  decoding="async"
+                  class="block w-full h-auto"
+                />
+                <div class="px-5 py-4 border-t border-[var(--color-line)]">
+                  <span class="inline-flex items-center gap-2 text-sm font-semibold text-[var(--color-accent)] group-hover:gap-3 transition-all">
                     Leggi la risposta
                     <svg
                       width="16"
