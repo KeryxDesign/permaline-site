@@ -85,6 +85,7 @@ const ogImage = ogNum ? withBase(`img/faq/og/og-${ogNum}.jpg`) : undefined;
                 loading="eager"
                 decoding="async"
                 class="absolute inset-0 h-full w-full object-cover"
+                style={`object-position: ${entry.data.heroPosition}`}
               />
             ) : (
               <div

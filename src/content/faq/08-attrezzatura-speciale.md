@@ -4,6 +4,7 @@ excerpt: "No. PERMALINE si posa con la normale attrezzatura che ogni cartongessi
 order: 8
 image: "img/faq/faq-08.webp"
 imageAlt: "Cartongessista al lavoro con la normale attrezzatura del secco"
+heroPosition: "50% 25%"
 cta: "supporto"
 ---
 

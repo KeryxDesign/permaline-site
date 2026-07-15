@@ -4,6 +4,7 @@ excerpt: "Se lavori il cartongesso, o ti affidi a un cartongessista professionis
 order: 7
 image: "img/faq/faq-07.webp"
 imageAlt: "Posa a soffitto di PERMALINE in controsoffitto"
+heroPosition: "50% 20%"
 cta: "supporto"
 ---
 

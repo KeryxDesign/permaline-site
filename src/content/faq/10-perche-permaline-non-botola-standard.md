@@ -4,6 +4,7 @@ excerpt: "Perché le botole standard in cartongesso hanno limiti tecnici intrins
 order: 10
 image: "img/faq/faq-10.webp"
 imageAlt: "PERMALINE integrata in corridoio con superficie continua"
+heroPosition: "50% 18%"
 cta: "supporto"
 ---
 

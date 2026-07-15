@@ -4,6 +4,7 @@ excerpt: "PERMALINE è pensata per chiudere i piccoli impianti di regolazione e 
 order: 1
 image: "img/faq/faq-01.webp"
 imageAlt: "Ingresso residenziale con accesso tecnico PERMALINE integrato a soffitto"
+heroPosition: "50% 12%"
 cta: "supporto"
 ---
 

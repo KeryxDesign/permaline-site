@@ -4,6 +4,7 @@ excerpt: "Sì. PERMALINE è progettata per rimanere stabile e complanare anche i
 order: 9
 image: "img/faq/faq-09.webp"
 imageAlt: "PERMALINE in bagno di pregio, resistente all'umidita"
+heroPosition: "50% 15%"
 cta: "supporto"
 ---
 

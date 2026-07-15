@@ -4,6 +4,7 @@ excerpt: "PERMALINE non è una botola standard. È un accesso tecnico di precisi
 order: 2
 image: "img/faq/faq-02.webp"
 imageAlt: "Progettazione su misura degli accessi tecnici PERMALINE"
+heroPosition: "50% 15%"
 cta: "supporto"
 ---
 

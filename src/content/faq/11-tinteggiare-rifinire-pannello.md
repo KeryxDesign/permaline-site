@@ -4,6 +4,7 @@ excerpt: "Sì. PERMALINE può essere tinteggiata o rifinita esattamente come la 
 order: 11
 image: "img/faq/faq-11.webp"
 imageAlt: "PERMALINE in salotto, anta rifinita come la parete"
+heroPosition: "50% 10%"
 cta: "supporto"
 ---
 
